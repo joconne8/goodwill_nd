@@ -1,18 +1,20 @@
 import type { ReactNode } from 'react';
 import './reporting.css';
 
-export type Page = 'operations' | 'reporting' | 'listings' | 'backlog' | 'evidence' | 'definitions';
+export type Page = 'overview' | 'database' | 'operations' | 'reporting' | 'listings' | 'backlog' | 'evidence' | 'definitions';
 
 const PAGES: { id: Page; label: string }[] = [
-  { id: 'operations', label: 'Operations' },
+  { id: 'overview', label: 'All sources' },
   { id: 'reporting', label: 'Reporting' },
+  { id: 'database', label: 'Database & lineage' },
+  { id: 'operations', label: 'Operations' },
   { id: 'listings', label: 'Listings' },
   { id: 'backlog', label: 'Backlog' },
   { id: 'evidence', label: 'Evidence' },
   { id: 'definitions', label: 'Definitions' },
 ];
 
-export function ReportingShell({ page, onPageChange, children, legacyHref }: { page: Page; onPageChange: (p: Page) => void; children: ReactNode; legacyHref: string }) {
+export function ReportingShell({ page, onPageChange, children, legacyHref, acquisitionHref }: { acquisitionHref: string; page: Page; onPageChange: (p: Page) => void; children: ReactNode; legacyHref: string }) {
   return (
     <div className="gw-reporting">
       <header className="gw-head">
@@ -34,11 +36,12 @@ export function ReportingShell({ page, onPageChange, children, legacyHref }: { p
         <ul>
           {PAGES.map((p) => (
             <li key={p.id}>
-              <button type="button" aria-current={page === p.id ? 'page' : undefined} onClick={() => onPageChange(p.id)}>
+              <button type="button" data-testid={`nav-${p.id}`} aria-current={page === p.id ? 'page' : undefined} onClick={() => onPageChange(p.id)}>
                 {p.label}
               </button>
             </li>
           ))}
+          <li><a href={acquisitionHref} className="gw-nav-link" data-testid="link-acquisition">Jev acquisition console</a></li>
         </ul>
       </nav>
       <main id="gw-main" tabIndex={-1}>{children}</main>

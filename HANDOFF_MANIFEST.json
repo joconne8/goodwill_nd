@@ -1,0 +1,3136 @@
+{
+  "formatVersion": 1,
+  "gitHistoryIncluded": false,
+  "audit": {
+    "scope": "Selected current-file bytes only; bounded token/credential and email patterns.",
+    "result": "No unresolved pattern findings in selected text files.",
+    "limitations": [
+      "Not a full security audit.",
+      "No checkpoint history scanned or exported.",
+      "No environment secret values read.",
+      "Binary assets need separate visual review."
+    ],
+    "unscannedBinaryFiles": []
+  },
+  "excludedTrackedFiles": 132,
+  "excludedCategories": [
+    "Git/checkpoint history",
+    "Uploaded reference material",
+    "Agent memory and workspace settings",
+    "Original source documents and operational evidence",
+    "Separate presentation material",
+    "Runtime data and credentials"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 1115,
+      "sha256": "30ef3d7f63b8db314c3ece1a0d2e334ae4331745553bb1ef817f91831acb08ec"
+    },
+    {
+      "path": ".npmrc",
+      "bytes": 56,
+      "sha256": "1ded4f26f4851b35dae702edd5719d1be5ff31db6983858d088d5e6593ea7c99"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1407,
+      "sha256": "3774a5425d49d862fee6920dfe51faa8195aeee0c3e4ab1a517e8f0d85ec798e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6868,
+      "sha256": "94c08b1eecf7daa21d4ec68d33ebd1f7fb57bb526135e2440bfee2f0f1eaffaa"
+    },
+    {
+      "path": "artifacts/api-server/.replit-artifact/artifact.toml",
+      "bytes": 811,
+      "sha256": "f8411000ce689a122993b59c9dc3519030c155f8b1b7e3afbd226d16be0efefd"
+    },
+    {
+      "path": "artifacts/api-server/build.mjs",
+      "bytes": 4087,
+      "sha256": "e89248f95b28425274c60824f739eb42322f424e36a62beae9867c59d3355b35"
+    },
+    {
+      "path": "artifacts/api-server/package.json",
+      "bytes": 1120,
+      "sha256": "76476ab4e4c5057a9b959a1504a8d210d45fc4a4c76512b671375244e6dd6c45"
+    },
+    {
+      "path": "artifacts/api-server/src/app.ts",
+      "bytes": 3907,
+      "sha256": "96623f61a9dc87b79ce6f6ece82b115a5bd7cebdf2cc714b5c332804b88c7fce"
+    },
+    {
+      "path": "artifacts/api-server/src/csv.d.ts",
+      "bytes": 77,
+      "sha256": "e370a99ba1447ddc35a218c44cc2375fb5f942429c4981276c78eae0972261d4"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/browser.ts",
+      "bytes": 9807,
+      "sha256": "94dc34d8f8a97e592e51ad719c9bdf93e9c84e60a849437565cc285bfc81d9f8"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/contracts.ts",
+      "bytes": 2613,
+      "sha256": "65a050026788471dbde456a4da4d163ed12fdcf3cfb7ae77372c3874366dde90"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/experimental/discovery.ts",
+      "bytes": 6799,
+      "sha256": "3a415c0b8576bbef568d6e3597aef6914f069b155a6f2044759a1aa0c2ffffe9"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/experimental/index.ts",
+      "bytes": 221,
+      "sha256": "5228ecc3d786f4f3897ce2f210127213ab5d4d177af8ae1421c72038aab0cd07"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/experimental/local-replica.ts",
+      "bytes": 6356,
+      "sha256": "77b3feac9789511fa29bdf28ad4c0017a34c817c64a857cc6922396a5cd88628"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/experimental/policy.ts",
+      "bytes": 8976,
+      "sha256": "1302085b2838676793d558721dd06d4e10555020d6694e882f3997d9071cb413"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/experimental/postgres.ts",
+      "bytes": 2778,
+      "sha256": "ebc658daf52e404637b8e8537d285d7775c3dd68568c37b1968094a626f38518"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/experimental/provider.ts",
+      "bytes": 7105,
+      "sha256": "eec89bfbd2d8426d12555aea84c7b68f85340a91af47635f01c68e7383147b5e"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/experimental/replay.ts",
+      "bytes": 5537,
+      "sha256": "0b4c85a9938b7be9b42af32449730940ba0df1db1ffc481fd8266db674970fcc"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/experimental/review.ts",
+      "bytes": 8325,
+      "sha256": "3514152278ab1b2aaa8fd97989d01fc01a3d81c2067ebfaf65c1d2d69e48be23"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/experimental/router.ts",
+      "bytes": 15335,
+      "sha256": "105d25d4aee902ea61570c959baeb5a975fbde37dc9bcb60ee25b1c45f6d408c"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/index.ts",
+      "bytes": 162,
+      "sha256": "478a18fbe8acf0a0fc1ed095fcffc9dfb289488ad5172d545fdbfad4d72b023d"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/postgres.ts",
+      "bytes": 2434,
+      "sha256": "332dd13e62733ab88e214884eb9f55dd31a0b6640e3cf83efb13559294960b33"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/router.ts",
+      "bytes": 2649,
+      "sha256": "e64ebeb34bf0585a59f20ac8d8edf8195f7db86a72bb80608fca5e416d46d031"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/service.ts",
+      "bytes": 9800,
+      "sha256": "582f4f40e63722c39b24f8fc902e8f996bbcd9cc46a5732f52d8a337145ea83b"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/acquisition/verify.ts",
+      "bytes": 3011,
+      "sha256": "ed1af6037a39c316ef3816a735e40ceb94ab47e2ba4ca612ceb357444fe936dd"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/analytics/definitions.ts",
+      "bytes": 6850,
+      "sha256": "1710ea9e17b7cd1e42b1ad26f89c4ae8d0245d0d5337f669c593d3f2c55762e3"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/analytics/router.ts",
+      "bytes": 1691,
+      "sha256": "c870ef48776069b1d9e2652f5f3997cf81c2e65409f133558ec4903bd38c350b"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/analytics/service.ts",
+      "bytes": 21995,
+      "sha256": "886235c2baa666a81bd2c0c86cfb5698feabd76a5afc7718bea4ddda759b3e71"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/assistant/index.ts",
+      "bytes": 105,
+      "sha256": "822c043647ead1aee5b85c88c30d7986bedc31e94fe716934fd256237064fdff"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/assistant/overview.ts",
+      "bytes": 4250,
+      "sha256": "2c20b54fc07c2563e4f4758c4e9badb85a1b1bbadd915c348f70a8e5956bfc6b"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/assistant/provider.ts",
+      "bytes": 7550,
+      "sha256": "4673981756c44b2dffef1c7250f4a2620a34fd830a8ca88867b7cd1283ef721a"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/assistant/router.ts",
+      "bytes": 2012,
+      "sha256": "68ed2a9b2c29644e51e98d1cc036f721b9cd5b3749b3be64809c45c7aff7feb2"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/assistant/service.ts",
+      "bytes": 11902,
+      "sha256": "d6f754f714107423cee1cd0a12d98f6045c5aab27aa0054ca2cfa7cffb641fbf"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/assistant/tools.ts",
+      "bytes": 2826,
+      "sha256": "afdc9b3c12176f6229e4afae138dbf531dea1505ab5c4687b748a596841ff519"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/assistant/usage.ts",
+      "bytes": 2165,
+      "sha256": "43afef3d86e60bc38ad6f83030052ed6a3f4fc60192282c517a5cbfed335389f"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/archive.ts",
+      "bytes": 4989,
+      "sha256": "251a6f8aef451f851c269660690cefeffe2bede1643bfe66584f71fa5034c378"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/catalog.ts",
+      "bytes": 8318,
+      "sha256": "009f37faadfb58e26328a66bec4f5ed3cd4a169ee920a344363dd239199e729a"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/export.ts",
+      "bytes": 3271,
+      "sha256": "e01e10d3c3fd12d8d9b39a9463b586aedd2e019a6e41f137ff5c6cde4cfbb7b4"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/index.ts",
+      "bytes": 237,
+      "sha256": "fca3f6742d4b28e1fff4829674d52a6d3a38774cbce598e0494cfda7d4c2a211"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/intake.ts",
+      "bytes": 19743,
+      "sha256": "108b3d2a7b11d91b2b5caee86176563af8bf3b300da6c4d4eb4277b23fb1fc1b"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/normalize.ts",
+      "bytes": 9033,
+      "sha256": "f4557550b835d8e173e27bfce356d7091b1d2a887bc12eb864df3dbf44dfa3cb"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/postgres.ts",
+      "bytes": 2601,
+      "sha256": "49aaca07d3cb3fc62bdac76f151e62cadd645701631e0f65f85d85d64b60bd84"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/reporting.ts",
+      "bytes": 16841,
+      "sha256": "d01f1b25f974299278517a85778f670489ac0bf269d895b62f5a3c260f717968"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/router.ts",
+      "bytes": 3935,
+      "sha256": "0779867736b0c48f7a2e259cbbc6d943c0dc79734f948573393a2b1f587feed5"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/seed.ts",
+      "bytes": 4875,
+      "sha256": "70d134a438a788bb40fa795ba24655aa831b98832097deccd074eeefe752e4c5"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/types.ts",
+      "bytes": 3435,
+      "sha256": "a5fede3f18003cbb56b216c6d93e5cc075f6695a5a1d36cf89200d6c4e4fc6ae"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/data/wire.ts",
+      "bytes": 1286,
+      "sha256": "bb7bebff3a1b30206adbfb488679cc5e88c372f93e75ebcc4472008be52854de"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/operatorAuth.ts",
+      "bytes": 1658,
+      "sha256": "4694ee480ce71144e13dbe9cd599c6f95947d4e3539bc6149bf71cc03a3bb7cc"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/operatorPolicy.ts",
+      "bytes": 2045,
+      "sha256": "641d36e6f6f4cd87503fe7b7236bf0d35225eb7b5918e1a978c2876c35ca002a"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/replicaCapability.ts",
+      "bytes": 927,
+      "sha256": "4cbec6be69e5ac482cdcd14d074c9f04515e7372ec9e66bf9a88004e2e60c848"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/replicaDestination.ts",
+      "bytes": 812,
+      "sha256": "b5a14d2415e711812321c5ed57fe14f60f7c139457943454a7691d18c6142da8"
+    },
+    {
+      "path": "artifacts/api-server/src/goodwill/runtime.ts",
+      "bytes": 5077,
+      "sha256": "c43858e8d85c591d6f1127fedf01de5eb6fcbab9d42747d129199d3495948b80"
+    },
+    {
+      "path": "artifacts/api-server/src/index.ts",
+      "bytes": 1130,
+      "sha256": "60d1a2421a9ec5b549c7a5fb60762b98e7567a920f50452ceb184ba8e07c656d"
+    },
+    {
+      "path": "artifacts/api-server/src/lib/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/api-server/src/lib/goodwill.ts",
+      "bytes": 7750,
+      "sha256": "45f18a10980bd62686ca2622f439333eadbf9f04d543ea12a52c7eaed28c948b"
+    },
+    {
+      "path": "artifacts/api-server/src/lib/goodwillAdapters.ts",
+      "bytes": 3128,
+      "sha256": "e18b4d2cdabe861ff616198e26e77b66c0801128f6e65a5ec463166acf8b86f4"
+    },
+    {
+      "path": "artifacts/api-server/src/lib/logger.ts",
+      "bytes": 421,
+      "sha256": "29e1ca75036fe917595a3a74fd450857d845836fe0625c30b9caa02df4acba62"
+    },
+    {
+      "path": "artifacts/api-server/src/lib/privateStorageClient.ts",
+      "bytes": 622,
+      "sha256": "45521a7c1e0a424fcd6633fcefa832e030be8fe31acf8990d5e0dcbe052eb47c"
+    },
+    {
+      "path": "artifacts/api-server/src/middlewares/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/api-server/src/middlewares/clerkProxyMiddleware.ts",
+      "bytes": 5931,
+      "sha256": "4709696f6020bc6f869ec9becc2e332c1522724bd17cc42937c31bfe95b6d2ab"
+    },
+    {
+      "path": "artifacts/api-server/src/routes/goodwill.ts",
+      "bytes": 4833,
+      "sha256": "3c2d75381c05219058839e670f5c28c1ebe99e3b00312a0084bea7bf0c4431e9"
+    },
+    {
+      "path": "artifacts/api-server/src/routes/health.ts",
+      "bytes": 288,
+      "sha256": "0386ceddb4ff4bff220af72ca38a62191ad95a2f41fd619df3bb9ceffce03db2"
+    },
+    {
+      "path": "artifacts/api-server/src/routes/index.ts",
+      "bytes": 240,
+      "sha256": "042f09051780fe843d0bd79ff2a292d1f0f378060b69781814a87b249a20d754"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/browser.test.ts",
+      "bytes": 12671,
+      "sha256": "5cc38f725daf5d3ebf6a54ef09e741ef2cc912b7c966dcb08756624a1465bd2e"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/core.test.ts",
+      "bytes": 10149,
+      "sha256": "17491cb19f85d6dfed9747ae26486565b8ffce6eff3197aa70283ffad1242e52"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/experimental-browser.test.ts",
+      "bytes": 17495,
+      "sha256": "2c1f7e17a661591d3b13d37495a7d3755d46ae11f4789339eb9c5a63dd8f19b7"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/experimental-helpers.ts",
+      "bytes": 1041,
+      "sha256": "f0a21f75a8769be6f7d9eafcbe8c76460475062db056fdd110ec4b6f4a8612b5"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/experimental-integration-browser.test.ts",
+      "bytes": 9894,
+      "sha256": "10f7886a10086130a329e11e1542b4c3508eed49a482c83dc26a77e2ff7ddea9"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/experimental-integration-postgres.test.ts",
+      "bytes": 1846,
+      "sha256": "508fadb1277bb5007080ec4d983f1c56797a307e31a6b3aa81b162e144bffe15"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/experimental-integration.test.ts",
+      "bytes": 8061,
+      "sha256": "9b595f83237f858deaa27593fb065814854000e25eaf296b3a04abffbead1308"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/experimental-local-replica.test.ts",
+      "bytes": 4477,
+      "sha256": "9fb81e36173a1ceaecbaf3dc204e09507ac2778ecad895af790ff01972154027"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/experimental.test.ts",
+      "bytes": 12931,
+      "sha256": "568e05eb7fd2dc167208df8279048686cde810609037b39bda7f031da454dec0"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/helpers.ts",
+      "bytes": 3225,
+      "sha256": "7a5d1343fb0c3c05b665f1649edc61e48af93aab88380c106882c5ab18b66798"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/postgres.test.ts",
+      "bytes": 1969,
+      "sha256": "165bfd8cd3ecb07e530571d31b4f85c8aaebeda62c6c06b13aa0c37034f47fe2"
+    },
+    {
+      "path": "artifacts/api-server/tests/acquisition/run.mjs",
+      "bytes": 2904,
+      "sha256": "e785350ddf29eb3c2f487056c88587a204c4b2a4c524a96aaf4e699480821f1f"
+    },
+    {
+      "path": "artifacts/api-server/tests/analytics/analytics.test.ts",
+      "bytes": 9594,
+      "sha256": "bf5801da371058e609f501f5eab129527ef676a098546fe2e20623c19cb107e6"
+    },
+    {
+      "path": "artifacts/api-server/tests/analytics/export-local-snapshot.ts",
+      "bytes": 902,
+      "sha256": "0532c9e72674d02fb6e881bd69be2c5d59336ec4074b2b11c47e0a1f5bb0126d"
+    },
+    {
+      "path": "artifacts/api-server/tests/analytics/live-readonly.ts",
+      "bytes": 1126,
+      "sha256": "da2220551c34dc9e70551c68e9bfffd7688b962d68b3fca832a9ce996289f496"
+    },
+    {
+      "path": "artifacts/api-server/tests/analytics/run.mjs",
+      "bytes": 1283,
+      "sha256": "a178a950f5df2eb9ac0999666498149c4ac23b49aede45aabab78eb1f1289916"
+    },
+    {
+      "path": "artifacts/api-server/tests/assistant/assistant.test.ts",
+      "bytes": 23299,
+      "sha256": "d6480579b7fa5185767f1416f46ea925bf46a87345bd7e69ef436dff9fbf1b96"
+    },
+    {
+      "path": "artifacts/api-server/tests/assistant/provider.test.ts",
+      "bytes": 12142,
+      "sha256": "1b6826eda7984b70fefef2a41497978459636663cb7df33c33e1ad3a214e8c27"
+    },
+    {
+      "path": "artifacts/api-server/tests/assistant/run.mjs",
+      "bytes": 1101,
+      "sha256": "a94a94318385a75594dae0577fb7d1352c4fdf26e356bc56ffc66ece5c2153ad"
+    },
+    {
+      "path": "artifacts/api-server/tests/contracts-experiments.test.ts",
+      "bytes": 5296,
+      "sha256": "2f0dc391bcc2b7a343091e8fa5006a6941ecee300bd2d23dd4469ae017997aab"
+    },
+    {
+      "path": "artifacts/api-server/tests/contracts-v2.test.ts",
+      "bytes": 2689,
+      "sha256": "6f480d6dc2e659eefdd3839cb452590f1ec157382f0f544aac530a981705a535"
+    },
+    {
+      "path": "artifacts/api-server/tests/data/core.test.ts",
+      "bytes": 22102,
+      "sha256": "8db4462c6480c83198d62a6242f129735205b7765c45c57d35d4d5fa2544026a"
+    },
+    {
+      "path": "artifacts/api-server/tests/data/helpers.ts",
+      "bytes": 3735,
+      "sha256": "a9039208388de63de17687bd4482cbe305092767e72bf75d8ef7c4464eadaad4"
+    },
+    {
+      "path": "artifacts/api-server/tests/data/postgres.test.ts",
+      "bytes": 3515,
+      "sha256": "6141e4f2fb384874692b854c199ece4490cb2463cd582bbe7e2aa68de8fb97b0"
+    },
+    {
+      "path": "artifacts/api-server/tests/data/publication-safety.test.ts",
+      "bytes": 7809,
+      "sha256": "08d106003ff9faac118f4136a8debad5ff2625069256dd7f9df2e4158b57d85b"
+    },
+    {
+      "path": "artifacts/api-server/tests/data/run.mjs",
+      "bytes": 1016,
+      "sha256": "a5d438200d489bf2873a43fa9e94f47efc6083c04c53ac9d00d6d7948239028b"
+    },
+    {
+      "path": "artifacts/api-server/tests/fixtures/contracts-v2.ts",
+      "bytes": 3674,
+      "sha256": "a057e52f44f449d573729840f833ecb58c716e4346de0771e887221c4bc4377f"
+    },
+    {
+      "path": "artifacts/api-server/tests/goodwill.test.ts",
+      "bytes": 4914,
+      "sha256": "83fed10874df9dd2a5d5617597fa339cf9365f6171b708d0afb8c45c8a54f5f4"
+    },
+    {
+      "path": "artifacts/api-server/tests/operator-policy.test.ts",
+      "bytes": 4415,
+      "sha256": "e3db676b6cca7fde35505321a345410b093e0326071f6a7745a429646cb08fc0"
+    },
+    {
+      "path": "artifacts/api-server/tests/replica-capability.test.ts",
+      "bytes": 725,
+      "sha256": "d9506d82520f63be652030a13735aa783914a2183952ade14552bf4065637669"
+    },
+    {
+      "path": "artifacts/api-server/tests/run.mjs",
+      "bytes": 908,
+      "sha256": "57df02b8e24caade8677f19e56823bad119c61a08153a8ab47f4474379a7ad36"
+    },
+    {
+      "path": "artifacts/api-server/tsconfig.json",
+      "bytes": 335,
+      "sha256": "aa300909ccd1d4282761b5d6549a174717b663bb56cb0f59d107d4b3d96cb009"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/.replit-artifact/artifact.toml",
+      "bytes": 825,
+      "sha256": "6b6159eb844dbf0f9a2806e9f9f6d289ba0e83c1a46d6bf4d3724fbecf0acada"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/components.json",
+      "bytes": 434,
+      "sha256": "3a5d5af62f05e6e3de6c5085f31ed4f49273d57cfeae4d69d00a2568c91f54f9"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/docs/SCOPE.md",
+      "bytes": 1736,
+      "sha256": "209ecc5e2dde322eca014cb685b1dec37879d72e23a002c6e28cc17f7f913699"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/index.html",
+      "bytes": 1411,
+      "sha256": "dffe14b9d778145d1eddcb847fbde1f96753d82ab5c7cee9a093b7d50b4b50d7"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/package.json",
+      "bytes": 2771,
+      "sha256": "9c51235260a8a5e58079863e6c3c766e6b337133802a4091055b6646d0be9778"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/public/favicon.svg",
+      "bytes": 163,
+      "sha256": "8ffbde9092b1fa4de97c9481b76f518b131268c82e7c555041925225b1dab6e0"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/public/robots.txt",
+      "bytes": 23,
+      "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/App.tsx",
+      "bytes": 2110,
+      "sha256": "82cb0048d9a8ef9daabd3075169af51691330f24f878364f21a82af1ab005cb1"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/auth/ClerkRoutes.tsx",
+      "bytes": 3831,
+      "sha256": "1c57fd60df6ff2b3edb8c4349ab27a15e7a567d48dfa2bfc991e1c6b93ba36cc"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/auth/OperatorGate.tsx",
+      "bytes": 2769,
+      "sha256": "37bc10e6ae9256e9208062cad3feb814901458b6f45579d0659e169c662eb3b2"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/charts.tsx",
+      "bytes": 3242,
+      "sha256": "557cbecb0b5825b845cab05eddfffbfffda5f5768c06c64952637c349ed69879"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/error-boundary.tsx",
+      "bytes": 2735,
+      "sha256": "c1ea4d88be8cd206a46bd87f19edf025b2504a70a2b65cd9c438e4a0e62dafe0"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/kpi-detail.tsx",
+      "bytes": 5340,
+      "sha256": "a2bbd0a48cca7b807ee2357d1f4b78a518882a7ceb9b9a3f3e4067db4bdaa313"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/kpi.tsx",
+      "bytes": 3033,
+      "sha256": "7bcb6e934946c630391137c2b193223aedec4ce612acf0fdcc76b301ba24f610"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/protected.tsx",
+      "bytes": 2782,
+      "sha256": "b42db524c441f9cd478fe4134b06a01ff446366c17c19442a5ca953928bcf890"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/shell.tsx",
+      "bytes": 6332,
+      "sha256": "cce62e37499bd807829436d9123762e4651ab6ee296f30060b8ad65b8497e042"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/accordion.tsx",
+      "bytes": 2013,
+      "sha256": "8e4230a3e6d38bfab7b02f00f9e948c8c4038432c5b1bf2d0ea44dc8b5ce09cc"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/alert-dialog.tsx",
+      "bytes": 4447,
+      "sha256": "d76901a06e6881e94aa3847fde2602ee6f6ddc9f4cace9fa238627a5572bd24e"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/alert.tsx",
+      "bytes": 1609,
+      "sha256": "695369ea4d1ba4438dcedacaa8059b08b6463ac93170360f3bd42b983b7608e9"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/aspect-ratio.tsx",
+      "bytes": 143,
+      "sha256": "2f5b0ed3cbcf84e526caad0c6b88d4457f8745a365c86cc74d924a1b6e013a36"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/avatar.tsx",
+      "bytes": 1431,
+      "sha256": "429f5e82fc3dcf265625650176f16ff9b35e55826183e1f1b2d4dc2a338f9b15"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/badge.tsx",
+      "bytes": 1528,
+      "sha256": "ba6f51e428a520f54e600fded4ea030a8099fa6a9a7b7110af8dca34795415d1"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/breadcrumb.tsx",
+      "bytes": 2735,
+      "sha256": "44b4de47f806eec0e3de5130f0399e83700eaf0bc8deb47af5ffda2bb11eb3f1"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/button-group.tsx",
+      "bytes": 2222,
+      "sha256": "b89025c11d08652597cb46b097d3e04658ad2c383bf81ed445c8182c0ed1b260"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/button.tsx",
+      "bytes": 2370,
+      "sha256": "9c20a340ca0c948d0164158eff44fca2e26343c8ee387ffc22f9cd677c59d27d"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/calendar.tsx",
+      "bytes": 7607,
+      "sha256": "1cdd1e62797356fe62f61f5521fcf0da8e3570b1120868ccca2b48370157fe46"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/card.tsx",
+      "bytes": 1856,
+      "sha256": "9fed39a53303c12fa6ac6f5f8813c1683e2198df9ee067cffbdfe69044cf3e4f"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/carousel.tsx",
+      "bytes": 6288,
+      "sha256": "4ae2f69bc2c1ce33c60b23ddc5382f4b93882dac07c2d18cce32fb148ff52c48"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/chart.tsx",
+      "bytes": 10846,
+      "sha256": "ac747c83483d742e207426a193ba5e2cf639fa18cd819c1f12d12329520c6c12"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/checkbox.tsx",
+      "bytes": 1038,
+      "sha256": "6b9e336fa42475bbb2ad4d76478afb8d2555e6e26bac245b9ccde62a9a033adc"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/collapsible.tsx",
+      "bytes": 335,
+      "sha256": "aedcd10b62404b39d8d5544c01fee90aa7b66e7280bb80a215601ad198a1b8fd"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/command.tsx",
+      "bytes": 4918,
+      "sha256": "d8fb66e44f9f8de558f6a94c781f3d890871d76dbabcda64e6fab3c917b3237d"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/context-menu.tsx",
+      "bytes": 7446,
+      "sha256": "bdff38b45a6010e3db808c099c799bd61e6aca619378074e7b14b63c1291e4c9"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/dialog.tsx",
+      "bytes": 3889,
+      "sha256": "e0d3fa53f4cb7d8011ab09f2d198c24234062d24638fabf5142f5fbce57d2ba5"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/drawer.tsx",
+      "bytes": 3029,
+      "sha256": "152bc340ad982e84f851e3bc1a6b8e7ffd0151a7445c6ecf1b1e3e13cbc19210"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/dropdown-menu.tsx",
+      "bytes": 7646,
+      "sha256": "a79d5419ee174de35880340aef44d67847cee54846c058e02ac4a846b603c60f"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/empty.tsx",
+      "bytes": 2410,
+      "sha256": "48824b1b37bd406fa74f48db726a4f1d70cf88db5b3432f7b1d59f584f1c5dad"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/field.tsx",
+      "bytes": 6079,
+      "sha256": "c3787ffb045354e9f18e70d94890627caea94939a226e49c1e6cedee84a1e9e1"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/form.tsx",
+      "bytes": 4232,
+      "sha256": "1960463b09152760fdd99ca3eb16187408d064c7599ed66384b42d1613d3a3a3"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/hover-card.tsx",
+      "bytes": 1245,
+      "sha256": "e0b4e3f0126757a8eb5c6e436c8c041c049430abe9a2eb84b10154144b31c29c"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/input-group.tsx",
+      "bytes": 4993,
+      "sha256": "f4befbf9bf8ebd755b267c4db2b396be296adb95acca5c3fba54f6495bdedebd"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/input-otp.tsx",
+      "bytes": 2160,
+      "sha256": "b4891335e70920518cfbdef2aeb399f61477fbc4b3ffe3b8a2938f19074164cc"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/input.tsx",
+      "bytes": 775,
+      "sha256": "03ac1648171bd5ad90dbc03e9ebff9a9cc77708bcc53bdac914b80eeebfe3032"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/item.tsx",
+      "bytes": 4519,
+      "sha256": "4a84cda22d692ee176f5128517a4003a63d11f907df445e7586ef034c88e8772"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/kbd.tsx",
+      "bytes": 867,
+      "sha256": "4348a7a06a715e9e9673602cbb9ed89a6a4c6cbdd457d4c03db0f23a139d19eb"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/label.tsx",
+      "bytes": 733,
+      "sha256": "fbc0c7db4221227941271a004bf71db5067aee9d8668f3351d91113cd5934c8c"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/menubar.tsx",
+      "bytes": 8655,
+      "sha256": "26dbbf36e4ffd87aab74e61dd1e3613f0c640988479679d53bacd8dbd15cc891"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/navigation-menu.tsx",
+      "bytes": 5150,
+      "sha256": "222020e1ac703ce01700d6e8822c6263932bc71c481d724b8ef53ccaae8ad63f"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/pagination.tsx",
+      "bytes": 2772,
+      "sha256": "dd65d2e59226a3f384014b596ae701aef50f130cb3061f4657e81c588587b8da"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/popover.tsx",
+      "bytes": 1351,
+      "sha256": "dc574442536873c8aa88733c348503c4599ad6ed0fc9898fd25406d94e095cca"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/progress.tsx",
+      "bytes": 799,
+      "sha256": "74223bcccf7ca2ed026d197476abbe3d48fbc531c40f4252445f56954a270c75"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/radio-group.tsx",
+      "bytes": 1421,
+      "sha256": "8155d32dea5d4ddea2048b6d12f83fe4805d9bc87c97b994dbb0d040981334f2"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/resizable.tsx",
+      "bytes": 1733,
+      "sha256": "8e73dfb8b582944364d73b64ed03378016f20f7251f15f880dcf0fb140e1ad41"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/scroll-area.tsx",
+      "bytes": 1650,
+      "sha256": "73f5dedda781e5285092ea269f747378dbad8d95631eab638e15b3c31595dc59"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/select.tsx",
+      "bytes": 5773,
+      "sha256": "c64c9c1574c91f1eff922f3557e7609ba6c1d5e39959dbdecf8d386d7ae41990"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/separator.tsx",
+      "bytes": 764,
+      "sha256": "2b129347f918742bf006099f7f56a9be373250de2ecc3ad201297563e3d1f807"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/sheet.tsx",
+      "bytes": 4307,
+      "sha256": "ef2ae35ccab1252c4eee56e67e9f1b2499b5bbfb3ae39037d8d4be39915c272f"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/sidebar.tsx",
+      "bytes": 21969,
+      "sha256": "de7566e708ba8bf34cb4a78fc018c784315c9d7a16d70e66255f8c72caf9d1db"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/skeleton.tsx",
+      "bytes": 269,
+      "sha256": "d78130b2e311a750e7bb524e66e3af4c04e2ab02b04fd68539c1afd0bbb47152"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/slider.tsx",
+      "bytes": 1043,
+      "sha256": "ecac74b8f3a044ba7a9e4eb0bdbfdf48be92483a32d2c414c5078c9f38e1f369"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/sonner.tsx",
+      "bytes": 902,
+      "sha256": "de5a5d9ae404545fcb0f21123530ffcf89d24a47812c70b3ca1376591e28dbdd"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/spinner.tsx",
+      "bytes": 334,
+      "sha256": "4458ea392b32f439cd4c64b9593846f339370fa1295c04f9003f05c1f3386689"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/switch.tsx",
+      "bytes": 1155,
+      "sha256": "f81bc9b5ce2d6a92b6b2f1f3376c0489f30f7073081a1d9d6c56553880f44c58"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/table.tsx",
+      "bytes": 2881,
+      "sha256": "dd29f5ef260af67ed09c84505495e3fddbad14009e3b3ce689d0c354ffaf55d3"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/tabs.tsx",
+      "bytes": 1890,
+      "sha256": "320609101fbaa6cccda0b899154cb510fa322926cfdbaf07e33b79c00c83fcd6"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/textarea.tsx",
+      "bytes": 655,
+      "sha256": "63fb699771afe60c5073ed50e1a042d7d7f21eefd12d15bcb750cf3230985011"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/toast.tsx",
+      "bytes": 4871,
+      "sha256": "04d4ef720079342e2f4380c22683f1544bd8e93a581fb55e447458f04a6127d5"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/toaster.tsx",
+      "bytes": 777,
+      "sha256": "d34c7cd51482ddd5703a13378d9ac69b3459a304581e42f56ac2c696e53163ac"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/toggle-group.tsx",
+      "bytes": 1767,
+      "sha256": "6d7aca86245edf5d0a8f6f3ed73bd19316f4865425891eabccd6f3e37e59519e"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/toggle.tsx",
+      "bytes": 1494,
+      "sha256": "5800d2099224ef90892e8c1d972d2a0964391c33cd43d7f5c6abf5cd42e023e1"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/components/ui/tooltip.tsx",
+      "bytes": 1277,
+      "sha256": "e3c6ea9d4ecd62881af33564e25be013d35a8a7fa78475a6dcc98a06c7f894eb"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/hooks/use-analytics.ts",
+      "bytes": 836,
+      "sha256": "7bc8e663cfd43e5e42a17ddc3399dc92b130933b837ed6f11c3271027dae2374"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/hooks/use-mobile.tsx",
+      "bytes": 585,
+      "sha256": "82bff42ff087bd5dc90a5d17609cc428b8688de92d1333073a839af5ad3c9cbd"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/hooks/use-toast.ts",
+      "bytes": 3952,
+      "sha256": "12cce940e597e1d597f7063131acd19658d25e924904308bf719bde17b67e351"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/index.css",
+      "bytes": 14356,
+      "sha256": "0b425be5da11aac36fdfda9140a6c7da773ca3efbec20198cc4861b393495bde"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/lib/format.ts",
+      "bytes": 2639,
+      "sha256": "64dbd1186d28ff618c825ef04425ab341b5157df164317437dcb9470e898ff20"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/lib/pillars.ts",
+      "bytes": 1121,
+      "sha256": "b1dcab894e501ebc503b696a6641aee69e0f3cb795c8e970dcae1e0a72f68ebd"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/lib/scope.tsx",
+      "bytes": 1169,
+      "sha256": "d8deab67045f2db3b8b0576b22f2785cea68b41d8cdd4f7888983748a55ba7e4"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/lib/utils.ts",
+      "bytes": 170,
+      "sha256": "afc0e1dc0e142d6b81f688d91087f81a4b2db4240cf70f55b6e5e4dcc199ebf1"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/main.tsx",
+      "bytes": 446,
+      "sha256": "e7e03b61f962dc1787ea029d4941424475455366b5a4f079c8fcb4f5df4d076c"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/pages/landing.tsx",
+      "bytes": 3744,
+      "sha256": "1eb006d47cc2da99dfa4d89c8a932bcd94407961fa0cf89e5164c1dd73bfcbcc"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/pages/metrics.tsx",
+      "bytes": 6780,
+      "sha256": "1b56d38c3d4784a75d6d617bfa68e4d5c419b9ff929fbf985357d7378d3bd0f0"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/pages/not-found.tsx",
+      "bytes": 739,
+      "sha256": "6aaea7a7125024440020566f3a14fde4f65149b1fd21f68c6a437b193e88c642"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/pages/overview.tsx",
+      "bytes": 5421,
+      "sha256": "0701e809f9bacd3fc18e4cf9babe5a5a35e8a7c398b39e44706bd06c81ad0ee5"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/src/pages/scorecard.tsx",
+      "bytes": 1401,
+      "sha256": "d0a0600cf51db7ee842269b9cf8a6c76b0f9a788f867f3971dfc38dc2e049a83"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/tsconfig.json",
+      "bytes": 520,
+      "sha256": "e0a2fd8a7f3bfc860ccab5623b1881e754eb02336612708ff8b59215e8c256c9"
+    },
+    {
+      "path": "artifacts/goodwill-analytics/vite.config.ts",
+      "bytes": 1803,
+      "sha256": "4f7c94d802c4f2d5f5c92e051ac99f5701d62d518a8cb412b9ae094879e0a4f7"
+    },
+    {
+      "path": "artifacts/goodwill/.replit-artifact/artifact.toml",
+      "bytes": 677,
+      "sha256": "a80117d9be1f247eef7afd547f892e8f2b8bd09d92a8b00e7707af1e754752e1"
+    },
+    {
+      "path": "artifacts/goodwill/components.json",
+      "bytes": 434,
+      "sha256": "3a5d5af62f05e6e3de6c5085f31ed4f49273d57cfeae4d69d00a2568c91f54f9"
+    },
+    {
+      "path": "artifacts/goodwill/index.html",
+      "bytes": 1513,
+      "sha256": "b8dcdc842975d77a70681b424acedad89a903dc09e145d317046e403bf543839"
+    },
+    {
+      "path": "artifacts/goodwill/package.json",
+      "bytes": 2793,
+      "sha256": "9690fce59ac8657e84e3b47e0f62ede2e84774200441b1af2a178a0ebd03bf5d"
+    },
+    {
+      "path": "artifacts/goodwill/public/favicon.svg",
+      "bytes": 163,
+      "sha256": "8ffbde9092b1fa4de97c9481b76f518b131268c82e7c555041925225b1dab6e0"
+    },
+    {
+      "path": "artifacts/goodwill/public/logo.svg",
+      "bytes": 535,
+      "sha256": "4439b8973e587d270d21222246f8886b85542d76cd91608228205ebf4c3bddc1"
+    },
+    {
+      "path": "artifacts/goodwill/public/robots.txt",
+      "bytes": 23,
+      "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+    },
+    {
+      "path": "artifacts/goodwill/src/App.tsx",
+      "bytes": 3884,
+      "sha256": "f6836d92e4a1dd9ee99e082b274de1c2cfcf1687456f1c8991d11dc5f70c5213"
+    },
+    {
+      "path": "artifacts/goodwill/src/auth/ClerkRoutes.tsx",
+      "bytes": 6152,
+      "sha256": "08fcc300e542d9fff77326e5631ef49d1841d900842d3b85507692b1011a9540"
+    },
+    {
+      "path": "artifacts/goodwill/src/auth/OperatorGate.tsx",
+      "bytes": 2682,
+      "sha256": "4e9063d4b26dfe75e9d4afa7ed0ddc1623cf5fe0c91f897f1c7e70d4d9b5500d"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/error-boundary.tsx",
+      "bytes": 2735,
+      "sha256": "c1ea4d88be8cd206a46bd87f19edf025b2504a70a2b65cd9c438e4a0e62dafe0"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/accordion.tsx",
+      "bytes": 2013,
+      "sha256": "8e4230a3e6d38bfab7b02f00f9e948c8c4038432c5b1bf2d0ea44dc8b5ce09cc"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/alert-dialog.tsx",
+      "bytes": 4447,
+      "sha256": "d76901a06e6881e94aa3847fde2602ee6f6ddc9f4cace9fa238627a5572bd24e"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/alert.tsx",
+      "bytes": 1609,
+      "sha256": "695369ea4d1ba4438dcedacaa8059b08b6463ac93170360f3bd42b983b7608e9"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/aspect-ratio.tsx",
+      "bytes": 143,
+      "sha256": "2f5b0ed3cbcf84e526caad0c6b88d4457f8745a365c86cc74d924a1b6e013a36"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/avatar.tsx",
+      "bytes": 1431,
+      "sha256": "429f5e82fc3dcf265625650176f16ff9b35e55826183e1f1b2d4dc2a338f9b15"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/badge.tsx",
+      "bytes": 1528,
+      "sha256": "ba6f51e428a520f54e600fded4ea030a8099fa6a9a7b7110af8dca34795415d1"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/breadcrumb.tsx",
+      "bytes": 2735,
+      "sha256": "44b4de47f806eec0e3de5130f0399e83700eaf0bc8deb47af5ffda2bb11eb3f1"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/button-group.tsx",
+      "bytes": 2222,
+      "sha256": "b89025c11d08652597cb46b097d3e04658ad2c383bf81ed445c8182c0ed1b260"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/button.tsx",
+      "bytes": 2370,
+      "sha256": "9c20a340ca0c948d0164158eff44fca2e26343c8ee387ffc22f9cd677c59d27d"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/calendar.tsx",
+      "bytes": 7607,
+      "sha256": "1cdd1e62797356fe62f61f5521fcf0da8e3570b1120868ccca2b48370157fe46"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/card.tsx",
+      "bytes": 1856,
+      "sha256": "9fed39a53303c12fa6ac6f5f8813c1683e2198df9ee067cffbdfe69044cf3e4f"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/carousel.tsx",
+      "bytes": 6288,
+      "sha256": "4ae2f69bc2c1ce33c60b23ddc5382f4b93882dac07c2d18cce32fb148ff52c48"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/chart.tsx",
+      "bytes": 10846,
+      "sha256": "ac747c83483d742e207426a193ba5e2cf639fa18cd819c1f12d12329520c6c12"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/checkbox.tsx",
+      "bytes": 1038,
+      "sha256": "6b9e336fa42475bbb2ad4d76478afb8d2555e6e26bac245b9ccde62a9a033adc"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/collapsible.tsx",
+      "bytes": 335,
+      "sha256": "aedcd10b62404b39d8d5544c01fee90aa7b66e7280bb80a215601ad198a1b8fd"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/command.tsx",
+      "bytes": 4918,
+      "sha256": "d8fb66e44f9f8de558f6a94c781f3d890871d76dbabcda64e6fab3c917b3237d"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/context-menu.tsx",
+      "bytes": 7446,
+      "sha256": "bdff38b45a6010e3db808c099c799bd61e6aca619378074e7b14b63c1291e4c9"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/dialog.tsx",
+      "bytes": 3889,
+      "sha256": "e0d3fa53f4cb7d8011ab09f2d198c24234062d24638fabf5142f5fbce57d2ba5"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/drawer.tsx",
+      "bytes": 3029,
+      "sha256": "152bc340ad982e84f851e3bc1a6b8e7ffd0151a7445c6ecf1b1e3e13cbc19210"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/dropdown-menu.tsx",
+      "bytes": 7646,
+      "sha256": "a79d5419ee174de35880340aef44d67847cee54846c058e02ac4a846b603c60f"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/empty.tsx",
+      "bytes": 2410,
+      "sha256": "48824b1b37bd406fa74f48db726a4f1d70cf88db5b3432f7b1d59f584f1c5dad"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/field.tsx",
+      "bytes": 6079,
+      "sha256": "c3787ffb045354e9f18e70d94890627caea94939a226e49c1e6cedee84a1e9e1"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/form.tsx",
+      "bytes": 4232,
+      "sha256": "1960463b09152760fdd99ca3eb16187408d064c7599ed66384b42d1613d3a3a3"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/hover-card.tsx",
+      "bytes": 1245,
+      "sha256": "e0b4e3f0126757a8eb5c6e436c8c041c049430abe9a2eb84b10154144b31c29c"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/input-group.tsx",
+      "bytes": 4993,
+      "sha256": "f4befbf9bf8ebd755b267c4db2b396be296adb95acca5c3fba54f6495bdedebd"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/input-otp.tsx",
+      "bytes": 2160,
+      "sha256": "b4891335e70920518cfbdef2aeb399f61477fbc4b3ffe3b8a2938f19074164cc"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/input.tsx",
+      "bytes": 775,
+      "sha256": "03ac1648171bd5ad90dbc03e9ebff9a9cc77708bcc53bdac914b80eeebfe3032"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/item.tsx",
+      "bytes": 4519,
+      "sha256": "4a84cda22d692ee176f5128517a4003a63d11f907df445e7586ef034c88e8772"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/kbd.tsx",
+      "bytes": 867,
+      "sha256": "4348a7a06a715e9e9673602cbb9ed89a6a4c6cbdd457d4c03db0f23a139d19eb"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/label.tsx",
+      "bytes": 733,
+      "sha256": "fbc0c7db4221227941271a004bf71db5067aee9d8668f3351d91113cd5934c8c"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/menubar.tsx",
+      "bytes": 8655,
+      "sha256": "26dbbf36e4ffd87aab74e61dd1e3613f0c640988479679d53bacd8dbd15cc891"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/navigation-menu.tsx",
+      "bytes": 5150,
+      "sha256": "222020e1ac703ce01700d6e8822c6263932bc71c481d724b8ef53ccaae8ad63f"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/pagination.tsx",
+      "bytes": 2772,
+      "sha256": "dd65d2e59226a3f384014b596ae701aef50f130cb3061f4657e81c588587b8da"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/popover.tsx",
+      "bytes": 1351,
+      "sha256": "dc574442536873c8aa88733c348503c4599ad6ed0fc9898fd25406d94e095cca"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/progress.tsx",
+      "bytes": 799,
+      "sha256": "74223bcccf7ca2ed026d197476abbe3d48fbc531c40f4252445f56954a270c75"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/radio-group.tsx",
+      "bytes": 1421,
+      "sha256": "8155d32dea5d4ddea2048b6d12f83fe4805d9bc87c97b994dbb0d040981334f2"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/resizable.tsx",
+      "bytes": 1733,
+      "sha256": "8e73dfb8b582944364d73b64ed03378016f20f7251f15f880dcf0fb140e1ad41"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/scroll-area.tsx",
+      "bytes": 1650,
+      "sha256": "73f5dedda781e5285092ea269f747378dbad8d95631eab638e15b3c31595dc59"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/select.tsx",
+      "bytes": 5773,
+      "sha256": "c64c9c1574c91f1eff922f3557e7609ba6c1d5e39959dbdecf8d386d7ae41990"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/separator.tsx",
+      "bytes": 764,
+      "sha256": "2b129347f918742bf006099f7f56a9be373250de2ecc3ad201297563e3d1f807"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/sheet.tsx",
+      "bytes": 4307,
+      "sha256": "ef2ae35ccab1252c4eee56e67e9f1b2499b5bbfb3ae39037d8d4be39915c272f"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/sidebar.tsx",
+      "bytes": 21969,
+      "sha256": "de7566e708ba8bf34cb4a78fc018c784315c9d7a16d70e66255f8c72caf9d1db"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/skeleton.tsx",
+      "bytes": 269,
+      "sha256": "d78130b2e311a750e7bb524e66e3af4c04e2ab02b04fd68539c1afd0bbb47152"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/slider.tsx",
+      "bytes": 1043,
+      "sha256": "ecac74b8f3a044ba7a9e4eb0bdbfdf48be92483a32d2c414c5078c9f38e1f369"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/sonner.tsx",
+      "bytes": 902,
+      "sha256": "de5a5d9ae404545fcb0f21123530ffcf89d24a47812c70b3ca1376591e28dbdd"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/spinner.tsx",
+      "bytes": 334,
+      "sha256": "4458ea392b32f439cd4c64b9593846f339370fa1295c04f9003f05c1f3386689"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/switch.tsx",
+      "bytes": 1155,
+      "sha256": "f81bc9b5ce2d6a92b6b2f1f3376c0489f30f7073081a1d9d6c56553880f44c58"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/table.tsx",
+      "bytes": 2881,
+      "sha256": "dd29f5ef260af67ed09c84505495e3fddbad14009e3b3ce689d0c354ffaf55d3"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/tabs.tsx",
+      "bytes": 1890,
+      "sha256": "320609101fbaa6cccda0b899154cb510fa322926cfdbaf07e33b79c00c83fcd6"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/textarea.tsx",
+      "bytes": 655,
+      "sha256": "63fb699771afe60c5073ed50e1a042d7d7f21eefd12d15bcb750cf3230985011"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/toast.tsx",
+      "bytes": 4871,
+      "sha256": "04d4ef720079342e2f4380c22683f1544bd8e93a581fb55e447458f04a6127d5"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/toaster.tsx",
+      "bytes": 777,
+      "sha256": "d34c7cd51482ddd5703a13378d9ac69b3459a304581e42f56ac2c696e53163ac"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/toggle-group.tsx",
+      "bytes": 1767,
+      "sha256": "6d7aca86245edf5d0a8f6f3ed73bd19316f4865425891eabccd6f3e37e59519e"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/toggle.tsx",
+      "bytes": 1494,
+      "sha256": "5800d2099224ef90892e8c1d972d2a0964391c33cd43d7f5c6abf5cd42e023e1"
+    },
+    {
+      "path": "artifacts/goodwill/src/components/ui/tooltip.tsx",
+      "bytes": 1277,
+      "sha256": "e3c6ea9d4ecd62881af33564e25be013d35a8a7fa78475a6dcc98a06c7f894eb"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/acquisition/AcquisitionConsole.tsx",
+      "bytes": 19107,
+      "sha256": "750e77bd38746880d4ed3bffe6c99f9413af4b973d39e7f2a5df5bf37f9ce906"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/acquisition/ExperimentReview.tsx",
+      "bytes": 7373,
+      "sha256": "35c226c7f5932180a5ec97738a3676f3665765f0be2e7aa28dfb524403d393e1"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/acquisition/ReplicaPortal.tsx",
+      "bytes": 13634,
+      "sha256": "9067cc7a5cfa4d89ca8cfbca6b6f2654cc34becb8b0cb0043812b0e7da2aabc7"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/acquisition/index.ts",
+      "bytes": 357,
+      "sha256": "21ce0a374cb155c57fc3edb96e9481b2b1c7909e6894361bd74e30fcf5cea7b5"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/acquisition/inspection.html",
+      "bytes": 337,
+      "sha256": "db81c8f2230b61979317e746a1606ce1bbfcc978553652617e60b7196a812563"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/acquisition/inspection.tsx",
+      "bytes": 803,
+      "sha256": "ad216bc1e9a0d7a00cc5d0f08f80c59386795b4373ac169d6a62d71b55dfa09d"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/acquisition/loopback-entry.tsx",
+      "bytes": 457,
+      "sha256": "11db0bfb5a15b0705175a7e83ab7c2a8d475fa2e9ac5058527f316eaa85f4d50"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting-tests/browser.test.ts",
+      "bytes": 17278,
+      "sha256": "40ea221ad0375fb7af03506828c122b6366051e99ac6e36a407b9adfe42febca"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting-tests/full-system-browser.test.ts",
+      "bytes": 20040,
+      "sha256": "808fa4320dce5b511e71214ef7470d612e60d716b40127725f3080308c7d1aea"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting-tests/full-system-entry.tsx",
+      "bytes": 794,
+      "sha256": "df3e780759eaddcee701e90f4403650b0596ae127103e15d34c52a7b95366cec"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting-tests/model.test.ts",
+      "bytes": 2331,
+      "sha256": "aeedf644b0a1882573de9bd2a3629ab37e831bb464d48828fd6fac481d8f5089"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting-tests/run.mjs",
+      "bytes": 1272,
+      "sha256": "2e14edd5fd5f720d6ca31118c3b8f987dd1896df5b2b04098f9e7cfebe32be4b"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/AssistantPanel.tsx",
+      "bytes": 6900,
+      "sha256": "dc0ebf809657f3dbcde4af589dbe9ce00153604c9d4514238f86496a2a7d1979"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/BatchDetail.tsx",
+      "bytes": 8562,
+      "sha256": "345287cff5d3140e66894e672141fef064cd2232b4b4521e276b4e70f1ece63d"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/EvidenceView.tsx",
+      "bytes": 4367,
+      "sha256": "df66a29f36061caf0a21c54dd119073f8699d4ca996adb93752156a6393399c8"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/MetricView.tsx",
+      "bytes": 5885,
+      "sha256": "0d8724ec0af3ce1d038cd183d81f8f397ee7c8e2949dbc4adcf91523d8970272"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/OperationsView.tsx",
+      "bytes": 13645,
+      "sha256": "4735c01a3e853ed51a45fae2aef270758e4b66a0a8db7c508600390a4704390d"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/ReportingApp.tsx",
+      "bytes": 12819,
+      "sha256": "6e32ec92b3179c2a0e9e5daf86171f6e159695273db2ebba77ab1705d5ecaae0"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/ReportingShell.tsx",
+      "bytes": 2262,
+      "sha256": "1f85d0293c27fd8d8511c79a2f83717903bc1401996e02ddaddd6b3c4d42139c"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/SystemView.tsx",
+      "bytes": 10377,
+      "sha256": "1dc5f38ab6cb85867be970ec5dac66480a514dec327d9a7a9c1d512172c2265c"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/index.ts",
+      "bytes": 232,
+      "sha256": "4e8e7b1555ce8a964bf55c966cac32a2ba21a831452c8d3806d783ecfd62a510"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/inspection.html",
+      "bytes": 501,
+      "sha256": "b8889be215da67be319941b26fb94a1e4fb1628e8b8eb60af274f64114d6d553"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/inspection.tsx",
+      "bytes": 739,
+      "sha256": "68cb33a83cae44a44351aa28d3e934c599a09a30b037820095b5218ebd1b9063"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/model.ts",
+      "bytes": 3425,
+      "sha256": "982d57e4f02ea0e84fceee5ee7f99dcaae8f8176f69d341195fc60900f7e48f2"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/reporting.css",
+      "bytes": 8506,
+      "sha256": "a2216dbcd6c1b90058c318619259767f934027d40312da247e427f3e15c91dc0"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/systemApi.ts",
+      "bytes": 1803,
+      "sha256": "b5dfa496e284db0831164c7e5f4067dea39e055fee6a5f96f413fb09bfe014d5"
+    },
+    {
+      "path": "artifacts/goodwill/src/features/reporting/ui.tsx",
+      "bytes": 2279,
+      "sha256": "1f8eb95ed2c4e3c8eb9bf2af0a641ff712d4c12b46429188719ec37599b748ff"
+    },
+    {
+      "path": "artifacts/goodwill/src/hooks/use-mobile.tsx",
+      "bytes": 585,
+      "sha256": "82bff42ff087bd5dc90a5d17609cc428b8688de92d1333073a839af5ad3c9cbd"
+    },
+    {
+      "path": "artifacts/goodwill/src/hooks/use-toast.ts",
+      "bytes": 3952,
+      "sha256": "12cce940e597e1d597f7063131acd19658d25e924904308bf719bde17b67e351"
+    },
+    {
+      "path": "artifacts/goodwill/src/index.css",
+      "bytes": 13143,
+      "sha256": "a7352a35afc05968118a7c1a7984b1caebc33c0e033af8db7a4c5570b7baf451"
+    },
+    {
+      "path": "artifacts/goodwill/src/lib/utils.ts",
+      "bytes": 170,
+      "sha256": "afc0e1dc0e142d6b81f688d91087f81a4b2db4240cf70f55b6e5e4dcc199ebf1"
+    },
+    {
+      "path": "artifacts/goodwill/src/main.tsx",
+      "bytes": 446,
+      "sha256": "e7e03b61f962dc1787ea029d4941424475455366b5a4f079c8fcb4f5df4d076c"
+    },
+    {
+      "path": "artifacts/goodwill/src/pages/home.tsx",
+      "bytes": 20477,
+      "sha256": "bfc89c59240160f342e6f3d9da2d6c2f1063fff9eef1bcf4d8808fd0689def92"
+    },
+    {
+      "path": "artifacts/goodwill/src/pages/not-found.tsx",
+      "bytes": 739,
+      "sha256": "6aaea7a7125024440020566f3a14fde4f65149b1fd21f68c6a437b193e88c642"
+    },
+    {
+      "path": "artifacts/goodwill/tsconfig.json",
+      "bytes": 520,
+      "sha256": "e0a2fd8a7f3bfc860ccab5623b1881e754eb02336612708ff8b59215e8c256c9"
+    },
+    {
+      "path": "artifacts/goodwill/vite.config.ts",
+      "bytes": 1822,
+      "sha256": "8d346eab209f2561e363a0717bbefc56f99936096c52611fc2dc695014d87be4"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/.replit-artifact/artifact.toml",
+      "bytes": 327,
+      "sha256": "e259a07aa72cd0a1d06c141f4aa00c16aa6942443ddf17b7cb59e88a9882f4f9"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/components.json",
+      "bytes": 426,
+      "sha256": "aa1b56411ed0e8fc2ac14315f211c7059406e03d68666e1921f640186b8c096f"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/index.html",
+      "bytes": 4325,
+      "sha256": "fa4111c44a19ea399d44d7c6486387ffd49d9f21459ac87906ded4dd5c2bcb6c"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/mockupPreviewPlugin.ts",
+      "bytes": 4639,
+      "sha256": "4d579d37f3d3d12ec8d8d78571b651c606ed44b07fb04a53aff02bcc75621cfd"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/package.json",
+      "bytes": 2515,
+      "sha256": "0b88535ede305ba8c63ea5cea2f94b57896561fcafac4dcac2109032c0b8abeb"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/.generated/mockup-components.ts",
+      "bytes": 171,
+      "sha256": "2c23d71ff9b2704c9db9aff8a414a728b810b10abc508e3bd75acf5718651cec"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/App.tsx",
+      "bytes": 3654,
+      "sha256": "0e0e60da88a64ef68a930565bb5c5d326896aaa0f9cea62702eef4c02db2462a"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/accordion.tsx",
+      "bytes": 2001,
+      "sha256": "dcbfb3243a26096fc3e5f54039ccb5c4c23d9bb79a4d5846b4be75bf912f07d9"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/alert-dialog.tsx",
+      "bytes": 4419,
+      "sha256": "311bede35f785d7b1ecd7398986757e26409d1049352a94ccf83586b8603c92d"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/alert.tsx",
+      "bytes": 1598,
+      "sha256": "5950ac01377e7eedc94b00eb3fee678745e4cc1a72b5343867f0733d07db6660"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/aspect-ratio.tsx",
+      "bytes": 140,
+      "sha256": "08b0aa0b05efc573c7d63363c03e83d4b101bfeb54140764e96ddea30659cfcc"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/avatar.tsx",
+      "bytes": 1419,
+      "sha256": "e78b35ed76c67d8ff50603fbe0dfa4fe600097bd860d89e65beea3e16683dad8"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/badge.tsx",
+      "bytes": 1163,
+      "sha256": "0564174ab513773e924dda521ce205535b05c7df9842e331ebbb59dd8b86022d"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/breadcrumb.tsx",
+      "bytes": 2712,
+      "sha256": "c3d3dcb0d82fc5e91d8830bac7fead905686fe876f1f42c3ed872bb0a6b6584e"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/button-group.tsx",
+      "bytes": 2209,
+      "sha256": "e3716d270e9ef6457b5cd29464ae00194abc8093c08ebf726c9204d7a69231d9"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/button.tsx",
+      "bytes": 1925,
+      "sha256": "4ea01d60fddbf1a0e66aa8234807d010378786b9bc5a934ed76a09edfa671040"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/calendar.tsx",
+      "bytes": 7569,
+      "sha256": "787a19c855cf2b826942d25440b63150c45094154c6a40e95abdb4109298b8b4"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/card.tsx",
+      "bytes": 1828,
+      "sha256": "525c4bb2c051987be64df0e92e1d90174912b219bf541e24ffbc4a3406de49e8"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/carousel.tsx",
+      "bytes": 6210,
+      "sha256": "5a4ff73c804e86c873382da80c453f1399006326ef042fb984c24162ec86666e"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/chart.tsx",
+      "bytes": 10674,
+      "sha256": "74005899ffa62cff5cc71ddd72a727bdc84a9bd9b7e26901e1f10d2ca8d90b62"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/checkbox.tsx",
+      "bytes": 1031,
+      "sha256": "ac389a574651c8bedffc10f80674c5fc2f02ab81291a5f4ad9c587d1f775fdce"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/collapsible.tsx",
+      "bytes": 329,
+      "sha256": "f4cdd104de29928bfcd40b865c7d08eed9157a537fbb8b5e6d0921f02b63cc04"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/command.tsx",
+      "bytes": 4887,
+      "sha256": "5a57ebc119f2357b097098d22865d45de8fda623ee88fe98b99999838c13633b"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/context-menu.tsx",
+      "bytes": 7406,
+      "sha256": "5369fc82c51df067aec2934f5e711aaf9e3f745ed7baadd7ba4b77397dee2a1b"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/dialog.tsx",
+      "bytes": 3835,
+      "sha256": "f9c982ed8114c253c6ca738043d3f455e89c6d65569e90c9415776d6b4d6be14"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/drawer.tsx",
+      "bytes": 3007,
+      "sha256": "47ff6248307a4ac09bf7e00181a2a29f9f846691092e04cad03e15d749bc249b"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/dropdown-menu.tsx",
+      "bytes": 7606,
+      "sha256": "dc109123ecd59af01d07aa9f3a8e8a7085bd3f337388c5369799ab1ce6c2d45f"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/empty.tsx",
+      "bytes": 2396,
+      "sha256": "9f975582a0290dbc7ce6efa3b36b376a4c3f07863026c3b74c1e73cb0023acb8"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/field.tsx",
+      "bytes": 6044,
+      "sha256": "e463611ab049c5e9b1c61691d239e05970ead7b577a191b3f80aa6f8ffccada9"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/form.tsx",
+      "bytes": 4175,
+      "sha256": "d50adf86568f76246f0f319c9e1e858627475563f6c1e38f5df7d4ee23958559"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/hover-card.tsx",
+      "bytes": 1237,
+      "sha256": "00f9086b1412843e04e01d31d2fab00a25d65d789d1a382e41f01b1f3c167c3b"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/input-group.tsx",
+      "bytes": 4883,
+      "sha256": "131052098fa8b16b423192ec7dcc8c8506f0e7e81355134aae4c9044e1d3ef95"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/input-otp.tsx",
+      "bytes": 2143,
+      "sha256": "7c4799e3597f2780c09a39a1391b921fa16eaedd0476457492af734f58e2ec98"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/input.tsx",
+      "bytes": 768,
+      "sha256": "6299a6a387dc55e528aec4342deaea0b83f1ea3a365c135a31a18ee55334f441"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/item.tsx",
+      "bytes": 4494,
+      "sha256": "90983640aa7cfef8217422347d8e14825cf55137c76369decacf440767f03188"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/kbd.tsx",
+      "bytes": 862,
+      "sha256": "0c025e7736d435f563bfb44105e562629672799eb1f35cbf194148d06cd1a9f7"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/label.tsx",
+      "bytes": 724,
+      "sha256": "2eac8fbb04002c42b0fbc4062d20d131e421796eaf65c37d2049e29e42ecbc5a"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/menubar.tsx",
+      "bytes": 8608,
+      "sha256": "def61eb2c47c9ec319423471f4ca20045e99549958211cacf832e4ede769e484"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/navigation-menu.tsx",
+      "bytes": 5124,
+      "sha256": "a06d96a582ac207ffcd38445d773c05e841d646efb185b5e9b65f73e5bd388c7"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/pagination.tsx",
+      "bytes": 2751,
+      "sha256": "9506dbd19ddd0c2810d1c9668a3f01606e39d9bf33ddc43329523c03bf629012"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/popover.tsx",
+      "bytes": 1342,
+      "sha256": "04cf38bf94abd3fe1b51e90227e6e235ca74776f6fc6af718bfc149e7424f582"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/progress.tsx",
+      "bytes": 792,
+      "sha256": "6b3b4b69a1cb361076174892e9a96e1a09020307616965ef89f2f7e2495b57a9"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/radio-group.tsx",
+      "bytes": 1410,
+      "sha256": "9ba7808b7404cdf2159c81883a39290033bc4308f2978eb80797c92b87421301"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/resizable.tsx",
+      "bytes": 1723,
+      "sha256": "70d1e35a5fb0897af7063cdd841d8ed636e1c332ef7ea6469f0f175a5a93dddf"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/scroll-area.tsx",
+      "bytes": 1642,
+      "sha256": "d7d02600effca55d0dcadce8c09c97ebddda3a19c5fa1d52dc9f6f727b26c6b1"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/select.tsx",
+      "bytes": 5745,
+      "sha256": "3d93ae07a8f3fe121ba60f4439e26bd7859f247eb8bfcafcf4b4a8a069888eec"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/separator.tsx",
+      "bytes": 756,
+      "sha256": "c956c4cca4b8442fa9314d6079b9f975e1ee39d5804aaf2966990f6258ac342a"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/sheet.tsx",
+      "bytes": 4280,
+      "sha256": "363f8e06aa5b53c6475f445117f60fa9294be79e9e4f1f5bf70886800188124e"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/sidebar.tsx",
+      "bytes": 21056,
+      "sha256": "53c5391594a46de2c3161de40eb56953ff6ddb09a9c64b877ea98af810b0ed35"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/skeleton.tsx",
+      "bytes": 266,
+      "sha256": "87608e7cc815ad3d88e0b9de6c402bb37b58ea1b38636cf69709da1baff6e334"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/slider.tsx",
+      "bytes": 1037,
+      "sha256": "234e38fef59169bd02d8f5b56ca02e5ec13a0bd6846c328927b924e1299f7fb0"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/sonner.tsx",
+      "bytes": 894,
+      "sha256": "771ab8637d27384c3ed030ba3be01a07b90c791c294eae06646250f8e81bc49e"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/spinner.tsx",
+      "bytes": 331,
+      "sha256": "3e6e6e8d37fb4069f8e43e55318f8db06fbc36e6c8be0096da3c9337c1c798b9"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/switch.tsx",
+      "bytes": 1148,
+      "sha256": "ba5867cd3145af1290edd80bb56d4b6d61c6331aa8ef96ae0b85487f4499feaf"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/table.tsx",
+      "bytes": 2859,
+      "sha256": "a4a6972c2d47d465d7f02c1dc4a6cbfeda7a97e46479c1b0cebdaf26bf9b497a"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/tabs.tsx",
+      "bytes": 1877,
+      "sha256": "6f74706bc6b53f9e4bcebb5e7ab8743b616aef181edc7758b8ee905f9b2fdcd7"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/textarea.tsx",
+      "bytes": 649,
+      "sha256": "ec7c92aaed80f6923a7caa4bfe4eead395b50a7001504fd7fbb0b9381804dae9"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/toast.tsx",
+      "bytes": 4845,
+      "sha256": "99f9f4a3e897f71d89b01c6772b2f5db51b888cecb2c8214fb2c2dbb2b3e6356"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/toaster.tsx",
+      "bytes": 772,
+      "sha256": "1348f1a1f9820e2f1394b93cecc156a7e22f03636ab9270753985549aae2be74"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/toggle-group.tsx",
+      "bytes": 1753,
+      "sha256": "dba95ead40d163af6959198ded9853a2cc9282b2cb534980f99937a65edf4e2d"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/toggle.tsx",
+      "bytes": 1486,
+      "sha256": "955fa1bb97505b7a8bba3f7cff1991035a9afa0e1113f5d598147e6369dbf44b"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/components/ui/tooltip.tsx",
+      "bytes": 1267,
+      "sha256": "ce6afa34fb9dae51053a863b4c3f7c6e55f3da23b00149f31a8e4402bc963be0"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/hooks/use-mobile.tsx",
+      "bytes": 565,
+      "sha256": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/hooks/use-toast.ts",
+      "bytes": 3767,
+      "sha256": "eb23d01c5e502ae1e0772f4303147170811b11f498c7e8f0dc8424c0f3463c94"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/index.css",
+      "bytes": 5760,
+      "sha256": "3935d982402c0101e55b60039685383ade4fd25227d2f4149ba356e6c2932aa3"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/lib/utils.ts",
+      "bytes": 166,
+      "sha256": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/src/main.tsx",
+      "bytes": 157,
+      "sha256": "29946f51942fba11605c7595fd82b50b0d7e50148e0194fd356dacbc958f18ec"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/tsconfig.json",
+      "bytes": 513,
+      "sha256": "bd0a1d0c1afa46c590350664a29d7848f6ccb91cfbd76426c40798437369fbf0"
+    },
+    {
+      "path": "artifacts/mockup-sandbox/vite.config.ts",
+      "bytes": 1592,
+      "sha256": "7de0f52b190e4d8f0854ed852e7a0d24420b4242e22423c6dd2712e7b0497cc7"
+    },
+    {
+      "path": "docs/goodwill/CONTRACT_V2.md",
+      "bytes": 7576,
+      "sha256": "01027793ca0a2fe3715a01e4226f121963731d53d45da0585e11c283fa1f4b82"
+    },
+    {
+      "path": "docs/goodwill/SOURCE_SEMANTICS.md",
+      "bytes": 7711,
+      "sha256": "6827238285dcb0ecaad7b8c885dec54815b7d1c0adab9529193565d5e68432ee"
+    },
+    {
+      "path": "docs/goodwill/contracts/examples/downloaded-report.csv",
+      "bytes": 102804,
+      "sha256": "829b6046132b1f709e47ee9f703299db0f1d812a1767a7d9c82029c0299434cf"
+    },
+    {
+      "path": "docs/goodwill/contracts/examples/expected-controls.json",
+      "bytes": 726,
+      "sha256": "6b61f09a20257c680cc9f7425ae276164b6e172a98a243661539d2de27a3d3c3"
+    },
+    {
+      "path": "docs/goodwill/contracts/examples/generated-report.json",
+      "bytes": 104928,
+      "sha256": "f5dfd74dd19788a1a9e67e24d59a746421700a66c69ca7bda81db5f6b8dad767"
+    },
+    {
+      "path": "docs/goodwill/contracts/examples/published-result.json",
+      "bytes": 176616,
+      "sha256": "42ed80afe302e32dfe24dcae9ccb5b0c60f049ba284c298117f4128c0f8bc203"
+    },
+    {
+      "path": "docs/goodwill/data/INTEGRATION.md",
+      "bytes": 13387,
+      "sha256": "b11c547a8d01d7b12d8cf6f1625fd588abd480877af9f23015f9399d2bd6b0cd"
+    },
+    {
+      "path": "docs/goodwill/data/independent-controls.py",
+      "bytes": 4392,
+      "sha256": "fa4d216b18d002381137854617bce39032cffc1bb54cd36402d2435379741aab"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/.gitignore",
+      "bytes": 18,
+      "sha256": "d958025fe3928d9ec40a2cd0b56e873c5f3ad4ca45be3d104583964cbcff26cb"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/01_cash_monkey_orders_aug2026.csv",
+      "bytes": 63614,
+      "sha256": "51e008d6d2ad58eb18cd29476d3f470cbc8066b2d7438f5e488990e8c04527c0"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/02_upright_paid_order_items_aug2026.csv",
+      "bytes": 103455,
+      "sha256": "3ffd1bdae4a5f79d25788120833be99499b05791a255fcfd2f7b378254d5a1ab"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/03_jewelry_report_aug2026.csv",
+      "bytes": 26629,
+      "sha256": "96e94636606bb677f8e1c46db933a613ba008384356742c7f7770be2264e4718"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/04_shipping_osm_pb_easypost_aug2026.csv",
+      "bytes": 370332,
+      "sha256": "635ebc41da539be5b249c771282cb5f74b8d7065bcb12ae7234547f745d06423"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/05_fedex_charges_refunds_aug2026.csv",
+      "bytes": 86422,
+      "sha256": "2480dd5bcf5feddfc13db3a0ce78efdee89a37da17d6ecc24c570e6a74bd0446"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/06_shopgoodwill_periodic_reports_aug2026.csv",
+      "bytes": 302441,
+      "sha256": "1e1285b81b46e114acabdb96073e22fdd51a53c020fcbd93d5d4e7250fc6e725"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/07_goodwill_books_payment_statement_aug2026.csv",
+      "bytes": 50435,
+      "sha256": "4d8f16c4dbfc4f00ffca095fc7a7440879de286a361a3277d5333407ea5052d4"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/08_ebay_listing_sales_aug2026.csv",
+      "bytes": 113540,
+      "sha256": "7b59b4eb7004747961839b7f7b1fe90811a4cf2483e20dce1da46ac7c625e425"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/09_amazon_payments_summary_aug2026.csv",
+      "bytes": 68712,
+      "sha256": "9c1300a896fa306111ca29d417a90f0ab753cb8365871820a8520434d3c0a8eb"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/10_stores.csv",
+      "bytes": 2446,
+      "sha256": "026cd444c32ee49478198b6d24800707b8c777cdbd808318f2b5c8c58422eee4"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/11_listing_events_aug2026.csv",
+      "bytes": 274827,
+      "sha256": "041a11ffc3c80360deecfc9a077979959c008d9d43b346b7a569114f3243469f"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/12_inventory_snapshots_aug2026.csv",
+      "bytes": 430330,
+      "sha256": "c725f84a6f42ab4944f0091f42cba40ae8c4a42493f7bb7d81af4c637319fdc0"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/13_item_catalog.csv",
+      "bytes": 688471,
+      "sha256": "73dba993c40f40e6498f6a4245fe72c282be2c12ffce5a0200e1e2460ade5565"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/14_quality_exceptions.csv",
+      "bytes": 2632,
+      "sha256": "3e3397181d91ec961754247140223cc890ec2151e307b51a6d1263da2cd5b36a"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/15_order_lifecycle.csv",
+      "bytes": 582297,
+      "sha256": "f35aca87e47492ce10e1890fdf215865697b1272920bd332effe508068f41f9a"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/README.md",
+      "bytes": 11610,
+      "sha256": "776d3f284fc2a514cf768ac66fb4f3f5f025549b57579e502937f7459a5980b8"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/generate.py",
+      "bytes": 27868,
+      "sha256": "4c9081d95ae486e79aedb38d536c85aeed3ce19bdeb3137648908bd735a10abf"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/incremental/ebay_sep01_2026.csv",
+      "bytes": 4218,
+      "sha256": "dbcfc6faac0a65fce83e5c57f03e7326e9e0a4afa8a8e35f86685d9620c1af3b"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/incremental/shopgoodwill_sep01_2026.csv",
+      "bytes": 10377,
+      "sha256": "4b7188020fdcaa51a985205ba764bbf0a945809f4ca4b79fc20543d84807690c"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/manifest.json",
+      "bytes": 21629,
+      "sha256": "d52fc3e4497ba1b748d4e3b7de137b8b389273d5ed7ebed107d1d681782615b8"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/test-fixtures/ebay_duplicate_replay.csv",
+      "bytes": 3343,
+      "sha256": "cb98c29d090af4cb5a15af81cf1035e4b9d02a8f47e792a2877a2e620c38ab3b"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/test-fixtures/ebay_invalid_rows.csv",
+      "bytes": 806,
+      "sha256": "7bdfed152b3b5a8242100816867f02d804ad3ea2d9bfc58ac06cd387706c041f"
+    },
+    {
+      "path": "docs/goodwill/evidence/github/goodwill/synthetic-data/test_data.py",
+      "bytes": 12260,
+      "sha256": "059228ebdd403070775edbc6292708ac8704842b61c20f4798f5201cf61e3ba7"
+    },
+    {
+      "path": "docs/goodwill/evidence/target/tree.json",
+      "bytes": 8876,
+      "sha256": "87002ceecd7c347e72a51ffce7d29c39b3f10efca28c89439b80ec9364820e3e"
+    },
+    {
+      "path": "docs/goodwill/verification/README.md",
+      "bytes": 4297,
+      "sha256": "d5795ef9b2b1d0843375199862d685e4da19f578e423b60fb93a4ef5f24bf0df"
+    },
+    {
+      "path": "docs/goodwill/verification/foundation-v2.md",
+      "bytes": 3982,
+      "sha256": "807ee07598366a719d3b6baf9396a6bb364c650d450a147c289bb8b0b363ea76"
+    },
+    {
+      "path": "docs/goodwill/verification/full-system/IMPLEMENTATION.md",
+      "bytes": 3794,
+      "sha256": "5fb4b6960d83b439d18b1e93ff284ab4c2b8fd1969ae48090f4b80e0fbb424f4"
+    },
+    {
+      "path": "docs/goodwill/verification/independent/access-security.test.mjs",
+      "bytes": 8761,
+      "sha256": "a9208bbafb96482a41edda5ed77da9abfd2b46b73a85110c212893074905d14c"
+    },
+    {
+      "path": "docs/goodwill/verification/independent/oracle-output.json",
+      "bytes": 105983,
+      "sha256": "62c05694f995cb29f920b18ece7b351fbcaf46dc6905bb8229a4ad44f5f54cd1"
+    },
+    {
+      "path": "docs/goodwill/verification/independent/oracle.py",
+      "bytes": 16090,
+      "sha256": "819beadddb0db2230144e466a2b677246462690f3d867ec204ac63022196ba1c"
+    },
+    {
+      "path": "docs/goodwill/verification/independent/service-output-check.test.ts",
+      "bytes": 4459,
+      "sha256": "e3e63cd4b707b39a661647b0c5e3dbc1c2f1d9041f336ff8616c326992f93e46"
+    },
+    {
+      "path": "docs/goodwill/verification/independent/wrong-period-check.test.ts",
+      "bytes": 2794,
+      "sha256": "eea60bab27b15a7714c95c2a359c5f1c4bdc52f0d579ea78a7b7cec28b421ff7"
+    },
+    {
+      "path": "docs/goodwill/verification/integration/AUTH.md",
+      "bytes": 4985,
+      "sha256": "9a77c110b157b5e19a5f055505095446c41a03ba01b2157e1ad87006c8496c37"
+    },
+    {
+      "path": "docs/goodwill/verification/integration/STATUS.md",
+      "bytes": 5258,
+      "sha256": "b268b383306c2c03c65de505ab8123e481901f0890a0b3544c240a44bb315720"
+    },
+    {
+      "path": "docs/goodwill/verification/team-assignments.md",
+      "bytes": 4225,
+      "sha256": "8a0d512528401c818ff16c2dbef07273bb9102805b87c4b91d23369028aee47e"
+    },
+    {
+      "path": "docs/handoff/AGENTS.md",
+      "bytes": 1407,
+      "sha256": "3774a5425d49d862fee6920dfe51faa8195aeee0c3e4ab1a517e8f0d85ec798e"
+    },
+    {
+      "path": "docs/handoff/CODEX_BRIEF.md",
+      "bytes": 3639,
+      "sha256": "94fdf7563b9de6965c2b70b75c5f68914b940af383e4ac91bba0e2c2a2598617"
+    },
+    {
+      "path": "docs/handoff/README.md",
+      "bytes": 7177,
+      "sha256": "fbedad4f41a566d09123516346753b1902cb810fd00e8a52ea81eb0b3b3d9c3f"
+    },
+    {
+      "path": "lib/api-client-react/package.json",
+      "bytes": 265,
+      "sha256": "ae70f97a12d1f7e7cbb291b5ffd1d6893f0d7a0ff7721a21e615d47bccfad789"
+    },
+    {
+      "path": "lib/api-client-react/src/custom-fetch.ts",
+      "bytes": 11377,
+      "sha256": "3a5605ea89571cca7ea9412a230a40954e3a3f1d94d7a566271480165bf5e03c"
+    },
+    {
+      "path": "lib/api-client-react/src/generated/api.schemas.ts",
+      "bytes": 43622,
+      "sha256": "e496115e521f49a5ff442e3248e6f8f990cbc5a6024eaee88fffe3207936d62f"
+    },
+    {
+      "path": "lib/api-client-react/src/generated/api.ts",
+      "bytes": 121295,
+      "sha256": "6af2257360a855e0c80ec8f6679b4d35a78eee4794dead4dfac61ae6ef8543e9"
+    },
+    {
+      "path": "lib/api-client-react/src/index.ts",
+      "bytes": 194,
+      "sha256": "7974b36e3973a8d0c403589bcf8d8aca7547c5c42c4b73924d05f49de18809e5"
+    },
+    {
+      "path": "lib/api-client-react/tsconfig.json",
+      "bytes": 267,
+      "sha256": "a00fda842228e3478705abcf2c76d9641f5d6263cd5d2df0b613d5379088ad73"
+    },
+    {
+      "path": "lib/api-spec/openapi.yaml",
+      "bytes": 60743,
+      "sha256": "271f75f720d23bcb8173bff5ff902475c89ceacc036daf78d53a8e21605484aa"
+    },
+    {
+      "path": "lib/api-spec/orval.config.ts",
+      "bytes": 2706,
+      "sha256": "c1f7b2d5ea6f44c01b9bbdf42393727f9b2acb7178d544c8e4f184c503a3c380"
+    },
+    {
+      "path": "lib/api-spec/package.json",
+      "bytes": 227,
+      "sha256": "1b9eb6b10cd90c528c3d06cd8470f39c0aa8bf683e746088ef47bb24d628ad66"
+    },
+    {
+      "path": "lib/api-zod/package.json",
+      "bytes": 189,
+      "sha256": "07009861b2ba8decccb4e9d78d743cb7273bd91915231b5eb1463b296efca13e"
+    },
+    {
+      "path": "lib/api-zod/src/generated/api.ts",
+      "bytes": 104186,
+      "sha256": "83f9b5efcfd9241c5f155393d81ab3ac8f228a9eb6870635b56d50e7290f9137"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/acquisitionRequest.ts",
+      "bytes": 755,
+      "sha256": "088fb82773cea5b0bec42c9194f4fce6a20fadff845e7019830447648dc1f486"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/acquisitionRequestReportType.ts",
+      "bytes": 474,
+      "sha256": "1aac712784639d494104c0ddd230ca7a0430e180950cccfd638b3a887a1a21a3"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/acquisitionRequestScenario.ts",
+      "bytes": 570,
+      "sha256": "2cba44eed1adcb28a48ff0a06e70c05551602dfd3a108f46f9380267818c1db6"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/acquisitionRequestSourceId.ts",
+      "bytes": 448,
+      "sha256": "538594eae3a674669651e9dcc4e6c9352e673a885340f246ed348efbd4e57c39"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/acquisitionRun.ts",
+      "bytes": 930,
+      "sha256": "375727e80fc74529f79ebe3f849d79307ccdaca0442106e8efed977213bfa390"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/acquisitionRunContractVersion.ts",
+      "bytes": 456,
+      "sha256": "dfb98e062d32d934338da366f9cd99aba278b2ca1f8e2a4e6af6481d6a10adbe"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/acquisitionRunPage.ts",
+      "bytes": 608,
+      "sha256": "112f066ecd6dff4d8cd4572e685665ccf63e6edd7161e25ec60b5ba2bc86e955"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/acquisitionRunState.ts",
+      "bytes": 538,
+      "sha256": "ac698751a99bbebf655d3418c43b00d264796b2053b15fb67eb1d84c50fdf801"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/analyticsChannel.ts",
+      "bytes": 649,
+      "sha256": "659cdb1eec47a2014d8095109706b99da8c83e622df18f5015d36b04c53aface"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/analyticsDashboard.ts",
+      "bytes": 821,
+      "sha256": "4040cf69964c6b197b8db959d6ea1fdec1a00e5ecdde0b4c4b23360fc4e3b954"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/analyticsDashboardTimezone.ts",
+      "bytes": 468,
+      "sha256": "a471406374b3eb78758b42c512ecf8b1fe827477381574707b846a41e3194cc2"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/analyticsKpi.ts",
+      "bytes": 892,
+      "sha256": "6d9ab47d58bf9b23e06e8252e2822e02d06e3cbecb5bed2b2bf0f6f45fb0c5f7"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/analyticsKpiArea.ts",
+      "bytes": 532,
+      "sha256": "de6da19d8bb256fc41dc3a5302eb667e43ae355dbfe632973a4be63303386285"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/analyticsKpiStatus.ts",
+      "bytes": 472,
+      "sha256": "7f1e16bc63ce3365ffbe24969e8ae0e378f13a99259fd90d84677c23b5d35b63"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/analyticsKpiUnit.ts",
+      "bytes": 486,
+      "sha256": "ec2201c05ab9eb8050240b1de0ea2d186e1125be11c7d7d5f13c30cbbbe4d8b0"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/analyticsPoint.ts",
+      "bytes": 347,
+      "sha256": "1be90b921d65a33bbb59f0267c3f6288bc33479dfc4b8dc74254f5476070086a"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/analyticsScope.ts",
+      "bytes": 512,
+      "sha256": "08ddf12f4f251bbb6f5c7f57bde660e4ad358450b6791d50d73425360e6046b8"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/analyticsScopeSourceId.ts",
+      "bytes": 630,
+      "sha256": "cc9b3c085ef72e459b6fc1e93bff27169820cb5a023623a0ee9a685da07f2931"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/conflictResponse.ts",
+      "bytes": 445,
+      "sha256": "bbaaf6649c4c390f0b89114e8f5c37e5fcb93fb7f05eb0ee0f3c18ba3770d364"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/correctionReview.ts",
+      "bytes": 534,
+      "sha256": "28621285445a74ea9778272854d6725a948edb6d49ed55d2278ef233733547d7"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/correctionReviewAction.ts",
+      "bytes": 478,
+      "sha256": "50d17ef967095d4317abc2156412f3225e69a0965f249c88cc8f5404a1ed61ca"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/csvExport.ts",
+      "bytes": 545,
+      "sha256": "618c6854e15dd4af2edc463b999964a298d1b414ca3f001bf00efad53bd425ab"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/csvExportContentType.ts",
+      "bytes": 428,
+      "sha256": "f89b26d5fc36fb8f3d17285392579fdce0999ad691dab0051d7930abf4e5c688"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/datasetDefinition.ts",
+      "bytes": 670,
+      "sha256": "2a667eecf583b9ff47d1956e7c4c39b0d72a321720e353d863b4225518893ba1"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/datasetDefinitionRole.ts",
+      "bytes": 618,
+      "sha256": "99ed42da3fb46a9e0da1f5d68fc41250981e72be87a42d521273a7d66bc3efde"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/evidencePage.ts",
+      "bytes": 653,
+      "sha256": "d56d44c17a591c78cbac9a5afe2881cff538d7ea5da5eee3c5685782e57ba135"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/evidenceQuery.ts",
+      "bytes": 535,
+      "sha256": "33e9d466c0773a3f2125b134616e75766d830bbc48a3713e1c369630d69c8357"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/evidenceRecord.ts",
+      "bytes": 1062,
+      "sha256": "e6bbf64d4ff8df6f3498bf9d7a0dffab2ed1be58337fbeac8b1e5abbaf44a070"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/evidenceRecordDisposition.ts",
+      "bytes": 496,
+      "sha256": "0b1405295a10445eb72829b332b771ed6b299fbbc37d8aee06dae42da9252176"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/evidenceRecordValues.ts",
+      "bytes": 427,
+      "sha256": "19df218acf9e05e042fd1a305e2e18201507c91d35300d9f379da17862a5630b"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/experimentConflictResponse.ts",
+      "bytes": 496,
+      "sha256": "517f35ece5dbf5ce1d63becae9dd1312419532deb05046ef81203f2ab366425e"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/experimentForbiddenResponse.ts",
+      "bytes": 499,
+      "sha256": "68e27ff0a2baabf2d06885a67d5fc40bc398dbe8096b2659b8c8e08ea4bbaae2"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/experimentInvalidInputResponse.ts",
+      "bytes": 551,
+      "sha256": "3fd5542f724d71b5c317335375a774bd9c6082d9a733d11f1a8a596005653610"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/experimentNotFoundResponse.ts",
+      "bytes": 482,
+      "sha256": "9d8ea37fc4f7ac9c16d8bd2faf0c1603983183f0b380b3fbc0436aba0514d098"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/experimentUnauthorizedResponse.ts",
+      "bytes": 481,
+      "sha256": "0c41243347989248e4351bffb48c06d2f915315194742923f05782ce3bbd8cfe"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/experimentUnavailableResponse.ts",
+      "bytes": 509,
+      "sha256": "a62255dd4b97dcf6e0830039d1af58ad44564a870dc83e6f0f7735a8679bb0ea"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/exportRequest.ts",
+      "bytes": 636,
+      "sha256": "fa0c0cdc6b8f34c9665bbb80e3f2f35bc61f7ee8b585af308b3dc3a6c20f244f"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/exportRequestKind.ts",
+      "bytes": 464,
+      "sha256": "9388e6e5f9dd5192058072002a0d9ed8fdef413b59fd6d0bff1d780941f6bb20"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/getGoodwillBatchRowsDisposition.ts",
+      "bytes": 520,
+      "sha256": "98506f34463455274308bf178b29a3bf2f67a00ba1d393d8ecc2132237fdee77"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/getGoodwillBatchRowsParams.ts",
+      "bytes": 687,
+      "sha256": "cf583e9548f1ba04cb9b573ac3087e1917b0058f85d86d14e5ebd7df37388026"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillAssistantInput.ts",
+      "bytes": 563,
+      "sha256": "9f25a10cb4a53121894aba6ecbe4fac1645d05ba772466ac8db9d7c5e77b06fb"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillAssistantInputMode.ts",
+      "bytes": 520,
+      "sha256": "03e781c21ebe7d27f5f9d8d79a2a6529f2542f0b7b3578fa7d15efd76e76422b"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillAssistantProviderUsage.ts",
+      "bytes": 1056,
+      "sha256": "94b59390991e948545d4d29669f6b1bbbeefa2ed1cb93d0b00d698420da17343"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillAssistantProviderUsageLimitCents.ts",
+      "bytes": 576,
+      "sha256": "b99e7dcae487d2e51cdc52134c404221b04fcb15a54b50b6aec06c6ccc2761f2"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillAssistantProviderUsageModel.ts",
+      "bytes": 500,
+      "sha256": "bbe82766e8e9ecc4ec0c5c1e538d73e89cb796cd66778e7ed15b815f25a72689"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillAssistantResponse.ts",
+      "bytes": 997,
+      "sha256": "d24b10fdb9206ed0934162ec8476f5c607da23926d3954ca0467fd9337d716a7"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillAssistantResponseMode.ts",
+      "bytes": 524,
+      "sha256": "59a7aeb172bb94778deb691ef6b3ee74b022eb2793f8feaa34984c5b481a487f"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillAssistantResponseStatus.ts",
+      "bytes": 522,
+      "sha256": "8760a429b0c89db7bee652a1554eef57c47eae72820a8a1aefd9ff086ea1bd60"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillAssistantTool.ts",
+      "bytes": 431,
+      "sha256": "da30a59323b3a170c0b813047bb5f3f4fcbe1f8b29afaa05fdbaa725cdfff1c3"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillAssistantToolStatus.ts",
+      "bytes": 506,
+      "sha256": "17e7c6dbfcff20631006a748e51de226deb708657e46620883f7304235f024a7"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillCatalog.ts",
+      "bytes": 719,
+      "sha256": "5795144d854c70e926653efa5fd3a1ac526e5004ac8b799dc9c121595bde60db"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillCatalogContractVersion.ts",
+      "bytes": 460,
+      "sha256": "91782c0d996652e741555bf5cc4316ebcf08ecd47c4efc38a5996d656efb89b2"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillDatabaseOverview.ts",
+      "bytes": 552,
+      "sha256": "1cbf700b21293aba9162de0892819ec232a51a0a42fa469afd3c17031bd2fd53"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillDatabaseOverviewEngine.ts",
+      "bytes": 470,
+      "sha256": "9407b7588c13c12d9a489f2c3446588ed3ada4f65b2a186e4ac1029a890564d4"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillDatabaseTable.ts",
+      "bytes": 395,
+      "sha256": "4ab273cc3237588663060faa36e7a3ac1e679349d5175b6effde75fe50ea5c88"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentAccess.ts",
+      "bytes": 1316,
+      "sha256": "374f450e9a4ca7cb14d1f145398a2bfd3dfe50708ff87de6b3616196f8bf2aa9"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentAccessMode.ts",
+      "bytes": 528,
+      "sha256": "1aa6027ee24c33a3d05df51460a3e56684d51ac53c47746b8afdcc72339ec401"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentAccessProvider.ts",
+      "bytes": 520,
+      "sha256": "e4f96ca465f318aa4cc1ccc599e83c4f2dc709113f135a8f21665a6ceefe50d7"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentAccessSourceMode.ts",
+      "bytes": 546,
+      "sha256": "d51ffaf243adca4e785ae7dc8f64992c972d8266f92f165e97198285933c1b6e"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentAliasApprovalInput.ts",
+      "bytes": 543,
+      "sha256": "a264f743354936e911043156177e0cac5e799da2c685c0c813fb6f3f21267561"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentApprovalInput.ts",
+      "bytes": 577,
+      "sha256": "71356351e072a378ecb65f0e8beb01af2ab210db1a22543a4fbb9c7d9b303dd3"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentApprovalSummary.ts",
+      "bytes": 497,
+      "sha256": "111832777951efb41dfd3bd8d14bb0b69dc21b4b8f62d33df5c20287cceacc59"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentDigestApprovalInput.ts",
+      "bytes": 654,
+      "sha256": "d95e0da95c2f37d220679b95dcdc5d356c43d361a673698eacf66fa906a429bb"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentDiscoveryInput.ts",
+      "bytes": 895,
+      "sha256": "6321ed80a4e71eff21c2826a9ce795bdeefa42d4fe12a6a4f49e72111b490e35"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentDiscoveryInputMode.ts",
+      "bytes": 516,
+      "sha256": "3aec97a430535a84ccd7c3984a70200345da8ec575ef6628cd0289b8dd4f0f53"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentDiscoveryInputReportType.ts",
+      "bytes": 530,
+      "sha256": "0821c0726681618ff51d95a10ef2254cb564bfdc5d3c2766c866a54a4be839ff"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentDiscoveryInputSourceId.ts",
+      "bytes": 504,
+      "sha256": "c75e779d3953b809ae3e7c2cedfd2f6452571a558f8e36f10bd436249fbbfe67"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentError.ts",
+      "bytes": 535,
+      "sha256": "4da59dacf629edeecf63b37dc34c3ce637056cb26352eb01b83183600d554bc4"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentIdentity.ts",
+      "bytes": 399,
+      "sha256": "7acfbf2b389d082c41eff6ea73299ac616e7572013dc482a58202294bd60c38e"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentPeriod.ts",
+      "bytes": 570,
+      "sha256": "819d88ff286885973f98eb52723beaf05514dc1b30063aac47c110ce7d7920da"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentRecipeStep.ts",
+      "bytes": 654,
+      "sha256": "3261446b2f7989703983e8afd49db6dea440a7b0a7cf137cc0673898f1a11da5"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentRecipeStepGoal.ts",
+      "bytes": 674,
+      "sha256": "b76e42260366811f6c8f8b14c613a9d2d4c5bb0b04f26733dab17c7c3fc54f97"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentRecipeStepOperation.ts",
+      "bytes": 524,
+      "sha256": "6f796423d798bae14e348b24aba11fde9984a1ad113cbd5264a4c5b08d8b7abd"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentRecipeSummary.ts",
+      "bytes": 1288,
+      "sha256": "3855836e70b3674b4e2337a3a09664e0967e4c4c75ceb8d2a7894891108d33e4"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentRecipeSummaryKind.ts",
+      "bytes": 582,
+      "sha256": "428f44706629a05565ffeb88797f1a1c3a5941020397bdf2ccf90ddcd015c95d"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentRecipeSummaryLabel.ts",
+      "bytes": 568,
+      "sha256": "16385e5655a6809fdee9c301ba3b494e7b4e11c6f041572156952526f38a0003"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentReplayInput.ts",
+      "bytes": 983,
+      "sha256": "b6fa7348a887e71ac3f6b0539991e27a0ab3a245ddcfcf30e7f083bf67042c6b"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentReplayInputMode.ts",
+      "bytes": 494,
+      "sha256": "8fa139dc25d3875acfce46a5ad6625ad9edd79760eddbf03df8efb5d2d3f573a"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentReplayInputReportType.ts",
+      "bytes": 518,
+      "sha256": "a25e5dba94ae8df2839be0b5ad8af3f94adb2e32336b8cc15345beb9baf0badf"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentReplayInputSourceId.ts",
+      "bytes": 492,
+      "sha256": "a377298174ed57e25df655047d34bc0f3eb5ebd36500b71d2bf3170bc2ef9ee8"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentReview.ts",
+      "bytes": 777,
+      "sha256": "615b99b8100cd3a0d711731b2edb093665513fe852052b251eeb5728d33db021"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillExperimentRunInput.ts",
+      "bytes": 536,
+      "sha256": "2130ab7052a01b032ebf285a3f7e4611d2660faeeb53b94c03645b3a618df352"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillOperatorAccess.ts",
+      "bytes": 337,
+      "sha256": "667a041d6bcefe9cb96dab0c0798d25be11bc8298a039d50a59f101300dc5233"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillReadOnlyToolDescriptor.ts",
+      "bytes": 873,
+      "sha256": "7e5531bb9c4e40f54a56380dcd1ee1e25433a449b006d84a60dca2a2c508e7c4"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillReadOnlyToolDescriptorInputSchema.ts",
+      "bytes": 430,
+      "sha256": "92bbe590d2f4ec9cd819231037fadf266b8c71e91b80c6768082c17adf7b0dee"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillReadOnlyToolDescriptorName.ts",
+      "bytes": 556,
+      "sha256": "4323dd0aa4ebeee217ffc583844ef3dfc9a7a1cb82f58c8ec13bdec0ed106f62"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillReadOnlyToolEndpoint.ts",
+      "bytes": 577,
+      "sha256": "026affb906f00c3a69629f37d141b57ce31d2b25dd8880c3e075db98992de9ad"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillReadOnlyToolEndpointMethod.ts",
+      "bytes": 488,
+      "sha256": "4f409bf78349fd3749dcbf12f95912e293cc3d92ef380da2d93671b3ca74494a"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillReadOnlyToolEndpointPath.ts",
+      "bytes": 650,
+      "sha256": "ff99c21f2c7a2b46ea092c253f7c4471b76fb730abcd31a1eed21c3f447079cb"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSourceOverview.ts",
+      "bytes": 1052,
+      "sha256": "c28b966b4f16c9baa880b4c234c71bb56214fb25cbf737e5e66bc484ebde86d2"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSourceOverviewSourceId.ts",
+      "bytes": 662,
+      "sha256": "7caecbfe273228d16aa46d335ab0690cb798a7003e12ae159977ee3e9fb18de0"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSourceOverviewStatus.ts",
+      "bytes": 540,
+      "sha256": "bd0d88ccb9ba2020a92118cb46e77bfd13e8b03ac044412fb41aaa880249bfe8"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillStorageOverview.ts",
+      "bytes": 449,
+      "sha256": "18c659ec3945d257202ef20c9121ab442fa3f148532cea7fb6c19e380ffebc76"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillStorageOverviewKind.ts",
+      "bytes": 482,
+      "sha256": "4c9b989f87f1360e9cc5d0b5f90fa9c165930c2d809b6fe4f8288727d2c8e946"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetMetric.ts",
+      "bytes": 1444,
+      "sha256": "4d87ae6f021c4d56a45f772618d40f13116472c1638aeb0328d50d0a0e64de79"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetMetricMetricId.ts",
+      "bytes": 584,
+      "sha256": "c1c6216a2f3b45acecdb2025cb1079d9b9b72bc6323e58357c2a95dbaee94a9a"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetMetricStatus.ts",
+      "bytes": 512,
+      "sha256": "420ed54381e22c7863c00b807bc6d1957e48ecb375de2a46d4ca75bb648b5a69"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetMetricUnit.ts",
+      "bytes": 468,
+      "sha256": "e3608022f2eed19d4854c9cfb66fa95b3978d2cafaf86a56dd06f3e73baf6af4"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetSnapshot.ts",
+      "bytes": 1850,
+      "sha256": "bc5b995dd3e350d224e8278709ebbcbce55a664b55a077e39fec143154f911df"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetSnapshotCurrency.ts",
+      "bytes": 464,
+      "sha256": "1c4938f0a18536133278cd78c7feb1de6e61fb3fb03a62a40f0d2e662fced579"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetSnapshotPoint.ts",
+      "bytes": 626,
+      "sha256": "115ef5b988bd678739a65e25d881a38b49a402cbf4c7bee74d1361aead0c9dec"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetSnapshotRequest.ts",
+      "bytes": 688,
+      "sha256": "65a42df4ea45f0d1188c744d4262b715166d01d7c3781c1e5683a1ac9eec2ac3"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetSnapshotRequestSourceId.ts",
+      "bytes": 698,
+      "sha256": "d22e0477509856c7824662594d156e64e3243ec589d917288be48506e06c5cce"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetSnapshotSchemaVersion.ts",
+      "bytes": 524,
+      "sha256": "301a2ad17603c3828dd36535076da566226b174682be503fc7f1f2f32b72134b"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetSnapshotSourceId.ts",
+      "bytes": 670,
+      "sha256": "1fa0cb8209d097a03a85121b1501a5d697bacc52bd0296b1d365b397997014c1"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSupersetSnapshotTimezone.ts",
+      "bytes": 492,
+      "sha256": "d0cc4cc1becd4f79578591dea6a34cdfe544d383f2addc638b80e93a677ffa2b"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSystemOverview.ts",
+      "bytes": 764,
+      "sha256": "df8513832f0e4702ef568666be9ab9fc7ad630c82f07558acb5ded9e21e2d55f"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/goodwillSystemOverviewQueryMode.ts",
+      "bytes": 492,
+      "sha256": "f3488c40818e86f9d869bb2bb87059206a74292bb5ca9052653e1a7e2ddfadfd"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/healthStatus.ts",
+      "bytes": 303,
+      "sha256": "d9907df0f2ce48f8f8cc4778ee509bdad56ab0257b20302083a0a36142346092"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/importBatch.ts",
+      "bytes": 1553,
+      "sha256": "84de9db87a5edd5127854fbbb71c8695e0e7570ce98b85aee42bad642c6f112a"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/importBatchContractVersion.ts",
+      "bytes": 444,
+      "sha256": "96ff8ba2c083d1634d0cb7de8158692bcd9f8ad4b3e8e714654e180a9afb46db"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/importBatchPage.ts",
+      "bytes": 596,
+      "sha256": "c4ace2da941cbc9d23a54097043f9e0567d30fcc2ede7486e4777ec19c0053fd"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/importBatchState.ts",
+      "bytes": 616,
+      "sha256": "70095e182442bc9cd86202e2ca0858fffa2b1d23a8ad04882a9ee910f094a7af"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/index.ts",
+      "bytes": 7113,
+      "sha256": "8d45581b42b9c68ecb47bb31a50fdc671f128a539fabda5c9ab7382d73339bbe"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/intakeRequest.ts",
+      "bytes": 620,
+      "sha256": "d91d96e33dcd3b57348f4af6874bef7f9509287ce4d7f2fe2b220fca2156a424"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/intakeRequestInputKind.ts",
+      "bytes": 444,
+      "sha256": "14b59978da4b495eec220c5ededb0cc3c348a177160182f86e4d63e56d3fd15f"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/invalidInputResponse.ts",
+      "bytes": 427,
+      "sha256": "1f713773debf383587bb639f5854d37cc15a8d9d1d7ad30654a49d949289d560"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/limitParameter.ts",
+      "bytes": 288,
+      "sha256": "f1b8fbe4a32c786870da72e4e9d4a4ab7dba56babbff7a1db569c72315c45f3a"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/listGoodwillBatchesParams.ts",
+      "bytes": 568,
+      "sha256": "1fd8e30f332355857797690270e90c64d6a1c69286075066ae49eb558044d162"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/listGoodwillRunsParams.ts",
+      "bytes": 546,
+      "sha256": "2d009007a4b459362be874e05bc433126447e1a4ad169107fc52cd94110a46ab"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/metricDefinition.ts",
+      "bytes": 604,
+      "sha256": "9ca7d5f7d26103dd580a6ce9688060fac3dbce875b98ac451e396aaea27dab4d"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/metricDefinitionUnit.ts",
+      "bytes": 444,
+      "sha256": "8325dc5d575ed1d0cd1fbe6e554502e59cb91bf88154ebca2e8b9cd504daaad5"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/metricPoint.ts",
+      "bytes": 607,
+      "sha256": "034b706b0d60da5fb36ee13a3bdbec360f40f6cabde616fbcafc6f14c20abe77"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/metricQuery.ts",
+      "bytes": 785,
+      "sha256": "daae4cbf564c604b9deafafd6826a7673257d9e13b1ceaa5ace5436b7a525178"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/metricQueryGroupBy.ts",
+      "bytes": 466,
+      "sha256": "95ba2d112d79b95692bf5d9849d00a677f04e2f8fa631d69eeb93f4a2f228c2d"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/metricQueryMetricId.ts",
+      "bytes": 586,
+      "sha256": "33fd2238fb3df6d127c59c43497d670f5af5d1972b251b906c30124fa3c8e2f3"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/metricResult.ts",
+      "bytes": 1446,
+      "sha256": "4c1c4eae47b503c757313e7d335b1ee0ed4d7b0bcdfbf7652feb9185772a0fb2"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/metricResultContractVersion.ts",
+      "bytes": 448,
+      "sha256": "f42c2c1a1dc3d3aec12ff891d89df082c1312ba57caa142d9619291c1c415f7a"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/metricResultCurrency.ts",
+      "bytes": 416,
+      "sha256": "9c75e92ced1dd26efdf1e737bd27190e44c0515b8fac25e9e73b3d3107819417"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/metricResultTimezone.ts",
+      "bytes": 444,
+      "sha256": "737e9dcbf0a5016d48f3708c230ce78eed87a274ad2bbab84052fc3126656507"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/notFoundResponse.ts",
+      "bytes": 382,
+      "sha256": "9d8cbd1990b479a3223f89444f5e8a1e9b6fef70c6759c7cbf0acdd43a195c07"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/offsetParameter.ts",
+      "bytes": 289,
+      "sha256": "bdf4e188d90030919b72a15834f3ca6c217401e20beeb67234d90b07aafa0603"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/rawArtifact.ts",
+      "bytes": 542,
+      "sha256": "8bfbc088e91530453001198927f8d76071cc7e44ca7c822c6b4357136f6f5580"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reconciliationCheck.ts",
+      "bytes": 905,
+      "sha256": "bac53e447e0de57520b012dcfe4b7edd5b7bc5ae3c29ec13fe264969ccbfa8c5"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reconciliationCheckStatus.ts",
+      "bytes": 498,
+      "sha256": "b5d84081842a2c87edf7fd3db95a45be655f2b873e66b53c45339badf8fef3d0"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reconciliationCheckUnit.ts",
+      "bytes": 456,
+      "sha256": "4465645a19795f112ca8049e737b2bc81ba2564ee3db4fcba22fd59dc3c604ea"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportPeriod.ts",
+      "bytes": 401,
+      "sha256": "fb40414dc07980d205321c02b47bffff32b42d0359638588a1fcba875063fdcf"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportSource.ts",
+      "bytes": 463,
+      "sha256": "f75c19f1c6d9a6c324c23fc0e5465d76a4098da004fb7d0bfb4c0bf47bb9e256"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportSourceStatus.ts",
+      "bytes": 470,
+      "sha256": "d83f6bf1ce54fede5610980290ecc7f92e969400d604a4ebc3ed90ceee34d364"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportTooLargeResponse.ts",
+      "bytes": 423,
+      "sha256": "0e4b2e9312a83cdb6368603021ff88f5fec2998f280fc8fcce6ae8be8522956f"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportingError.ts",
+      "bytes": 320,
+      "sha256": "92dd2a876577a20fbe92b043a62cb9b0cc16145388ebe0517e86a0f2c9c53967"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportingResult.ts",
+      "bytes": 1375,
+      "sha256": "215265ceb0ad5f5752b6b7571768a9863284e9e38c5f2c5d33ff06e8a36ce01b"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportingResultCoverage.ts",
+      "bytes": 468,
+      "sha256": "8690428d95263312ce6894e3d479b9b8871ceee3c736748021dd51d12ae2920d"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportingResultCurrency.ts",
+      "bytes": 428,
+      "sha256": "1788979ddf185e2a378634766a14fa9f72a236c37409dce55fd6ffe2368710af"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportingResultTimezone.ts",
+      "bytes": 456,
+      "sha256": "ddab71e7ba38d3226777574afe2c2ad1555ec686a93d41fec74776acb4df33c1"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportingRow.ts",
+      "bytes": 842,
+      "sha256": "0dead933fe48a0f5158a56eba98151c1586989a3dbd30f529a8913cab48a5d30"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/reportingState.ts",
+      "bytes": 379,
+      "sha256": "cc65f25fefab46f2be07d8efde08a48916879134cb4687338da6933772ff8830"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/sourceCoverage.ts",
+      "bytes": 727,
+      "sha256": "38bc2200606a63a7f3c2425d84ed307931f07e419d32b2650583017ceda10a41"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/sourceCoverageStatus.ts",
+      "bytes": 538,
+      "sha256": "2a2b5d59a622b72378105b6fa30ed597e3fc77113917072c8cdbd0570f3cdb95"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/storageUnavailableResponse.ts",
+      "bytes": 441,
+      "sha256": "10de24a659aeb9e682b3947a9e147ff60d47aae2a412e043691fd91c4063879e"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/storeDefinition.ts",
+      "bytes": 338,
+      "sha256": "53c579863221bca91dcd683fd5756caeffa3b52ac6c390abb409eb7e58b97146"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/syntheticReport.ts",
+      "bytes": 919,
+      "sha256": "1bf8e03f32bc08ab0f7ab23339a359b3742471a1346bf09ff3a73ea7e58c6280"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/syntheticReportContractVersion.ts",
+      "bytes": 460,
+      "sha256": "8a02a2e58f4fc0193370097bd5abb75e8410a9f68cbc1bebac88b0c8c471ff3a"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/syntheticReportReportType.ts",
+      "bytes": 462,
+      "sha256": "f5beb3d61c77d594490b0f2f38f6b2b3e311355a086df88d3bdc133af84018a0"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/syntheticReportSourceId.ts",
+      "bytes": 436,
+      "sha256": "5749e0807db5118ac98f8e93b9b14a8debba3cc38c486ffc4813f2c517737ecd"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/uploadRequest.ts",
+      "bytes": 533,
+      "sha256": "bccb0ff04ddec93c644361ff60d0b06a5afdf106cdf4e5de8d3496f5ae5ec031"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/uploadTicket.ts",
+      "bytes": 420,
+      "sha256": "aa8bc4a0e284985eb2d6c60c06a25d9185b38397442b0f1d36ed027ebe6dafe6"
+    },
+    {
+      "path": "lib/api-zod/src/generated/types/workflowFailure.ts",
+      "bytes": 367,
+      "sha256": "3066f4df724d412efa58833c6e05de782273c080a208f4f7cd31faf13780d41e"
+    },
+    {
+      "path": "lib/api-zod/src/index.ts",
+      "bytes": 294,
+      "sha256": "f0149bd11cbf8e83f91fcb14ce4e6cccfaa515acce3bffbbc66f5bd6d7fa0df1"
+    },
+    {
+      "path": "lib/api-zod/tsconfig.json",
+      "bytes": 221,
+      "sha256": "bb52c0e8b13e658570a208d946cb874fdf2b8d990f7c228f96fb24254c9c5a95"
+    },
+    {
+      "path": "lib/db/drizzle.config.ts",
+      "bytes": 352,
+      "sha256": "57862221556f24a1accd28b283876930c403ad7c86b79d87cfb5c9c200ba6258"
+    },
+    {
+      "path": "lib/db/package.json",
+      "bytes": 578,
+      "sha256": "4d39774f96c4e135ae5fabbad2015ece4255a75fddc1293286d196d1e9fdcb8b"
+    },
+    {
+      "path": "lib/db/src/index.ts",
+      "bytes": 416,
+      "sha256": "fc285bc83108137ba57c4c2774a35053e3c25fda1292c3d7a16a57d43dd9679c"
+    },
+    {
+      "path": "lib/db/src/schema/goodwill-assistant-usage.ts",
+      "bytes": 843,
+      "sha256": "8dafb32f9cc5a6975fc94871f03f1af9af0ca0f48138c5d0ad907175038ad566"
+    },
+    {
+      "path": "lib/db/src/schema/goodwill-publications.ts",
+      "bytes": 891,
+      "sha256": "0579461d2485e9d236807a1f13d35f4c42ec4899eb445dda7d87473f35d4499c"
+    },
+    {
+      "path": "lib/db/src/schema/goodwill-v2.ts",
+      "bytes": 3298,
+      "sha256": "db152fa94413527c3ac73277b846d58384f5129a8a6c0b6778ec07e007ca26d9"
+    },
+    {
+      "path": "lib/db/src/schema/index.ts",
+      "bytes": 849,
+      "sha256": "d9f76ac2f43d192e1be88579c7c26fff48678fd8feed8b2c8b4d7e90f118e858"
+    },
+    {
+      "path": "lib/db/tsconfig.json",
+      "bytes": 244,
+      "sha256": "69c976d11de35f0ac391934625beeccdd1b2689ba5d0f14c54b5384d4c30a9c9"
+    },
+    {
+      "path": "local-superset/README.md",
+      "bytes": 8504,
+      "sha256": "de8975cd679566a8c7b89af18b0ef412d3d3bb6a1ed745e81bd9a03aa2cad629"
+    },
+    {
+      "path": "local-superset/VERIFICATION.md",
+      "bytes": 2144,
+      "sha256": "22c3f866396fb2f92f3479de5f7ca8579f30ae9baa64dea3ec6e4f77f3cad943"
+    },
+    {
+      "path": "local-superset/compose.yaml",
+      "bytes": 5008,
+      "sha256": "fda6a496e49e636eff838a7dfa16ee52653c5f0e464ed199a282efde2eaf21ab"
+    },
+    {
+      "path": "local-superset/db/init-reporting.sh",
+      "bytes": 5281,
+      "sha256": "420594c55e063c916a7696041711f07aa26ff483576b0cc9304ed5faff88478c"
+    },
+    {
+      "path": "local-superset/importer/Dockerfile",
+      "bytes": 188,
+      "sha256": "fa8b9d7237795557890ba57a9a852175d15bac139f81a872c68d05b6537d59a0"
+    },
+    {
+      "path": "local-superset/importer/import_snapshot.py",
+      "bytes": 17071,
+      "sha256": "964c179f544c22bfde31a03ab8ff203e1d0735826c5b7d799300e968fb859418"
+    },
+    {
+      "path": "local-superset/importer/test_importer.py",
+      "bytes": 12483,
+      "sha256": "1b6da2cf4c94410b744c87ef7d0fef810dddf50d34a1469de6bcbc4be5961a32"
+    },
+    {
+      "path": "local-superset/scripts/create-approved-operators.sh",
+      "bytes": 2746,
+      "sha256": "297a3a78465becf88b6566f21fc5d132cf58e50c55597a3664f2b51bc9693132"
+    },
+    {
+      "path": "local-superset/scripts/import-snapshot.sh",
+      "bytes": 635,
+      "sha256": "9fe5d09bcb5894defd3a438edd75aa343bc2d755659b5699256016d2a89e6194"
+    },
+    {
+      "path": "local-superset/scripts/setup.sh",
+      "bytes": 833,
+      "sha256": "eb2ae01d2e3ce7f9d308834e2bc8f996ad1e5d9dee8c5c205eaf51b2ab50a9f0"
+    },
+    {
+      "path": "local-superset/superset/Dockerfile",
+      "bytes": 106,
+      "sha256": "173c508d34c4e3a534351d156bab79b282cbad8d725afebea51c0f5538b1391f"
+    },
+    {
+      "path": "local-superset/superset/create_approved_operator.py",
+      "bytes": 3044,
+      "sha256": "bd3108045ca9fde7c4b84dcc12549762d35be30c65242fcbcad7b0a8b505999a"
+    },
+    {
+      "path": "local-superset/superset/provision_dashboard.py",
+      "bytes": 14631,
+      "sha256": "5519ae2bcfbd18c5970f0bfae67f25494858795ed7cde5fd324f894d4daad307"
+    },
+    {
+      "path": "local-superset/superset/superset_config.py",
+      "bytes": 495,
+      "sha256": "7b8598688c9461bd160059e91cd391e045d2ae8811022e9c1fdb6230511d5af7"
+    },
+    {
+      "path": "local-superset/superset/wait_for_databases.py",
+      "bytes": 1161,
+      "sha256": "f7f75c77ad074b2b60385517f1e88112ef018bfccf2e27823446c9021f3da9df"
+    },
+    {
+      "path": "package.json",
+      "bytes": 649,
+      "sha256": "78d2d42bca4811b22fd0a5610bd1a2ef05597d9bfcf4797eb1ee321909928050"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 237312,
+      "sha256": "9dd22ac5331d1cb2b24a752220c247a6cea4c1a4e74a06e01847bb8203a57dcc"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 7321,
+      "sha256": "afa56b395d668ab89fd5e09c3c90aff49fb5038fd896a1549bd881bff90ab167"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 245,
+      "sha256": "accd7c4b1db81b903cab8169ff2594ad8a6b61b88dc4fe2bf144ee7acb36e232"
+    },
+    {
+      "path": "scripts/goodwill-fixture-controls.py",
+      "bytes": 2895,
+      "sha256": "84d70e12b6ac6e46b73d790f8427b304f1700dc54a485f348fa2987c9afe599a"
+    },
+    {
+      "path": "scripts/goodwill-foundation-smoke.py",
+      "bytes": 5339,
+      "sha256": "07c3ab7f0caf0dd3c712678556d08b390b92d8910f4c9845397e660689ba4be9"
+    },
+    {
+      "path": "scripts/goodwill-story-coverage.py",
+      "bytes": 3946,
+      "sha256": "cd5655683752f1f1320d7f04bf0d43f05a233bf288e82829ff7b1e23a43a0695"
+    },
+    {
+      "path": "scripts/goodwill-verify-assistant-usage.mjs",
+      "bytes": 870,
+      "sha256": "137151d910b750b43dcbd6201fd5c89c93e55eb64086feaa953cb62171bb8fe8"
+    },
+    {
+      "path": "scripts/goodwill-verify-assistant-usage.ts",
+      "bytes": 2634,
+      "sha256": "d5d9b9c57a430927fa4a4516e4b15155753e41672ad3719188f5a1c117981eb0"
+    },
+    {
+      "path": "scripts/goodwill-verify-clean-build.sh",
+      "bytes": 1317,
+      "sha256": "137c4ff01b8fbf3fc99b86e46b26c455ab140917d6e0fdbe3e02ec94e3a7dc3a"
+    },
+    {
+      "path": "scripts/goodwill-verify-cloud.mjs",
+      "bytes": 6223,
+      "sha256": "84a2156d052d81e8be24a70856964ccb45fa9e8bf3ab07521a29216ebf3a7a44"
+    },
+    {
+      "path": "scripts/goodwill-verify-dependencies.mjs",
+      "bytes": 1931,
+      "sha256": "9b063b2f42a96a8a64b892cc00c3ad65ba66ef0fe0242e3c27480d8039ca31b0"
+    },
+    {
+      "path": "scripts/goodwill-verify-full-runtime.mjs",
+      "bytes": 1248,
+      "sha256": "b4f463fdf49be7460911a5f888c4a69873557074d191dcf1a980c4c5ef256ac1"
+    },
+    {
+      "path": "scripts/goodwill-verify-full-runtime.ts",
+      "bytes": 3326,
+      "sha256": "cd5c614d0f608a68606781d770d7e5ee6be2d25f95ea51a14fa9744c23e80585"
+    },
+    {
+      "path": "scripts/goodwill-verify-full-system.mjs",
+      "bytes": 2181,
+      "sha256": "670179cbc39ed2ce7cc2539fa7d1a7ddfc9acde2b583c99ba9481857ec53523b"
+    },
+    {
+      "path": "scripts/goodwill-verify-independent-access.mjs",
+      "bytes": 2475,
+      "sha256": "d1eedb184a37ded161e689ac9d5b113563af51a25a43ecf7eef4efda98768ccb"
+    },
+    {
+      "path": "scripts/goodwill-verify-independent-service.mjs",
+      "bytes": 1226,
+      "sha256": "0928f949ab6eda5963ca57dd90cb373ec344501c5195650908aff3ae876c9b20"
+    },
+    {
+      "path": "scripts/goodwill-verify-independent-wrong-period.mjs",
+      "bytes": 1223,
+      "sha256": "ba9c28e46590e9d5d18c5e94d88b009ac7df0d98274954ee594d266c892f29d1"
+    },
+    {
+      "path": "scripts/local-db-setup.mjs",
+      "bytes": 411,
+      "sha256": "6a8fc5b8fa442ca62f995df06222ec6f0dc88be4dc5805ed89d447e5e3290dbd"
+    },
+    {
+      "path": "scripts/local-preview.mjs",
+      "bytes": 2565,
+      "sha256": "8385ef17ae7ab292ca734f94307ab89abdf03a685ee1dd40f944af0448fd3172"
+    },
+    {
+      "path": "scripts/package.json",
+      "bytes": 281,
+      "sha256": "e321044da26540ad84f56fcbe985013f369c3b18ba06c233f1db99f488df0f8b"
+    },
+    {
+      "path": "scripts/post-merge.sh",
+      "bytes": 72,
+      "sha256": "b9e43e43dcbacd4bd26b84d68dd616270a6aacbd51ab25a2f6b1b81484eadc37"
+    },
+    {
+      "path": "scripts/prepare-github-handoff.py",
+      "bytes": 8956,
+      "sha256": "223da8e102c21120858acae87b469f72e13d02701266d7187b0a1ed5ff784119"
+    },
+    {
+      "path": "scripts/src/hello.ts",
+      "bytes": 46,
+      "sha256": "9a865c3de9900891e697e1ee8632dd565ce69bd7cb6b610e48b26bc0ee9e81e9"
+    },
+    {
+      "path": "scripts/tsconfig.json",
+      "bytes": 157,
+      "sha256": "636dea76ed898c62e56d6657ed97bb3edc85feb0ea8256b5198849d5c6cf462a"
+    },
+    {
+      "path": "tsconfig.base.json",
+      "bytes": 692,
+      "sha256": "2dfaa6f6168f618e0e6deff048c17e4f5f73d59325bd935d471905ae6773585c"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 236,
+      "sha256": "8883c5dbf9e073ef0c7e91769b3e4abccca022df69b62fa7518d73e1512b37ef"
+    },
+    {
+      "path": "uv.lock",
+      "bytes": 17797,
+      "sha256": "e79d465460c73314ceb97f9225f0436420b343ebed19e00d9d8c674dc4eb90e5"
+    }
+  ]
+}

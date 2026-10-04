@@ -6,7 +6,7 @@ import { MAX_BYTES } from "./verify";
 
 // Structural Playwright boundary keeps shared packages/lockfile lead-owned.
 // Inject chromium from the lead-installed Playwright package, never a client executable path.
-interface Locator {
+export interface Locator {
   count(): Promise<number>;
   waitFor(options: { state: "attached"; timeout: number }): Promise<void>;
   click(): Promise<void>;
@@ -20,14 +20,16 @@ interface Download {
   saveAs(path: string): Promise<void>;
   failure(): Promise<string | null>;
 }
-interface Page {
+export interface Page {
   locator(selector: string): Locator;
   goto(url: string, options: { waitUntil: "domcontentloaded" }): Promise<unknown>;
   waitForEvent(event: "download", options: { timeout: number }): Promise<Download>;
   setDefaultTimeout(ms: number): void;
+  /** Optional experimental capability: fixed, code-owned DOM observation only. */
+  evaluate?<T>(fn: () => T): Promise<T>;
 }
 interface Context {
-  route(pattern: string, handler: (route: { request(): { url(): string }; continue(): Promise<void>; abort(): Promise<void> }) => Promise<void>): Promise<void>;
+  route(pattern: string, handler: (route: { request(): { url(): string; method(): string }; continue(): Promise<void>; abort(): Promise<void> }) => Promise<void>): Promise<void>;
   newPage(): Promise<Page>;
   close(): Promise<void>;
 }
@@ -38,11 +40,19 @@ interface Browser {
 export interface BrowserLauncher {
   launch(options: { headless: true }): Promise<Browser>;
 }
+export interface BrowserControls {
+  prepare(page: Page, request: Request, signal: AbortSignal, step: Step, deadline: number): Promise<void>;
+  download(page: Page, request: Request, signal: AbortSignal, step: Step, deadline: number): Promise<void>;
+}
 export class BrowserReplay implements Replay {
   private url: URL;
   constructor(private options: {
     launcher: BrowserLauncher; replicaUrl: string; allowedOrigin: string;
     waitMs?: number; testFault?: "wrong_dates" | "failed_download";
+    /** Explicit injected experiment/reviewed recipe; absent means model-free baseline. */
+    controls?: BrowserControls;
+    /** Experiment's fixed HTTP path/method policy; independent of provider endpoint policy. */
+    allowRequest?: (url: URL, method: string) => boolean;
   }) {
     const url = new URL(options.replicaUrl);
     if (!["http:", "https:"].includes(url.protocol) || url.origin !== options.allowedOrigin ||
@@ -64,7 +74,8 @@ export class BrowserReplay implements Replay {
       await context.route("**/*", async route => {
         // Includes subresources, XHR and navigations. No remote sessions or arbitrary portals.
         const url = new URL(route.request().url());
-        if (url.origin === this.url.origin && ["http:", "https:"].includes(url.protocol)) await route.continue();
+        if (url.origin === this.url.origin && ["http:", "https:"].includes(url.protocol) &&
+          (!this.options.allowRequest || this.options.allowRequest(url, route.request().method()))) await route.continue();
         else await route.abort();
       });
       const page = await context.newPage();
@@ -94,6 +105,9 @@ export class BrowserReplay implements Replay {
         await operation(l);
         await step(id);
       };
+      if (this.options.controls) {
+        await this.options.controls.prepare(page, request, signal, step, deadline);
+      } else {
       await act("replica-reports", l => l.click());
       await act("replica-paid-orders", l => l.click());
       await act("replica-start", l => l.fill(request.period.startDate));
@@ -103,6 +117,7 @@ export class BrowserReplay implements Replay {
       await act("replica-payment", l => l.selectOption("paid"));
       await act("replica-generate", l => l.click());
       await act("replica-confirm", l => l.click());
+      }
       while (!await locator("replica-ready").count()) {
         aborted(signal);
         await portalError();
@@ -120,7 +135,8 @@ export class BrowserReplay implements Replay {
       const downloadPromise = page.waitForEvent("download", { timeout: Math.max(1, deadline - Date.now()) });
       // Attach rejection handler immediately, even if clicking itself fails.
       downloadPromise.catch(() => {});
-      await locator("replica-download").click();
+      if (this.options.controls) await this.options.controls.download(page, request, signal, step, deadline);
+      else await locator("replica-download").click();
       let download: Download;
       try { download = await downloadPromise; }
       catch { throw new AcquisitionError("DOWNLOAD_FAILED", "Browser did not complete a report download.", true, "Retry once or download and upload the CSV manually."); }

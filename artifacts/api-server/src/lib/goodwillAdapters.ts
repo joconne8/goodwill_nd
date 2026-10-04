@@ -57,6 +57,9 @@ export function goodwillBrowser(executablePath: string): BrowserLauncher {
                 goto: async (url, options) => { await page.goto(url, options); },
                 waitForEvent: (event, options) => page.waitForEvent(event, options),
                 setDefaultTimeout: ms => page.setDefaultTimeout(ms),
+                // Server-only fixed-function observation capability. No string
+                // scripts, caller arguments or wire-selected browser code.
+                evaluate: async <T>(fn: () => T): Promise<T> => page.evaluate(fn),
               };
             },
           };

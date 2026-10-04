@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
+import { ExperimentReview, type ExperimentalAcquisitionAdapter } from './ExperimentReview';
 import {
   useListGoodwillRuns, useStartGoodwillRun, useCancelGoodwillRun, downloadGoodwillRun,
   useRequestGoodwillUpload, useCreateGoodwillBatch, useGetGoodwillCatalog, useGetGoodwillSources,
@@ -25,7 +26,7 @@ const Note = ({ kind, children, id }: { kind: 'ok' | 'err'; children: React.Reac
   <p role="status" data-testid={id} className={`border-l-4 px-3 py-2 text-sm ${kind === 'ok' ? 'border-primary bg-primary/10' : 'border-destructive bg-destructive/10'}`}>{children}</p>
 );
 
-export function AcquisitionConsole() {
+export function AcquisitionConsole({ experiment }: { experiment?: ExperimentalAcquisitionAdapter } = {}) {
   const qc = useQueryClient();
   const [startDate, setStart] = useState('2026-08-01');
   const [endDate, setEnd] = useState('2026-08-31');
@@ -78,7 +79,7 @@ export function AcquisitionConsole() {
     setIntakeNote(null);
     createBatch.mutate(
       { data: { sourceId: r.request.sourceId, reportType: r.request.reportType, period: r.request.period, inputKind: 'run', inputId: r.id } },
-      { onSuccess: (b) => { setBatches((x) => [b, ...x]); setIntakeNote({ kind: 'ok', text: `Batch ${b.id} created from run ${r.id}: state ${b.state}.` }); qc.invalidateQueries({ queryKey: getListGoodwillBatchesQueryKey() }); },
+      { onSuccess: (b) => { setBatches((x) => [b, ...x]); setIntakeNote({ kind: 'ok', text: `Batch ${b.id} created from run ${r.id}: state ${b.state}.` }); qc.invalidateQueries({ queryKey: getListGoodwillBatchesQueryKey() }); qc.invalidateQueries({ queryKey: ['goodwill-reporting'] }); },
         onError: (e) => setIntakeNote({ kind: 'err', text: errMsg(e) }) },
     );
   };
@@ -113,7 +114,7 @@ export function AcquisitionConsole() {
       const b = await createBatch.mutateAsync({ data: { sourceId: ds.sourceId, reportType: ds.reportType, period: { startDate: mStart, endDate: mEnd }, inputKind: 'upload', inputId: ticket.uploadId } });
       setBatches((x) => [b, ...x]);
       setIntakeNote({ kind: 'ok', text: `Batch ${b.id} created from upload ${ticket.uploadId}: state ${b.state}.` });
-      qc.invalidateQueries({ queryKey: getListGoodwillBatchesQueryKey() });
+      qc.invalidateQueries({ queryKey: getListGoodwillBatchesQueryKey() }); qc.invalidateQueries({ queryKey: ['goodwill-reporting'] });
       setFile(null); if (fileRef.current) fileRef.current.value = '';
     } catch (e) { setIntakeNote({ kind: 'err', text: errMsg(e) }); }
     finally { setStep(null); }
@@ -151,12 +152,14 @@ export function AcquisitionConsole() {
               <select className={field} value={scenario} onChange={(e) => setScenario(e.target.value as AcquisitionRequestScenario)} data-testid="select-run-scenario">
                 {Object.values(AcquisitionRequestScenario).map((s) => <option key={s} value={s}>{s}</option>)}
               </select></label>
-            <button className={`${btn} bg-primary text-primary-foreground`} disabled={!!dateErr || start.isPending} onClick={() => begin()} data-testid="button-start-run">{start.isPending ? 'Starting...' : 'Start run'}</button>
+            <button className={`${btn} bg-primary text-primary-foreground`} disabled={!!dateErr || start.isPending} onClick={() => begin()} data-testid="button-start-run">{start.isPending ? 'Starting...' : 'Start deterministic run'}</button>
           </div>
           <p className="text-xs text-muted-foreground">Source upright, report paid_order_items. Retry is explicit and only offered on failed or cancelled runs.</p>
           {dateErr && <Note kind="err" id="status-run-date">{dateErr}</Note>}
           {note && <Note kind={note.kind} id="status-run">{note.text}</Note>}
         </section>
+
+        <ExperimentReview adapter={experiment} period={{ startDate, endDate }} verifiedRunIds={items.filter(r => r.state === 'verified').map(r => r.id)} onRun={refresh} />
 
         <section aria-labelledby="a2" className="space-y-3">
           <h2 id="a2" className="font-serif text-3xl">Run history</h2>

@@ -52,5 +52,22 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+local-superset/.env
+local-superset/data/
+local-superset/snapshots/
 playwright/.auth/
 test-results/
+
+
+# Clean handoff: never re-add private workspace or runtime material.
+/.agents/
+/.local/
+/attached_assets/
+/.replit
+/replit.md
+/ProjectManagement/
+/docs/goodwill/evidence/target/drive-*.md
+/docs/goodwill/evidence/github/deck.md
+*.sql
+*.dump
+*.log

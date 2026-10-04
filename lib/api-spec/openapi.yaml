@@ -11,6 +11,163 @@ tags:
   - name: health
     description: Health operations
 paths:
+  /goodwill/v2/analytics/framework:
+    get:
+      operationId: getGoodwillAnalyticsFramework
+      summary: Public sponsor KPI definitions only; contains no protected published values
+      responses:
+        "200":
+          description: Original framework and scorecard definitions, all values null until authorized evaluation
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/AnalyticsKpi" }
+  /goodwill/v2/analytics/query:
+    post:
+      operationId: queryGoodwillAnalytics
+      summary: Original sponsor KPI framework evaluated at one immutable synthetic publication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/AnalyticsScope" }
+      responses:
+        "200":
+          description: Complete KPI framework with measured values or explicit missing-input reasons; never sums overlapping sources
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AnalyticsDashboard" }
+        "400": { $ref: "#/components/responses/InvalidInput" }
+        "401":
+          description: Existing explicitly approved operator required
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/analytics/superset-snapshot:
+    post:
+      operationId: exportGoodwillSupersetSnapshot
+      summary: Export bounded source-local aggregates for the optional local Superset pilot
+      description: Requires the same verified approved operator as Analytics. Returns aggregate metrics and metadata only; no accepted row evidence, raw intake, rejected rows, buyer identities, employee identities or credentials.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/GoodwillSupersetSnapshotRequest" }
+      responses:
+        "200":
+          description: One source, period and optional store scope pinned to exactly one immutable publication
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/GoodwillSupersetSnapshot" }
+        "400": { $ref: "#/components/responses/InvalidInput" }
+        "401": { description: Existing explicitly approved operator required }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/experiments:
+    get:
+      operationId: getGoodwillExperiments
+      summary: Authorized experiment review, recipe provenance and server-owned execution access
+      description: Metadata only. Discovery permission is not inferred from a configured provider or a prior smoke call. No credentials, source URLs or client grants are exposed. Responses are Cache-Control no-store.
+      responses:
+        "200":
+          description: Recipe summaries, explicit approved versions, repair count and current access gates
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/GoodwillExperimentReview" }
+        "400": { $ref: "#/components/responses/ExperimentInvalidInput" }
+        "401": { $ref: "#/components/responses/ExperimentUnauthorized" }
+        "404": { $ref: "#/components/responses/ExperimentNotFound" }
+        "409": { $ref: "#/components/responses/ExperimentConflict" }
+        "503": { $ref: "#/components/responses/ExperimentUnavailable" }
+  /goodwill/v2/experiments/runs:
+    post:
+      operationId: startGoodwillExperimentRun
+      summary: Queue a bounded Upright synthetic discovery or explicitly approved model-free replay
+      description: Discovery requires separate server-owned execution/spending authorization and a fresh bounded reservation. Replay requires an existing approvalId and makes zero model calls. The server supplies all source URLs and grants; no batch is published by this operation.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/GoodwillExperimentRunInput" }
+      responses:
+        "202":
+          description: Experimental run queued in the existing acquisition worker; inspect /goodwill/v2/runs/{runId} for state and verified artifacts
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/GoodwillExperimentIdentity" }
+        "400": { $ref: "#/components/responses/ExperimentInvalidInput" }
+        "401": { $ref: "#/components/responses/ExperimentUnauthorized" }
+        "403": { $ref: "#/components/responses/ExperimentForbidden" }
+        "404": { $ref: "#/components/responses/ExperimentNotFound" }
+        "409": { $ref: "#/components/responses/ExperimentConflict" }
+        "503": { $ref: "#/components/responses/ExperimentUnavailable" }
+  /goodwill/v2/experiments/approvals:
+    post:
+      operationId: approveGoodwillExperimentRecipe
+      summary: Process-owner approval of one exact recipe digest bound to an existing verified archived run
+      description: Explicit confirmation and server-authorized process-owner review are mandatory. expectedDigest is canonical; digest is an existing compatibility alias. Exactly one digest field is accepted. Approval creates no acquisition run and publishes no financial data.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/GoodwillExperimentApprovalInput" }
+      responses:
+        "201":
+          description: Immutable approval identity recorded for this exact recipe version and verified run
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/GoodwillExperimentIdentity" }
+        "400": { $ref: "#/components/responses/ExperimentInvalidInput" }
+        "401": { $ref: "#/components/responses/ExperimentUnauthorized" }
+        "403": { $ref: "#/components/responses/ExperimentForbidden" }
+        "404": { $ref: "#/components/responses/ExperimentNotFound" }
+        "409": { $ref: "#/components/responses/ExperimentConflict" }
+        "503": { $ref: "#/components/responses/ExperimentUnavailable" }
+  /goodwill/v2/assistant/tools:
+    get:
+      operationId: getGoodwillAssistantTools
+      summary: Discover the approved read-only reporting tools and their input contracts
+      responses:
+        "200":
+          description: Machine-readable tool descriptors for existing authorized endpoints; no SQL or write tools
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/GoodwillReadOnlyToolDescriptor" }
+        "401":
+          description: Existing approved operator authorization required
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/assistant/query:
+    post:
+      operationId: askGoodwillAssistant
+      summary: Model-free read-only routing to source-local reporting and publication-pinned evidence
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/GoodwillAssistantInput" }
+      responses:
+        "200":
+          description: Deterministic grounded answer, explicit refusal or unavailable data
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/GoodwillAssistantResponse" }
+        "400": { $ref: "#/components/responses/InvalidInput" }
+        "401":
+          description: Existing approved operator authorization required
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/system/overview:
+    get:
+      operationId: getGoodwillSystemOverview
+      summary: Actual PostgreSQL metadata table counts and nine business-source coverage
+      responses:
+        "200":
+          description: Verified read-only database counts and repository source coverage; supporting datasets are not additional business sources
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/GoodwillSystemOverview" }
+        "401":
+          description: Existing approved operator authorization required
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
   /goodwill/access:
     get:
       operationId: getGoodwillOperatorAccess
@@ -340,6 +497,36 @@ components:
     Offset: { name: offset, in: query, schema: { type: integer, minimum: 0, default: 0 } }
     Limit: { name: limit, in: query, schema: { type: integer, minimum: 1, maximum: 500, default: 100 } }
   responses:
+    ExperimentInvalidInput:
+      description: Invalid frozen request fields, period, recipe identity/digest, explicit confirmation, policy gates or verified-run binding; nothing is published
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/GoodwillExperimentError" }
+    ExperimentUnauthorized:
+      description: Approved operator sign-in required; persona labels do not authorize access
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/GoodwillExperimentError" }
+    ExperimentForbidden:
+      description: Separate execution/spending authorization or explicit process-owner review authority is missing
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/GoodwillExperimentError" }
+    ExperimentNotFound:
+      description: Recipe/approval metadata or the required verified acquisition run was not found
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/GoodwillExperimentError" }
+    ExperimentConflict:
+      description: Recipe provenance or local synthetic source is unavailable, or the acquisition worker is busy
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/GoodwillExperimentError" }
+    ExperimentUnavailable:
+      description: Experiment metadata, initialization or authorization service is unavailable; no data has been published
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/GoodwillExperimentError" }
     NotFound:
       description: Unknown resource
       content:
@@ -369,6 +556,249 @@ components:
           schema:
             $ref: "#/components/schemas/ReportingError"
   schemas:
+    AnalyticsScope:
+      type: object
+      additionalProperties: false
+      required: [sourceId, period]
+      properties:
+        sourceId: { type: string, enum: [cash_monkey, upright, jewelry, shipping, fedex, shopgoodwill, goodwill_books, ebay, amazon] }
+        period: { $ref: "#/components/schemas/ReportPeriod" }
+        storeId: { type: string }
+        snapshotAt: { type: string, format: date-time }
+    GoodwillSupersetSnapshotRequest:
+      type: object
+      additionalProperties: false
+      required: [sourceId, period]
+      properties:
+        sourceId: { type: string, enum: [cash_monkey, upright, jewelry, shipping, fedex, shopgoodwill, goodwill_books, ebay, amazon] }
+        period: { $ref: "#/components/schemas/ReportPeriod" }
+        storeId: { type: string, pattern: '^(GW-[0-9]{3}|__unknown__)$', description: Omit for all stores; __unknown__ selects unresolved attribution }
+    GoodwillSupersetSnapshotPoint:
+      type: object
+      additionalProperties: false
+      required: [key, value, contributingRows, missingBuyerRows]
+      properties:
+        key: { type: string, maxLength: 80 }
+        value: { type: ["integer", "null"], minimum: -9007199254740991, maximum: 9007199254740991 }
+        contributingRows: { type: integer, minimum: 0, maximum: 20000 }
+        missingBuyerRows: { type: integer, minimum: 0, maximum: 20000 }
+    GoodwillSupersetMetric:
+      type: object
+      additionalProperties: false
+      required: [metricId, label, unit, definitionVersion, formula, grain, timeBasis, availabilityReason, status, value, points, coverage, warnings]
+      properties:
+        metricId: { type: string, enum: [net_item_sales, source_net, shipping_expense, daily_customers] }
+        label: { type: string, maxLength: 100 }
+        unit: { type: string, enum: [usd_cent, count] }
+        definitionVersion: { type: string, maxLength: 80 }
+        formula: { type: string, maxLength: 500 }
+        grain: { type: string, maxLength: 200 }
+        timeBasis: { type: string, maxLength: 200 }
+        availabilityReason: { type: ["string", "null"], maxLength: 500 }
+        status: { type: string, enum: [available, partial, unavailable] }
+        value: { type: ["integer", "null"], minimum: -9007199254740991, maximum: 9007199254740991 }
+        points: { type: array, maxItems: 366, items: { $ref: "#/components/schemas/GoodwillSupersetSnapshotPoint" } }
+        coverage: { type: array, maxItems: 2, items: { $ref: "#/components/schemas/SourceCoverage" } }
+        warnings: { type: array, maxItems: 30, items: { type: string, maxLength: 300 } }
+    GoodwillSupersetSnapshot:
+      type: object
+      additionalProperties: false
+      required: [schemaVersion, synthetic, snapshotId, checksum, scopeId, exportedAt, snapshotAgeSeconds, sourceId, period, storeId, publicationId, publishedAt, timezone, currency, metrics, warnings]
+      properties:
+        schemaVersion: { type: string, enum: ["goodwill-superset/1.0.0"] }
+        synthetic: { type: boolean, enum: [true] }
+        snapshotId: { type: string, pattern: '^[a-f0-9]{64}$' }
+        checksum: { type: string, pattern: '^[a-f0-9]{64}$', description: Corruption check only; not proof of authenticity or completeness }
+        scopeId: { type: string, pattern: '^[a-f0-9]{64}$', description: Stable identity for the exact source/date/store query scope }
+        exportedAt: { type: string, format: date-time }
+        snapshotAgeSeconds: { type: integer, minimum: 0, maximum: 9007199254740991 }
+        sourceId: { type: string, enum: [cash_monkey, upright, jewelry, shipping, fedex, shopgoodwill, goodwill_books, ebay, amazon] }
+        period: { $ref: "#/components/schemas/ReportPeriod" }
+        storeId: { type: ["string", "null"], pattern: '^(GW-[0-9]{3}|__unknown__)$' }
+        publicationId: { type: string, minLength: 1, maxLength: 120 }
+        publishedAt: { type: string, format: date-time }
+        timezone: { type: string, enum: [America/New_York] }
+        currency: { type: string, enum: [USD] }
+        metrics: { type: array, minItems: 1, maxItems: 4, items: { $ref: "#/components/schemas/GoodwillSupersetMetric" } }
+        warnings: { type: array, maxItems: 30, items: { type: string, maxLength: 300 } }
+    AnalyticsPoint:
+      type: object
+      required: [label, value]
+      properties:
+        label: { type: string }
+        value: { type: ["number", "null"] }
+    AnalyticsKpi:
+      type: object
+      required: [id, label, area, unit, value, status, reason, formula, requiredInputs, points, coo, plan2027]
+      properties:
+        id: { type: string }
+        label: { type: string }
+        area: { type: string, enum: [financial, production, sales, category, customer, inventory] }
+        unit: { type: string, enum: [usd_cent, count, percent, days, rating] }
+        value: { type: ["number", "null"] }
+        status: { type: string, enum: [available, partial, unavailable] }
+        reason: { type: string }
+        formula: { type: string }
+        requiredInputs: { type: array, items: { type: string } }
+        points: { type: array, items: { $ref: "#/components/schemas/AnalyticsPoint" } }
+        coo: { type: boolean }
+        plan2027: { type: boolean }
+        evidenceQuery: { $ref: "#/components/schemas/MetricQuery" }
+    AnalyticsChannel:
+      type: object
+      required: [sourceId, label, revenue, revenueLabel, customers, customerReason, reason, points]
+      properties:
+        sourceId: { type: string }
+        label: { type: string }
+        revenue: { type: ["number", "null"] }
+        revenueLabel: { type: string }
+        customers: { type: ["integer", "null"] }
+        customerReason: { type: string }
+        reason: { type: string }
+        points: { type: array, items: { $ref: "#/components/schemas/AnalyticsPoint" } }
+    AnalyticsDashboard:
+      type: object
+      required: [query, publicationId, publishedAt, synthetic, timezone, kpis, channels, warnings, batchIds]
+      properties:
+        query: { $ref: "#/components/schemas/AnalyticsScope" }
+        publicationId: { type: ["string", "null"] }
+        publishedAt: { type: ["string", "null"], format: date-time }
+        synthetic: { type: boolean, enum: [true] }
+        timezone: { type: string, enum: [America/New_York] }
+        kpis: { type: array, items: { $ref: "#/components/schemas/AnalyticsKpi" } }
+        channels: { type: array, items: { $ref: "#/components/schemas/AnalyticsChannel" } }
+        warnings: { type: array, items: { type: string } }
+        batchIds: { type: array, items: { type: string } }
+    GoodwillExperimentError:
+      type: object
+      additionalProperties: false
+      required: [code, error, message, retainedPrevious]
+      properties:
+        code: { type: string, description: Explicit acquisition/review/auth failure code; no silent retry or publication }
+        error: { type: string, description: Same safe failure text as message; retained for existing clients }
+        message: { type: string }
+        retainedPrevious: { type: boolean, enum: [true] }
+    GoodwillExperimentIdentity:
+      type: object
+      additionalProperties: false
+      required: [id]
+      properties:
+        id: { type: string, description: Opaque server-issued run identity (202) or immutable approval identity (201) }
+    GoodwillExperimentPeriod:
+      type: object
+      additionalProperties: false
+      required: [startDate, endDate]
+      description: Valid chronological inclusive dates within August 2026 only. The server additionally requires startDate <= endDate.
+      properties:
+        startDate: { type: string, pattern: '^2026-08-(0[1-9]|[12][0-9]|3[01])$' }
+        endDate: { type: string, pattern: '^2026-08-(0[1-9]|[12][0-9]|3[01])$' }
+    GoodwillExperimentDiscoveryInput:
+      type: object
+      additionalProperties: false
+      required: [mode, sourceId, reportType, period]
+      properties:
+        mode: { type: string, enum: [supervised-discovery] }
+        sourceId: { type: string, enum: [upright] }
+        reportType: { type: string, enum: [paid_order_items] }
+        period: { $ref: "#/components/schemas/GoodwillExperimentPeriod" }
+    GoodwillExperimentReplayInput:
+      type: object
+      additionalProperties: false
+      required: [mode, sourceId, reportType, period, approvalId]
+      properties:
+        mode: { type: string, enum: [approved-replay] }
+        sourceId: { type: string, enum: [upright] }
+        reportType: { type: string, enum: [paid_order_items] }
+        period: { $ref: "#/components/schemas/GoodwillExperimentPeriod" }
+        approvalId: { type: string, description: Existing explicit immutable recipe approval identity; not a client authorization grant }
+    GoodwillExperimentRunInput:
+      oneOf:
+        - { $ref: "#/components/schemas/GoodwillExperimentDiscoveryInput" }
+        - { $ref: "#/components/schemas/GoodwillExperimentReplayInput" }
+    GoodwillExperimentDigestApprovalInput:
+      type: object
+      additionalProperties: false
+      required: [recipeId, expectedDigest, verifiedRunId, confirmation]
+      properties:
+        recipeId: { type: string, description: Opaque persisted recipe identity; exact version checked server-side }
+        expectedDigest: { type: string, pattern: '^[a-f0-9]{64}$', description: SHA-256 digest of the exact persisted recipe reviewed by the operator }
+        verifiedRunId: { type: string, description: Existing verified run with matching period, archive checksum and byte identity }
+        confirmation: { type: boolean, enum: [true] }
+    GoodwillExperimentAliasApprovalInput:
+      type: object
+      additionalProperties: false
+      required: [recipeId, digest, verifiedRunId, confirmation]
+      properties:
+        recipeId: { type: string }
+        digest: { type: string, pattern: '^[a-f0-9]{64}$', description: Existing compatibility alias for expectedDigest; cannot be supplied together with expectedDigest }
+        verifiedRunId: { type: string }
+        confirmation: { type: boolean, enum: [true] }
+    GoodwillExperimentApprovalInput:
+      oneOf:
+        - { $ref: "#/components/schemas/GoodwillExperimentDigestApprovalInput" }
+        - { $ref: "#/components/schemas/GoodwillExperimentAliasApprovalInput" }
+    GoodwillExperimentRecipeStep:
+      type: object
+      additionalProperties: false
+      required: [goal, operation, name]
+      properties:
+        goal: { type: string, enum: [reports, paid-orders, start, end, timezone, channel, payment, generate, confirm, download] }
+        operation: { type: string, enum: [click, fill, select] }
+        name: { type: string, description: Observed approved semantic control name, never a URL, selector or executable instruction }
+    GoodwillExperimentRecipeSummary:
+      type: object
+      additionalProperties: false
+      required: [id, digest, version, kind, label, checksum, byteSize, period, steps]
+      properties:
+        id: { type: string, description: Opaque persisted recipe identity }
+        digest: { type: string, pattern: '^[a-f0-9]{64}$' }
+        version: { type: string, description: Exact recipe version; never automatically changed on drift }
+        kind: { type: string, enum: [jev, scripted], description: Persisted successful download provenance; scripted is not measured Jev }
+        label: { type: string, enum: ["SCRIPTED — not measured Jev", "Jev discovery"] }
+        checksum: { type: string, pattern: '^[a-f0-9]{64}$' }
+        byteSize: { type: integer, minimum: 1, maximum: 5242880 }
+        period: { $ref: "#/components/schemas/GoodwillExperimentPeriod" }
+        steps: { type: array, minItems: 10, maxItems: 10, items: { $ref: "#/components/schemas/GoodwillExperimentRecipeStep" } }
+    GoodwillExperimentApprovalSummary:
+      type: object
+      additionalProperties: false
+      required: [id, version, recipeId, digest, verifiedRunId]
+      properties:
+        id: { type: string, description: Immutable approval identity used for approved replay }
+        version: { type: string }
+        recipeId: { type: string }
+        digest: { type: string, pattern: '^[a-f0-9]{64}$' }
+        verifiedRunId: { type: string }
+    GoodwillExperimentAccess:
+      type: object
+      additionalProperties: false
+      required: [discoveryAuthorized, mode, explanation, provider, providerConfigured, executionAuthorized, spendingAuthorized, evaluatedThresholdsConfigured, syntheticPayloadApproved, providerAccessApproved, sourceConfigured, sourceMode, approvalAuthorized, approvedRecipeCount, replayAvailable, policyVersion]
+      properties:
+        discoveryAuthorized: { type: boolean }
+        mode: { type: string, enum: [review-and-approved-replay, review-only] }
+        explanation: { type: string }
+        provider: { type: string, enum: [JEV_DISABLED, JEV, SCRIPTED] }
+        providerConfigured: { type: boolean }
+        executionAuthorized: { type: boolean }
+        spendingAuthorized: { type: boolean, description: Separate current server-owned spending approval, not implied by scripted tests or provider configuration }
+        evaluatedThresholdsConfigured: { type: boolean }
+        syntheticPayloadApproved: { type: boolean }
+        providerAccessApproved: { type: boolean }
+        sourceConfigured: { type: boolean }
+        sourceMode: { type: string, enum: [local-synthetic-replica, unconfigured] }
+        approvalAuthorized: { type: boolean, description: Existing operator has explicit server-owned process-owner review authority }
+        approvedRecipeCount: { type: integer, minimum: 0 }
+        replayAvailable: { type: boolean }
+        policyVersion: { type: string }
+    GoodwillExperimentReview:
+      type: object
+      additionalProperties: false
+      required: [recipes, approvals, repairCount, access]
+      properties:
+        recipes: { type: array, items: { $ref: "#/components/schemas/GoodwillExperimentRecipeSummary" } }
+        approvals: { type: array, items: { $ref: "#/components/schemas/GoodwillExperimentApprovalSummary" } }
+        repairCount: { type: integer, minimum: 0 }
+        access: { $ref: "#/components/schemas/GoodwillExperimentAccess" }
     GoodwillOperatorAccess:
       type: object
       additionalProperties: false
@@ -576,6 +1006,113 @@ components:
         storeId: { type: string, description: Omit for all stores; __unknown__ explicitly selects unresolved attribution }
         snapshotAt: { type: string, format: date-time }
         groupBy: { type: string, enum: [day, store, category, none] }
+    GoodwillAssistantInput:
+      type: object
+      additionalProperties: false
+      required: [question, context]
+      properties:
+        question: { type: string, minLength: 1, maxLength: 2000 }
+        context: { $ref: "#/components/schemas/MetricQuery" }
+        mode:
+          type: string
+          enum: [deterministic_tools, synthetic_openai]
+          default: deterministic_tools
+    GoodwillReadOnlyToolEndpoint:
+      type: object
+      additionalProperties: false
+      required: [method, path]
+      properties:
+        method: { type: string, enum: [GET, POST] }
+        path:
+          type: string
+          enum: [/api/goodwill/v2/metrics/query, /api/goodwill/v2/evidence/query, /api/goodwill/v2/catalog]
+    GoodwillReadOnlyToolDescriptor:
+      type: object
+      additionalProperties: false
+      required: [name, readOnly, description, inputSchema, endpoint]
+      properties:
+        name: { type: string, enum: [query_metric, read_evidence, read_catalog] }
+        readOnly: { type: boolean, enum: [true] }
+        description: { type: string }
+        inputSchema:
+          type: object
+          additionalProperties: {}
+          description: JSON Schema object or local reference into this OpenAPI contract's components/schemas
+        endpoint: { $ref: "#/components/schemas/GoodwillReadOnlyToolEndpoint" }
+    GoodwillAssistantTool:
+      type: object
+      additionalProperties: false
+      required: [name, status]
+      properties:
+        name: { type: string }
+        status: { type: string, enum: [completed, unavailable, failed] }
+    GoodwillAssistantResponse:
+      type: object
+      additionalProperties: false
+      required: [status, mode, answer, tools, suggestions]
+      properties:
+        status: { type: string, enum: [answered, refused, unavailable] }
+        mode: { type: string, enum: [deterministic_tools, synthetic_openai] }
+        answer: { type: string }
+        providerUsage: { $ref: "#/components/schemas/GoodwillAssistantProviderUsage" }
+        result: { $ref: "#/components/schemas/MetricResult" }
+        evidence: { $ref: "#/components/schemas/EvidencePage" }
+        tools: { type: array, items: { $ref: "#/components/schemas/GoodwillAssistantTool" } }
+        suggestions: { type: array, items: { type: string } }
+    GoodwillAssistantProviderUsage:
+      type: object
+      additionalProperties: false
+      required: [model, attemptedCalls, reservedCents, limitCents, inputTokens, outputTokens]
+      properties:
+        model: { type: string, enum: [gpt-5-mini] }
+        attemptedCalls: { type: integer, minimum: 1, maximum: 5 }
+        reservedCents: { type: integer, minimum: 100, maximum: 500 }
+        limitCents: { type: integer, enum: [500] }
+        inputTokens: { type: [integer, "null"], minimum: 0, maximum: 8192 }
+        outputTokens: { type: [integer, "null"], minimum: 0, maximum: 1024 }
+    GoodwillDatabaseTable:
+      type: object
+      additionalProperties: false
+      required: [name, rowCount]
+      properties:
+        name: { type: string }
+        rowCount: { type: integer, minimum: 0, maximum: 9007199254740991 }
+    GoodwillDatabaseOverview:
+      type: object
+      additionalProperties: false
+      required: [engine, verifiedAt, tables]
+      properties:
+        engine: { type: string, enum: [PostgreSQL] }
+        verifiedAt: { type: string, format: date-time }
+        tables: { type: array, items: { $ref: "#/components/schemas/GoodwillDatabaseTable" } }
+    GoodwillSourceOverview:
+      type: object
+      additionalProperties: false
+      required: [sourceId, label, datasetCount, publicationCount, batchCount, acceptedRows, status]
+      properties:
+        sourceId: { type: string, enum: [cash_monkey, upright, jewelry, shipping, fedex, shopgoodwill, goodwill_books, ebay, amazon] }
+        label: { type: string }
+        datasetCount: { type: integer, minimum: 0, maximum: 9007199254740991 }
+        publicationCount: { type: integer, minimum: 0, maximum: 9007199254740991 }
+        batchCount: { type: integer, minimum: 0, maximum: 9007199254740991 }
+        acceptedRows: { type: integer, minimum: 0, maximum: 9007199254740991, description: Canonical accepted records in the current immutable publication for this business source; supporting datasets excluded }
+        status: { type: string, enum: [complete, partial, stale, missing, failed] }
+    GoodwillStorageOverview:
+      type: object
+      additionalProperties: false
+      required: [kind, originalBytesInDatabase]
+      properties:
+        kind: { type: string, enum: [private_object_storage] }
+        originalBytesInDatabase: { type: boolean, enum: [false] }
+    GoodwillSystemOverview:
+      type: object
+      additionalProperties: false
+      required: [database, sources, storage, queryMode]
+      properties:
+        database: { $ref: "#/components/schemas/GoodwillDatabaseOverview" }
+        sources: { type: array, items: { $ref: "#/components/schemas/GoodwillSourceOverview" } }
+        storage: { $ref: "#/components/schemas/GoodwillStorageOverview" }
+        queryMode: { type: string, enum: [deterministic_tools] }
     MetricPoint:
       type: object
       required: [key, value, contributingRows, missingBuyerRows]
@@ -742,4 +1279,3 @@ components:
           type: string
       required:
         - status
-

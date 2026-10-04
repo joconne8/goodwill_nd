@@ -5,9 +5,11 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import Home from '@/pages/home';
 import NotFound from '@/pages/not-found';
 import { ReportingApp } from '@/features/reporting';
-import { ReplicaPortal } from '@/features/acquisition';
+import { AcquisitionConsole, ReplicaPortal } from '@/features/acquisition';
+import { useExperimentAdapter } from '@/features/reporting/systemApi';
 import { setBaseUrl } from '@workspace/api-client-react';
 import {
+  Redirect,
   Route,
   Switch,
   useLocation,
@@ -17,7 +19,6 @@ import {
 const queryClient = new QueryClient();
 setBaseUrl(import.meta.env.BASE_URL.replace(/\/$/, '') || null);
 const ClerkProviderWithRoutes = lazy(() => import('@/auth/ClerkRoutes').then(module => ({ default: module.ClerkProviderWithRoutes })));
-const HomeRedirect = lazy(() => import('@/auth/ClerkRoutes').then(module => ({ default: module.HomeRedirect })));
 const SignInPage = lazy(() => import('@/auth/ClerkRoutes').then(module => ({ default: module.SignInPage })));
 const SignUpPage = lazy(() => import('@/auth/ClerkRoutes').then(module => ({ default: module.SignUpPage })));
 const OperatorGate = lazy(() => import('@/auth/OperatorGate').then(module => ({ default: module.OperatorGate })));
@@ -29,16 +30,30 @@ function Router() {
     // survives a page crash.
     <RoutedErrorBoundary>
       <Switch>
-        <Route path="/" component={HomeRedirect} />
+        <Route path="/"><Redirect to="/reports" /></Route>
         <Route path="/sign-in/*?" component={SignInPage} />
         <Route path="/sign-up/*?" component={SignUpPage} />
         <Route path="/reports"><OperatorGate><ReportingApp legacyHref={`${import.meta.env.BASE_URL}foundation`} /></OperatorGate></Route>
+        <Route path="/acquisition"><OperatorGate><AcquisitionPage /></OperatorGate></Route>
         <Route path="/foundation"><OperatorGate><Home /></OperatorGate></Route>
         <Route path="/replica/upright"><ReplicaPortal /></Route>
         <Route component={NotFound} />
       </Switch>
     </RoutedErrorBoundary>
   );
+}
+
+function AcquisitionPage() {
+  const { adapter, loading, error } = useExperimentAdapter();
+  return <div className="min-h-[100dvh] bg-background">
+    <nav className="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-4 py-3 text-sm" aria-label="Acquisition">
+      <a className="underline" href={`${import.meta.env.BASE_URL}reports#overview`} data-testid="link-back-reports">Back to reporting</a>
+      <span className="text-muted-foreground" role="status" data-testid="status-experiment-adapter">
+        {loading ? 'Checking experiment access…' : error ? `Experiment review unavailable: ${error}` : adapter?.access.discoveryAuthorized ? 'Jev discovery authorized for this operator' : `Jev provider calls disabled: ${adapter?.access.explanation ?? 'spending or model authorization not granted'}`}
+      </span>
+    </nav>
+    <AcquisitionConsole experiment={adapter} />
+  </div>;
 }
 
 function RoutedErrorBoundary({ children }: { children: ReactNode }) {

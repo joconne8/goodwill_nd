@@ -3,21 +3,23 @@ import { useGetGoodwillCatalog, getGetGoodwillCatalogQueryKey, type MetricQuery,
 import { Coverage, MetricView } from './MetricView';
 import { EvidenceView } from './EvidenceView';
 import { OperationsView } from './OperationsView';
+import { AssistantPanel } from './AssistantPanel';
+import { DatabaseView, SourceOverview } from './SystemView';
 import { ReportingShell, type Page } from './ReportingShell';
 import { errorMessage, validatePeriod } from './model';
 import { DataTable, Notice, Panel, StatusTag } from './ui';
 
-const PAGES: Page[] = ['operations', 'reporting', 'listings', 'backlog', 'evidence', 'definitions'];
+const PAGES: Page[] = ['overview', 'database', 'operations', 'reporting', 'listings', 'backlog', 'evidence', 'definitions'];
 function hashPage(): Page {
   const value = window.location.hash.slice(1);
-  return PAGES.includes(value as Page) ? value as Page : 'reporting';
+  return PAGES.includes(value as Page) ? value as Page : 'overview';
 }
 
 /**
  * Lead-owned shell integration mounts this under its QueryClientProvider.
  * All data is from generated API clients; this module never imports fixtures.
  */
-export function ReportingApp({ legacyHref = import.meta.env.BASE_URL }: { legacyHref?: string }) {
+export function ReportingApp({ legacyHref = import.meta.env.BASE_URL, acquisitionHref = `${import.meta.env.BASE_URL}acquisition` }: { legacyHref?: string; acquisitionHref?: string }) {
   const [page, setPage] = useState<Page>(hashPage);
   const [period, setPeriod] = useState<ReportPeriod>({ startDate: '2026-08-01', endDate: '2026-08-31' });
   const [draft, setDraft] = useState(period);
@@ -29,6 +31,8 @@ export function ReportingApp({ legacyHref = import.meta.env.BASE_URL }: { legacy
   const [snapshotDraft, setSnapshotDraft] = useState('');
   const [snapshotAt, setSnapshot] = useState('');
   const [snapshotError, setSnapshotError] = useState<string | null>(null);
+  const [lineageSource, setLineageSource] = useState('upright');
+  const [batchId, setBatch] = useState<string | null>(null);
   const [selectedEvidence, setEvidence] = useState<MetricResult | null>(null);
   const catalog = useGetGoodwillCatalog({ query: { queryKey: getGetGoodwillCatalogQueryKey(), retry: false, staleTime: 0, refetchInterval: 30_000 } });
 
@@ -40,13 +44,14 @@ export function ReportingApp({ legacyHref = import.meta.env.BASE_URL }: { legacy
   useEffect(() => { document.title = `${page[0].toUpperCase()}${page.slice(1)} | Goodwill Reporting — synthetic`; }, [page]);
   const navigate = (next: Page) => { window.location.hash = next; setPage(next); };
   const inspect = (result: MetricResult) => { setEvidence(result); navigate('evidence'); };
+  const openBatch = (id: string) => { setBatch(id); navigate('database'); };
   const businessSources = Array.from(new Set(catalog.data?.datasets.filter(d => ['sales', 'expense', 'statement'].includes(d.role)).map(d => d.sourceId)));
   const supported = Array.from(new Set(catalog.data?.datasets.filter(d => d.sourceId === sourceId).flatMap(d => d.supportedMetrics)))
     .filter(id => ['net_item_sales', 'source_net', 'shipping_expense'].includes(id)) as MetricQuery['metricId'][];
   const metricId = supported.includes(financialId) ? financialId : supported[0] ?? financialId;
   const query: MetricQuery = { sourceId, metricId, period, groupBy, ...(storeId ? { storeId } : {}) };
   const operationSource = ['ebay', 'shopgoodwill'].includes(sourceId) ? sourceId : null;
-  return <ReportingShell page={page} onPageChange={navigate} legacyHref={legacyHref}>
+  return <ReportingShell page={page} onPageChange={navigate} legacyHref={legacyHref} acquisitionHref={acquisitionHref}>
     <Panel title="Reporting scope" description="Inclusive Eastern dates. Each figure uses one source or platform. Source-local results must not be combined.">
       <form className="gw-actions" onSubmit={e => {
         e.preventDefault(); const error = validatePeriod(draft); setPeriodError(error);
@@ -58,7 +63,7 @@ export function ReportingApp({ legacyHref = import.meta.env.BASE_URL }: { legacy
       </form>
       {periodError && <Notice kind="error">{periodError} The applied scope is unchanged.</Notice>}
       <p className="gw-meta">Applied: {period.startDate} – {period.endDate} · America/New_York</p>
-      {page !== 'operations' && page !== 'definitions' && page !== 'evidence' && <div className="gw-actions">
+      {!['operations', 'definitions', 'evidence', 'overview', 'database'].includes(page) && <div className="gw-actions">
         <label className="gw-field">Source / platform<select aria-label="Source / platform" value={sourceId} disabled={!catalog.data} onChange={e => setSource(e.target.value)}>
           {!businessSources.length && <option value={sourceId}>{sourceId} — catalog unavailable</option>}
           {businessSources.map(source => <option key={source}>{source}</option>)}
@@ -74,7 +79,12 @@ export function ReportingApp({ legacyHref = import.meta.env.BASE_URL }: { legacy
       {catalog.isPending && <Notice kind="info">Loading source definitions and actual coverage…</Notice>}
       {catalog.isError && <Notice kind="error" onRetry={() => void catalog.refetch()}>{errorMessage(catalog.error)}</Notice>}
     </Panel>
-    {page === 'operations' && <OperationsView catalog={catalog.data} period={period} />}
+    {page === 'overview' && <SourceOverview catalog={catalog.data} period={period} onEvidence={inspect} onReport={id => { setSource(id); setStore(''); navigate('reporting'); }} onSelect={id => { setLineageSource(id); setBatch(null); navigate('database'); }} />}
+    {page === 'database' && <DatabaseView sourceId={lineageSource} onSource={setLineageSource} batchId={batchId} onBatch={setBatch} />}
+    {page === 'operations' && <>
+      <Notice kind="info">Automated retrieval, Jev experiment runs and recipe review live in the <a href={acquisitionHref} data-testid="link-operations-acquisition">Jev acquisition console</a>. Rejected or duplicate batches can be traced under <button type="button" className="gw-linkish" data-testid="link-operations-lineage" onClick={() => navigate('database')}>Database &amp; lineage</button>.</Notice>
+      <OperationsView catalog={catalog.data} period={period} />
+    </>}
     {page === 'reporting' && <div className="gw-stack">
       <Panel title="Leadership and daily reporting" description="Sales, statements and carrier expense remain separate. No cross-source revenue, margin, labor productivity or sell-through figure is available.">
         <label className="gw-field">Financial definition<select aria-label="Financial definition" value={metricId} disabled={!supported.length} onChange={e => setFinancial(e.target.value as MetricQuery['metricId'])}>
@@ -84,6 +94,7 @@ export function ReportingApp({ legacyHref = import.meta.env.BASE_URL }: { legacy
       </Panel>
       <MetricView query={query} title="Source-local financial result" onEvidence={inspect} />
       <MetricView query={{ ...query, metricId: 'daily_customers', groupBy: 'day' }} title="Daily platform-local customers" onEvidence={inspect} />
+      <AssistantPanel context={query} onEvidence={inspect} onBatch={openBatch} />
     </div>}
     {page === 'listings' && <div className="gw-stack">
       <Notice kind="info">Distinct new-listing events only, not sold item rows or relists. Supporting history includes June/July; choose those dates explicitly to inspect it.</Notice>

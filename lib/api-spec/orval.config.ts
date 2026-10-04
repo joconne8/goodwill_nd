@@ -47,6 +47,8 @@ export default defineConfig({
       baseUrl: "/api",
       clean: true,
       override: {
+        // pnpm catalogs are not package-version literals; do not infer v4.
+        query: { version: 5 },
         fetch: {
           includeHttpResponseReturnType: false,
         },
@@ -73,6 +75,8 @@ export default defineConfig({
       clean: true,
       override: {
         zod: {
+          // Preserve the installed classic Zod 3 API instead of auto-detection.
+          version: 3,
           coerce: {
             query: ['boolean', 'number', 'string'],
             param: ['boolean', 'number', 'string'],

@@ -14,6 +14,20 @@ async function buildAll() {
   const distDir = path.resolve(artifactDir, "dist");
   await rm(distDir, { recursive: true, force: true });
 
+  // Exact existing synthetic component, packaged for a private loopback source.
+  // Never serve the frontend's Vite graph or connect this surface to a provider.
+  await esbuild({
+    entryPoints: [path.resolve(artifactDir, "../goodwill/src/features/acquisition/loopback-entry.tsx")],
+    outfile: path.join(distDir, "acquisition-replica/app.js"),
+    platform: "browser",
+    bundle: true,
+    format: "iife",
+    jsx: "automatic",
+    minify: true,
+    define: { "import.meta.env.BASE_URL": JSON.stringify("/"), "process.env.NODE_ENV": JSON.stringify("production") },
+    logLevel: "info",
+  });
+
   await esbuild({
     entryPoints: [path.resolve(artifactDir, "src/index.ts")],
     platform: "node",

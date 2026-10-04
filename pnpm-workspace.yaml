@@ -157,4 +157,17 @@ overrides:
   "@expo/ngrok-bin>@expo/ngrok-bin-win32-x64": "-"
   # drizzle-kit uses esbuild internally on an older version that's vulnerable, this overrides it
   "@esbuild-kit/esm-loader": "npm:tsx@^4.21.0"
-  esbuild: "0.27.3"
+  esbuild: "0.28.2"
+  # Vite 7 has no newer compatible release and still resolves older PostCSS.
+  # Keep Vite's framework major; use a patched compatible PostCSS 8.
+  "vite@7>postcss": "8.5.28"
+  # Storage 8.2.0 is the latest SDK and its gaxios 6 parent still pins uuid 9.
+  # UUID 11 retains CommonJS and the v4 API used by gaxios; do not force ESM-only 14.
+  "gaxios@6>uuid": "11.1.1"
+  # Latest AJV 8 still allows the affected older fast-uri 3; stay on major 3.
+  "ajv@8>fast-uri": "3.1.8"
+  # Vite 7's Babel 7 toolchain cannot adopt Babel 8 as a compatible update.
+  "@babel/helper-compilation-targets@7>browserslist": "4.29.3"
+  # Latest Express 5 / body-parser 2 allow older affected qs releases.
+  "express@5>qs": "6.16.0"
+  "body-parser@2>qs": "6.16.0"

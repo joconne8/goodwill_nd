@@ -12,6 +12,12 @@ import {
   PrivateArchive, PostgresRepository, IntakeService, ReportingService,
   createDataRouter, loadApprovedControls, signPrivateUpload,
 } from "./data";
+import { GoodwillAssistantService, GoodwillOverviewService, createAssistantRouter } from "./assistant";
+import { AnalyticsService } from "./analytics/service";
+import { createAnalyticsRouter } from "./analytics/router";
+import { createExperimentalAcquisitionRouter, createLocalSyntheticReplica, PostgresExperimentMetadataStore } from "./acquisition/experimental";
+import { SyntheticOpenAIProvider } from "./assistant/provider";
+import { PostgresAssistantUsage } from "./assistant/usage";
 
 export type OperatorAuthorizer = (request: Request) => Promise<string | null>;
 
@@ -42,6 +48,10 @@ export async function createGoodwillRuntime(authorizeOperator: OperatorAuthorize
   const reporting = new ReportingService(repository, controls);
   await acquisition.initialize();
   await intake.initialize();
+  const localReplica = await createLocalSyntheticReplica({
+    launcher: goodwillBrowser(executablePath),
+    fixture: await readFile(path.join(fixtureRoot, "02_upright_paid_order_items_aug2026.csv"), "utf8"),
+  });
   const router = Router();
   // Both routers share mandatory server authorization. Never infer it from persona.
   router.use(async (req, res, next) => {
@@ -61,5 +71,29 @@ export async function createGoodwillRuntime(authorizeOperator: OperatorAuthorize
   });
   router.use(createAcquisitionRouter(acquisition));
   router.use(createDataRouter(intake, reporting, authorizeOperator));
-  return { router, acquisition, intake, reporting, archive, repository, fixtureRoot };
+  router.use(createAnalyticsRouter(new AnalyticsService(repository, reporting), authorizeOperator));
+  router.use(createExperimentalAcquisitionRouter({
+    acquisition, store: new PostgresExperimentMetadataStore(pool),
+    authorizeOperator, source: localReplica.source,
+    // The same explicitly approved synthetic operators may manually review
+    // recipes; this is not permission to spend on model execution.
+    authorizeReview: async (_request, operatorId) => Boolean(operatorId),
+    // No discovery dependency: prior paid-call authorization was consumed.
+  }));
+  router.use(createAssistantRouter(
+    new GoodwillAssistantService(reporting, new SyntheticOpenAIProvider(
+      new PostgresAssistantUsage(pool),
+      {
+        baseUrl: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
+        apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
+        // This is a development-only, finite synthetic approval, not production
+        // permission. A server flag is necessary but never replaces the ledger.
+        enabled: process.env.NODE_ENV === "development" &&
+          process.env.GOODWILL_SYNTHETIC_ASSISTANT_ENABLED === "true",
+      },
+    )),
+    new GoodwillOverviewService(pool, repository, reporting),
+    authorizeOperator,
+  ));
+  return { router, acquisition, intake, reporting, archive, repository, fixtureRoot, close: () => localReplica.close() };
 }

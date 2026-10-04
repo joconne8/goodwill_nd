@@ -9,8 +9,17 @@ import { CLERK_PROXY_PATH, clerkProxyMiddleware, getClerkProxyHost } from "./mid
 import { authorizeOperator, currentOperatorAccess } from "./goodwill/operatorAuth";
 import { consumeReplicaCapability } from "./goodwill/replicaCapability";
 import { approvedAppOrigin } from "./goodwill/replicaDestination";
+import { framework } from "./goodwill/analytics/definitions";
 
 const app: Express = express();
+
+// Explicit artifact-prefixed API alias. Rewriting before routing preserves all
+// existing Origin, Clerk and operator guards; this is not an authorization bypass.
+app.use((req, _res, next) => {
+  if(req.url.startsWith("/goodwill-analytics/api/"))
+    req.url=req.url.replace(/^\/goodwill-analytics\/api\//,"/api/");
+  next();
+});
 
 app.use(
   pinoHttp({
@@ -57,6 +66,10 @@ app.use("/api/goodwill", (req, res, next) => {
   next();
 });
 app.get("/api/goodwill/access", currentOperatorAccess);
+// Static sponsor definitions only. No repository access or financial values.
+app.get("/api/goodwill/v2/analytics/framework", (_req,res) => {
+  res.json(framework.map(k=>({...k,reason:"Sign in with an approved operator account to evaluate this definition against published data."})));
+});
 // Retained legacy financial paths require the same named demo account.
 // Internal replay permission is single-use and ONLY grants synthetic generation.
 app.use("/api/goodwill", async (req, res, next) => {

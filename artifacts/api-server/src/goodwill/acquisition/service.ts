@@ -17,7 +17,8 @@ export class AcquisitionService {
     await this.deps.repository.interruptUnfinished(this.now());
     this.ready = true;
   }
-  async start(input: unknown): Promise<Run> {
+  /** Optional Replay is trusted server injection only; never accepted from the wire request. */
+  async start(input: unknown, replay: Replay = this.deps.replay): Promise<Run> {
     if (!this.ready) throw new AcquisitionError("NOT_INITIALIZED", "Run repository is not initialized.", false, "Initialize the acquisition worker.", 503);
     const parsed = StartGoodwillRunBody.safeParse(input);
     if (!parsed.success) throw new AcquisitionError("INVALID_REQUEST", "Use the frozen Upright acquisition request; arbitrary browser URLs are not accepted.");
@@ -47,7 +48,7 @@ export class AcquisitionService {
     try { await this.deps.repository.create(run); }
     catch (e) { this.controllers.delete(run.id); throw e; }
     // Reply with immutable queued state; processing never implies publication.
-    queueMicrotask(() => { void this.execute(run.id, controller).catch(() => {
+    queueMicrotask(() => { void this.execute(run.id, controller, replay).catch(() => {
       // A persistence outage is not fake failure evidence; recovery on restart marks unfinished runs.
       controller.abort();
     }); });
@@ -73,7 +74,7 @@ export class AcquisitionService {
     }
     throw new AcquisitionError("STATE_CONFLICT", "Run changed while cancelling.", true, "Refresh and cancel again.", 409);
   }
-  private async execute(id: string, controller: AbortController) {
+  private async execute(id: string, controller: AbortController, replay: Replay) {
     let timedOut = false;
     const timer = setTimeout(() => { timedOut = true; controller.abort(); }, Math.min(this.deps.timeoutMs ?? 60000, 60000));
     const step = async (name: string) => {
@@ -96,7 +97,7 @@ export class AcquisitionService {
         if (controller.signal.aborted) stop();
         else controller.signal.addEventListener("abort", stop, { once: true });
       });
-      const evidence = await Promise.race([this.deps.replay.acquire(initial.request, controller.signal, step), abortPromise]);
+      const evidence = await Promise.race([replay.acquire(initial.request, controller.signal, step), abortPromise]);
       await step("downloaded");
       const downloaded = await this.get(id);
       if (downloaded.state !== "downloaded") return;

@@ -19,3 +19,4 @@
 
 export * from "./goodwill-publications";
 export * from "./goodwill-v2";
+export * from "./goodwill-assistant-usage";

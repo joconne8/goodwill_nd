@@ -35,6 +35,18 @@ test("exact downloaded periods differ; independent expected counts are 141 and 1
   assert.equal(new TextDecoder().decode(a.bytes).trim().split("\n").length - 1, 141);
   assert.equal(new TextDecoder().decode(b.bytes).trim().split("\n").length - 1, 129);
 });
+test("trusted per-run replay injection shares one lifecycle without changing the default or frozen wire request", async () => {
+  let baselineCalls = 0, alternateCalls = 0;
+  const baseline = { async acquire(...args: Parameters<typeof fakeReplay.acquire>) { baselineCalls++; return fakeReplay.acquire(...args); } };
+  const alternate = { async acquire(...args: Parameters<typeof fakeReplay.acquire>) { alternateCalls++; return fakeReplay.acquire(...args); } };
+  const { service } = make(baseline);
+  await service.initialize();
+  const a = await service.start(request), b = await service.start(request, alternate);
+  assert.equal((await waitRun(service, a.id)).state, "verified");
+  assert.equal((await waitRun(service, b.id)).state, "verified");
+  assert.equal(baselineCalls, 1); assert.equal(alternateCalls, 1);
+  await assert.rejects(service.start({ ...request, mode: "discovery" }), { code: "INVALID_REQUEST" });
+});
 test("wrong dates, filename, hash, bytes, identity, UTF8 and empty/header-only reports reject", async () => {
   const e = await fakeReplay.acquire(request, new AbortController().signal, async () => {});
   for (const [patch, code] of [

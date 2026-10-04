@@ -32,7 +32,7 @@ export function paginate(offset = 0, limit = 100) {
   return {offset,limit};
 }
 const unknown = "__unknown__";
-function coverage(did: string, pub: Publication | null, batches: Batch[], completePeriod?: Query["period"]) {
+export function coverage(did: string, pub: Publication | null, batches: Batch[], completePeriod?: Query["period"]) {
   const good = batches.filter(b=>b.datasetId===did && pub?.batchIds.includes(b.id));
   const latest = batches.filter(b=>b.datasetId===did).sort((a,b)=>b.receivedAt.localeCompare(a.receivedAt))[0];
   let complete = good.some(b=>b.coverageComplete);

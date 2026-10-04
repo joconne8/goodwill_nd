@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/goodwill-analytics/"
+title = "Goodwill Analytics"
+description = "A separate analytical dashboard covering the original Goodwill Michiana KPI framework, nightly source reporting and COO scorecard, with source-scoped results and transparent data readiness."
+version = "1.0.0"
+id = "artifacts/goodwill-analytics"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/goodwill-analytics/" ]
+localPort = 24916
+
+[services.development]
+run = "pnpm --filter @workspace/goodwill-analytics run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/goodwill-analytics", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/goodwill-analytics/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24916"
+BASE_PATH = "/goodwill-analytics/"

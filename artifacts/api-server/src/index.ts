@@ -21,7 +21,7 @@ if (Number.isNaN(port) || port <= 0) {
 const goodwill = await createGoodwillRuntime(authorizeOperator);
 app.use("/api/goodwill/v2", goodwill.router);
 
-app.listen(port, (err) => {
+const server = app.listen(port, (err) => {
   if (err) {
     logger.error({ err }, "Error listening on port");
     process.exit(1);
@@ -29,3 +29,14 @@ app.listen(port, (err) => {
 
   logger.info({ port }, "Server listening");
 });
+
+let stopping = false;
+for (const signal of ["SIGTERM", "SIGINT"] as const) {
+  process.on(signal, () => {
+    if (stopping) return;
+    stopping = true;
+    server.close();
+    void goodwill.close().finally(() => process.exit(0));
+    setTimeout(() => process.exit(1), 5000).unref();
+  });
+}

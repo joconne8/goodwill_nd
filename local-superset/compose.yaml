@@ -1,0 +1,127 @@
+name: goodwill-local-superset
+
+services:
+  reporting-db:
+    image: postgres:16.4-alpine3.20
+    environment:
+      POSTGRES_DB: goodwill_reporting
+      POSTGRES_USER: reporting_owner
+      POSTGRES_PASSWORD: ${REPORTING_OWNER_PASSWORD:?Run local-superset/scripts/setup.sh first}
+      REPORTING_IMPORTER_PASSWORD: ${REPORTING_IMPORTER_PASSWORD:?Run local-superset/scripts/setup.sh first}
+      REPORTING_READER_PASSWORD: ${REPORTING_READER_PASSWORD:?Run local-superset/scripts/setup.sh first}
+    volumes:
+      - reporting-data:/var/lib/postgresql/data
+      - ./db/init-reporting.sh:/docker-entrypoint-initdb.d/10-init-reporting.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U reporting_owner -d goodwill_reporting"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  metadata-db:
+    image: postgres:16.4-alpine3.20
+    environment:
+      POSTGRES_DB: superset
+      POSTGRES_USER: superset_meta
+      POSTGRES_PASSWORD: ${SUPERSET_METADATA_PASSWORD:?Run local-superset/scripts/setup.sh first}
+    volumes:
+      - superset-metadata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U superset_meta -d superset"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  superset-init:
+    image: goodwill-local/superset:4.1.1
+    build:
+      context: ./superset
+    depends_on:
+      metadata-db:
+        condition: service_started
+      reporting-db:
+        condition: service_started
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:?Run local-superset/scripts/setup.sh first}
+      SUPERSET_METADATA_DB_URI: postgresql+psycopg2://superset_meta:${SUPERSET_METADATA_PASSWORD}@metadata-db:5432/superset
+      GOODWILL_REPORTING_DB_URI: postgresql+psycopg2://goodwill_superset_reader:${REPORTING_READER_PASSWORD}@reporting-db:5432/goodwill_reporting
+      SUPERSET_CONFIG_PATH: /app/pythonpath/goodwill_superset_config.py
+    volumes:
+      - ./superset/superset_config.py:/app/pythonpath/goodwill_superset_config.py:ro
+      - ./superset/wait_for_databases.py:/app/pythonpath/goodwill_wait_for_databases.py:ro
+      - ./superset/provision_dashboard.py:/app/pythonpath/goodwill_provision_dashboard.py:ro
+    command:
+      - /bin/sh
+      - -c
+      - python /app/pythonpath/goodwill_wait_for_databases.py && superset db upgrade && superset init && python /app/pythonpath/goodwill_provision_dashboard.py
+    restart: "no"
+
+  superset:
+    image: goodwill-local/superset:4.1.1
+    build:
+      context: ./superset
+    depends_on:
+      superset-init:
+        condition: service_completed_successfully
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:?Run local-superset/scripts/setup.sh first}
+      SUPERSET_METADATA_DB_URI: postgresql+psycopg2://superset_meta:${SUPERSET_METADATA_PASSWORD}@metadata-db:5432/superset
+      GOODWILL_REPORTING_DB_URI: postgresql+psycopg2://goodwill_superset_reader:${REPORTING_READER_PASSWORD}@reporting-db:5432/goodwill_reporting
+      SUPERSET_CONFIG_PATH: /app/pythonpath/goodwill_superset_config.py
+      GOODWILL_DEMO_OPERATOR_EMAIL: ${GOODWILL_DEMO_OPERATOR_EMAIL:-}
+      GOODWILL_DEMO_ADDITIONAL_OPERATOR_EMAIL: ${GOODWILL_DEMO_ADDITIONAL_OPERATOR_EMAIL:-}
+    volumes:
+      - ./superset/superset_config.py:/app/pythonpath/goodwill_superset_config.py:ro
+      - ./superset/create_approved_operator.py:/app/pythonpath/goodwill_create_approved_operator.py:ro
+    ports:
+      - "127.0.0.1:8088:8088"
+    command: ["/usr/bin/run-server.sh"]
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8088/health', timeout=3).read()"
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 90s
+
+  importer:
+    build:
+      context: ./importer
+    profiles: ["tools"]
+    depends_on:
+      reporting-db:
+        condition: service_started
+    environment:
+      REPORTING_HOST: reporting-db
+      REPORTING_PORT: "5432"
+      REPORTING_DATABASE: goodwill_reporting
+      REPORTING_USER: goodwill_importer
+      REPORTING_PASSWORD: ${REPORTING_IMPORTER_PASSWORD:?Run local-superset/scripts/setup.sh first}
+    volumes:
+      - ./snapshots:/input:ro
+    entrypoint: ["python", "/app/import_snapshot.py"]
+
+  pilot-tests:
+    build:
+      context: ./importer
+    profiles: ["tests"]
+    depends_on:
+      reporting-db:
+        condition: service_started
+    environment:
+      REPORTING_HOST: reporting-db
+      REPORTING_PORT: "5432"
+      REPORTING_DATABASE: goodwill_reporting
+      REPORTING_USER: goodwill_importer
+      REPORTING_PASSWORD: ${REPORTING_IMPORTER_PASSWORD:?Run local-superset/scripts/setup.sh first}
+      REPORTING_OWNER_PASSWORD: ${REPORTING_OWNER_PASSWORD:?Run local-superset/scripts/setup.sh first}
+      REPORTING_READER_PASSWORD: ${REPORTING_READER_PASSWORD:?Run local-superset/scripts/setup.sh first}
+      GOODWILL_PILOT_INTEGRATION_TEST: "1"
+    entrypoint: ["python", "/app/test_importer.py"]
+
+volumes:
+  reporting-data:
+  superset-metadata:

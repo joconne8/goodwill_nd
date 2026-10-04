@@ -1,0 +1,25 @@
+store_id,store_name,district,cost_center,timezone,currency,synthetic
+GW-001,Fictional Donation Store 01,Demo District 1,DEMO-180,America/Indiana/Indianapolis,USD,true
+GW-002,Fictional Donation Store 02,Demo District 1,DEMO-181,America/Indiana/Indianapolis,USD,true
+GW-003,Fictional Donation Store 03,Demo District 1,DEMO-182,America/Indiana/Indianapolis,USD,true
+GW-004,Fictional Donation Store 04,Demo District 1,DEMO-183,America/Indiana/Indianapolis,USD,true
+GW-005,Fictional Donation Store 05,Demo District 1,DEMO-184,America/Indiana/Indianapolis,USD,true
+GW-006,Fictional Donation Store 06,Demo District 1,DEMO-185,America/Indiana/Indianapolis,USD,true
+GW-007,Fictional Donation Store 07,Demo District 1,DEMO-186,America/Indiana/Indianapolis,USD,true
+GW-008,Fictional Donation Store 08,Demo District 1,DEMO-187,America/Indiana/Indianapolis,USD,true
+GW-009,Fictional Donation Store 09,Demo District 2,DEMO-188,America/Indiana/Indianapolis,USD,true
+GW-010,Fictional Donation Store 10,Demo District 2,DEMO-189,America/Indiana/Indianapolis,USD,true
+GW-011,Fictional Donation Store 11,Demo District 2,DEMO-190,America/Indiana/Indianapolis,USD,true
+GW-012,Fictional Donation Store 12,Demo District 2,DEMO-191,America/Indiana/Indianapolis,USD,true
+GW-013,Fictional Donation Store 13,Demo District 2,DEMO-192,America/Indiana/Indianapolis,USD,true
+GW-014,Fictional Donation Store 14,Demo District 2,DEMO-193,America/Indiana/Indianapolis,USD,true
+GW-015,Fictional Donation Store 15,Demo District 2,DEMO-194,America/Indiana/Indianapolis,USD,true
+GW-016,Fictional Donation Store 16,Demo District 2,DEMO-195,America/Indiana/Indianapolis,USD,true
+GW-017,Fictional Donation Store 17,Demo District 3,DEMO-196,America/Indiana/Indianapolis,USD,true
+GW-018,Fictional Donation Store 18,Demo District 3,DEMO-197,America/Indiana/Indianapolis,USD,true
+GW-019,Fictional Donation Store 19,Demo District 3,DEMO-198,America/Indiana/Indianapolis,USD,true
+GW-020,Fictional Donation Store 20,Demo District 3,DEMO-199,America/Indiana/Indianapolis,USD,true
+GW-021,Fictional Donation Store 21,Demo District 3,DEMO-200,America/Indiana/Indianapolis,USD,true
+GW-022,Fictional Donation Store 22,Demo District 3,DEMO-201,America/Indiana/Indianapolis,USD,true
+GW-023,Fictional Donation Store 23,Demo District 3,DEMO-202,America/Indiana/Indianapolis,USD,true
+GW-024,Fictional Donation Store 24,Demo District 3,DEMO-203,America/Indiana/Indianapolis,USD,true

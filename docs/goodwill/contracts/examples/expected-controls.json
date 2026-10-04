@@ -1,0 +1,30 @@
+{
+  "authority": "independent Python csv + Decimal calculation of the merged fixture",
+  "fixtureSha256": "3ffd1bdae4a5f79d25788120833be99499b05791a255fcfd2f7b378254d5a1ab",
+  "periods": [
+    {
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-31",
+      "rows": 650,
+      "grossMinor": 3702126,
+      "refundMinor": 86416,
+      "netMinor": 3615710
+    },
+    {
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-07",
+      "rows": 141,
+      "grossMinor": 804179,
+      "refundMinor": 45058,
+      "netMinor": 759121
+    },
+    {
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-14",
+      "rows": 129,
+      "grossMinor": 604400,
+      "refundMinor": 7126,
+      "netMinor": 597274
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "sha": "207abb90c453d7b32fca16a29aa149c32b8c22ee",
+  "tree": [
+    {
+      "mode": "100644",
+      "path": "PROJECT_MANAGEMENT_EPICS_AND_STORIES.md",
+      "sha": "47a88b27fc27c2edafc2e8787f21496322ea65b5",
+      "size": 45480,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/47a88b27fc27c2edafc2e8787f21496322ea65b5"
+    },
+    {
+      "mode": "040000",
+      "path": "synthetic-data",
+      "sha": "8d7cc76888eba65b353a5213adba93a1af50db7b",
+      "type": "tree",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/trees/8d7cc76888eba65b353a5213adba93a1af50db7b"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/.gitignore",
+      "sha": "7bfcd7a0b1b8c6332b97bb454d8e65332d4cc90a",
+      "size": 18,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/7bfcd7a0b1b8c6332b97bb454d8e65332d4cc90a"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/01_cash_monkey_orders_aug2026.csv",
+      "sha": "5fb488f7e169971eb322c0a4353fdfaa8e9b0d0c",
+      "size": 63113,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/5fb488f7e169971eb322c0a4353fdfaa8e9b0d0c"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/02_upright_paid_order_items_aug2026.csv",
+      "sha": "dd2be085e439ade0619738f962a52dff3e99be37",
+      "size": 102804,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/dd2be085e439ade0619738f962a52dff3e99be37"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/03_jewelry_report_aug2026.csv",
+      "sha": "9f259f0df871d73bc3cfa39fe080faab53e2e879",
+      "size": 26388,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/9f259f0df871d73bc3cfa39fe080faab53e2e879"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/04_shipping_osm_pb_easypost_aug2026.csv",
+      "sha": "d7dbfb307b5e149d2d790641c12c0bdb15c92cb0",
+      "size": 366874,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/d7dbfb307b5e149d2d790641c12c0bdb15c92cb0"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/05_fedex_charges_refunds_aug2026.csv",
+      "sha": "889bfd64e1ec722ee0f4d8a3e2b500c648c77245",
+      "size": 85619,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/889bfd64e1ec722ee0f4d8a3e2b500c648c77245"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/06_shopgoodwill_periodic_reports_aug2026.csv",
+      "sha": "a9b57eb731442ae5616c7454885bfdb32430b09e",
+      "size": 300640,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/a9b57eb731442ae5616c7454885bfdb32430b09e"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/07_goodwill_books_payment_statement_aug2026.csv",
+      "sha": "4b27822068f937cfe6257ede8a72e74861ce8341",
+      "size": 49984,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/4b27822068f937cfe6257ede8a72e74861ce8341"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/08_ebay_listing_sales_aug2026.csv",
+      "sha": "e27affd5a0506f143187726bf704bf54138e2bc8",
+      "size": 112639,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/e27affd5a0506f143187726bf704bf54138e2bc8"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/09_amazon_payments_summary_aug2026.csv",
+      "sha": "56f8da61875571e7feb25c96b17bc729a6ae0da9",
+      "size": 68061,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/56f8da61875571e7feb25c96b17bc729a6ae0da9"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/10_stores.csv",
+      "sha": "750a006f87e0edbc92b18d37a1f5ba47a86dae84",
+      "size": 2421,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/750a006f87e0edbc92b18d37a1f5ba47a86dae84"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/11_listing_events_aug2026.csv",
+      "sha": "689ae4ca3a8c201833fe2080467ed2c0e9093a63",
+      "size": 271645,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/689ae4ca3a8c201833fe2080467ed2c0e9093a63"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/12_inventory_snapshots_aug2026.csv",
+      "sha": "8009572449ae8485f52c21aa7357589c657fdd71",
+      "size": 424310,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/8009572449ae8485f52c21aa7357589c657fdd71"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/13_item_catalog.csv",
+      "sha": "e433d07859021d6d13430a29f5ff953540ad4b68",
+      "size": 684570,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/e433d07859021d6d13430a29f5ff953540ad4b68"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/14_quality_exceptions.csv",
+      "sha": "e6f60829d281588bdb3b417eafc78be4448c04c6",
+      "size": 2610,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/e6f60829d281588bdb3b417eafc78be4448c04c6"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/15_order_lifecycle.csv",
+      "sha": "0ab6a76d16afde9d23d0527a78af43df3fd80c6a",
+      "size": 577346,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/0ab6a76d16afde9d23d0527a78af43df3fd80c6a"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/README.md",
+      "sha": "9ab02ed59d6cd1045baa1dd03e3888b7d14a758b",
+      "size": 11610,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/9ab02ed59d6cd1045baa1dd03e3888b7d14a758b"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/generate.py",
+      "sha": "e5084b0c458a41fa672169b3ce21f725135c3fdb",
+      "size": 27868,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/e5084b0c458a41fa672169b3ce21f725135c3fdb"
+    },
+    {
+      "mode": "040000",
+      "path": "synthetic-data/incremental",
+      "sha": "67450db636f680d43f94248836858063e5b75c2f",
+      "type": "tree",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/trees/67450db636f680d43f94248836858063e5b75c2f"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/incremental/ebay_sep01_2026.csv",
+      "sha": "667c1350f47533def4095afed437b9f381213d28",
+      "size": 4187,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/667c1350f47533def4095afed437b9f381213d28"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/incremental/shopgoodwill_sep01_2026.csv",
+      "sha": "6ececc7af1e277eac19a1f5f3d7449fc44829449",
+      "size": 10316,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/6ececc7af1e277eac19a1f5f3d7449fc44829449"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/manifest.json",
+      "sha": "627a7aba35eb5388f5c4c4330e7c9a621606b17d",
+      "size": 21629,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/627a7aba35eb5388f5c4c4330e7c9a621606b17d"
+    },
+    {
+      "mode": "040000",
+      "path": "synthetic-data/test-fixtures",
+      "sha": "66fc5b1bca3c7083288d69a83f19e4f5b3661c29",
+      "type": "tree",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/trees/66fc5b1bca3c7083288d69a83f19e4f5b3661c29"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/test-fixtures/ebay_duplicate_replay.csv",
+      "sha": "61e1526895ae7f253b446ba07fd7578266d70a83",
+      "size": 3317,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/61e1526895ae7f253b446ba07fd7578266d70a83"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/test-fixtures/ebay_invalid_rows.csv",
+      "sha": "9975d653137cf6dfc27b3fb55e165c1359cc3d96",
+      "size": 800,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/9975d653137cf6dfc27b3fb55e165c1359cc3d96"
+    },
+    {
+      "mode": "100644",
+      "path": "synthetic-data/test_data.py",
+      "sha": "26d1ddacb343bf1c0c9f193c0945c2b0f21d984d",
+      "size": 12260,
+      "type": "blob",
+      "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/blobs/26d1ddacb343bf1c0c9f193c0945c2b0f21d984d"
+    }
+  ],
+  "truncated": false,
+  "url": "https://api.github.com/repos/joconne8/goodwill_nd/git/trees/207abb90c453d7b32fca16a29aa149c32b8c22ee"
+}

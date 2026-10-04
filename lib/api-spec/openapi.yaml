@@ -1,0 +1,745 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 2.0.0
+  description: Goodwill shared contract. Legacy v1 endpoints remain runnable; v2 endpoints are reserved for the parallel implementation lanes, not yet implemented.
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+paths:
+  /goodwill/access:
+    get:
+      operationId: getGoodwillOperatorAccess
+      summary: Current verified session and explicit synthetic operator approval
+      responses:
+        "200":
+          description: Current session approval state only; no financial or account identity data
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/GoodwillOperatorAccess" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/catalog:
+    get:
+      operationId: getGoodwillCatalog
+      summary: All source datasets, definitions, stores and actual coverage
+      responses:
+        "200":
+          description: Dataset and metric catalog
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/GoodwillCatalog" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/runs:
+    get:
+      operationId: listGoodwillRuns
+      parameters:
+        - { $ref: "#/components/parameters/Offset" }
+        - { $ref: "#/components/parameters/Limit" }
+      responses:
+        "200":
+          description: Run history newest first
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AcquisitionRunPage" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+    post:
+      operationId: startGoodwillRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/AcquisitionRequest" }
+      responses:
+        "202":
+          description: Queued bounded synthetic acquisition, not published metrics
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AcquisitionRun" }
+        "400": { $ref: "#/components/responses/InvalidInput" }
+        "409": { $ref: "#/components/responses/Conflict" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/runs/{runId}:
+    parameters:
+      - { name: runId, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: getGoodwillRun
+      responses:
+        "200":
+          description: Run state and verified file when available
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AcquisitionRun" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/runs/{runId}/cancel:
+    parameters:
+      - { name: runId, in: path, required: true, schema: { type: string } }
+    post:
+      operationId: cancelGoodwillRun
+      responses:
+        "200":
+          description: Cancelled run, or unchanged terminal run
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AcquisitionRun" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/runs/{runId}/download:
+    parameters:
+      - { name: runId, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: downloadGoodwillRun
+      responses:
+        "200":
+          description: Exact verified bytes, attachment filename and X-Content-SHA256 headers
+          content:
+            application/octet-stream:
+              schema: { type: string, format: binary }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "409": { $ref: "#/components/responses/Conflict" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/uploads:
+    post:
+      operationId: requestGoodwillUpload
+      summary: Request direct-to-object-storage upload; never accepts file bytes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/UploadRequest" }
+      responses:
+        "201":
+          description: Expiring upload capability; do not log or persist uploadUrl
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/UploadTicket" }
+        "400": { $ref: "#/components/responses/InvalidInput" }
+        "413": { $ref: "#/components/responses/ReportTooLarge" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/batches:
+    get:
+      operationId: listGoodwillBatches
+      parameters:
+        - { $ref: "#/components/parameters/Offset" }
+        - { $ref: "#/components/parameters/Limit" }
+        - { name: sourceId, in: query, schema: { type: string } }
+      responses:
+        "200":
+          description: All intake attempts, including rejected and duplicate attempts
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ImportBatchPage" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+    post:
+      operationId: createGoodwillBatch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/IntakeRequest" }
+      responses:
+        "201":
+          description: Recorded intake attempt; inspect state before displaying any publication
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ImportBatch" }
+        "400": { $ref: "#/components/responses/InvalidInput" }
+        "409": { $ref: "#/components/responses/Conflict" }
+        "413": { $ref: "#/components/responses/ReportTooLarge" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/batches/{batchId}:
+    parameters:
+      - { name: batchId, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: getGoodwillBatch
+      responses:
+        "200":
+          description: Batch lineage, counts, reconciliation and correction references
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ImportBatch" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/batches/{batchId}/rows:
+    parameters:
+      - { name: batchId, in: path, required: true, schema: { type: string } }
+    get:
+      operationId: getGoodwillBatchRows
+      parameters:
+        - { $ref: "#/components/parameters/Offset" }
+        - { $ref: "#/components/parameters/Limit" }
+        - { name: disposition, in: query, schema: { type: string, enum: [accepted, rejected, duplicate] } }
+      responses:
+        "200":
+          description: Original source row references and normalized values or rejection reasons
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/EvidencePage" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/batches/{batchId}/review:
+    parameters:
+      - { name: batchId, in: path, required: true, schema: { type: string } }
+    post:
+      operationId: reviewGoodwillBatch
+      summary: Explicit synthetic correction review with optimistic publication check
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/CorrectionReview" }
+      responses:
+        "200":
+          description: Reviewed correction; old raw bytes and publication history retained
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ImportBatch" }
+        "400": { $ref: "#/components/responses/InvalidInput" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "409": { $ref: "#/components/responses/Conflict" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/metrics/query:
+    post:
+      operationId: queryGoodwillMetrics
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/MetricQuery" }
+      responses:
+        "200":
+          description: Published source-local metrics; unavailable is null, not zero
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/MetricResult" }
+        "400": { $ref: "#/components/responses/InvalidInput" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/evidence/query:
+    post:
+      operationId: queryGoodwillEvidence
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/EvidenceQuery" }
+      responses:
+        "200":
+          description: Contributing accepted records at an immutable publication version
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/EvidencePage" }
+        "400": { $ref: "#/components/responses/InvalidInput" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/v2/exports:
+    post:
+      operationId: exportGoodwillReport
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/ExportRequest" }
+      responses:
+        "200":
+          description: Spreadsheet-safe CSV from same immutable publication and query
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/CsvExport" }
+        "400": { $ref: "#/components/responses/InvalidInput" }
+        "404": { $ref: "#/components/responses/NotFound" }
+        "503": { $ref: "#/components/responses/StorageUnavailable" }
+  /goodwill/report:
+    post:
+      operationId: generateGoodwillReport
+      summary: Filter the existing synthetic Upright fixture into a downloadable report
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReportPeriod"
+      responses:
+        "200":
+          description: Synthetic report bytes and identity
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SyntheticReport"
+        "400":
+          $ref: "#/components/responses/InvalidInput"
+        "413":
+          $ref: "#/components/responses/ReportTooLarge"
+  /goodwill/imports:
+    post:
+      operationId: importGoodwillReport
+      summary: Validate the exact downloaded CSV and publish a supervised foundation result
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SyntheticReport"
+      responses:
+        "200":
+          description: Published result or replay of an identical import
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportingResult"
+        "400":
+          $ref: "#/components/responses/InvalidInput"
+        "413":
+          $ref: "#/components/responses/ReportTooLarge"
+        "503":
+          $ref: "#/components/responses/StorageUnavailable"
+  /goodwill/latest:
+    get:
+      operationId: getGoodwillLatest
+      summary: Last successfully published foundation result
+      responses:
+        "200":
+          description: Current state; null until the first successful import
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReportingState"
+        "503":
+          $ref: "#/components/responses/StorageUnavailable"
+  /goodwill/sources:
+    get:
+      operationId: getGoodwillSources
+      summary: Nine source workflows and honest demo availability
+      responses:
+        "200":
+          description: Source register
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ReportSource"
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+components:
+  parameters:
+    Offset: { name: offset, in: query, schema: { type: integer, minimum: 0, default: 0 } }
+    Limit: { name: limit, in: query, schema: { type: integer, minimum: 1, maximum: 500, default: 100 } }
+  responses:
+    NotFound:
+      description: Unknown resource
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/ReportingError" }
+    Conflict:
+      description: State, overlap, correction or concurrency conflict; last-good remains unchanged
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/ReportingError" }
+    ReportTooLarge:
+      description: Report exceeds the supervised foundation size limit
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ReportingError"
+    StorageUnavailable:
+      description: Storage failed; last successful publication has not been replaced
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ReportingError"
+    InvalidInput:
+      description: Invalid request; last successful publication is unchanged
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ReportingError"
+  schemas:
+    GoodwillOperatorAccess:
+      type: object
+      additionalProperties: false
+      required: [signedIn, approved]
+      properties:
+        signedIn: { type: boolean }
+        approved: { type: boolean }
+    AcquisitionRequest:
+      type: object
+      additionalProperties: false
+      required: [sourceId, reportType, period, scenario]
+      properties:
+        sourceId: { type: string, enum: [upright] }
+        reportType: { type: string, enum: [paid_order_items] }
+        period: { $ref: "#/components/schemas/ReportPeriod" }
+        scenario: { type: string, enum: [success, delayed, session_expired, dom_drift, missing_report] }
+        retryOf: { type: string }
+    WorkflowFailure:
+      type: object
+      required: [code, message, retryable, nextAction]
+      properties:
+        code: { type: string }
+        message: { type: string }
+        retryable: { type: boolean }
+        nextAction: { type: string }
+    RawArtifact:
+      type: object
+      required: [artifactId, filename, checksum, byteSize, archivedAt, synthetic]
+      properties:
+        artifactId: { type: string, description: Opaque server-owned reference, never a client-chosen path or signed URL }
+        filename: { type: string }
+        checksum: { type: string, pattern: '^[a-f0-9]{64}$' }
+        byteSize: { type: integer, minimum: 1 }
+        archivedAt: { type: string, format: date-time }
+        synthetic: { type: boolean, enum: [true] }
+    AcquisitionRun:
+      type: object
+      required: [id, request, state, createdAt, updatedAt, attempt, lastStep, artifact, failure, contractVersion]
+      properties:
+        id: { type: string }
+        request: { $ref: "#/components/schemas/AcquisitionRequest" }
+        state: { type: string, enum: [queued, running, downloaded, verified, failed, cancelled] }
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+        attempt: { type: integer, minimum: 1, maximum: 2 }
+        lastStep: { type: string }
+        artifact:
+          anyOf: [{ $ref: "#/components/schemas/RawArtifact" }, { type: "null" }]
+        failure:
+          anyOf: [{ $ref: "#/components/schemas/WorkflowFailure" }, { type: "null" }]
+        contractVersion: { type: string, enum: ["2.0.0"] }
+    AcquisitionRunPage:
+      type: object
+      required: [items, total, offset, limit]
+      properties:
+        items: { type: array, items: { $ref: "#/components/schemas/AcquisitionRun" } }
+        total: { type: integer, minimum: 0 }
+        offset: { type: integer, minimum: 0 }
+        limit: { type: integer, minimum: 1, maximum: 500 }
+    UploadRequest:
+      type: object
+      additionalProperties: false
+      required: [sourceId, reportType, filename, byteSize, checksum]
+      properties:
+        sourceId: { type: string }
+        reportType: { type: string }
+        filename: { type: string, minLength: 1, maxLength: 160 }
+        byteSize: { type: integer, minimum: 1, maximum: 5242880 }
+        checksum: { type: string, pattern: '^[a-f0-9]{64}$' }
+    UploadTicket:
+      type: object
+      required: [uploadId, uploadUrl, expiresAt]
+      properties:
+        uploadId: { type: string }
+        uploadUrl: { type: string, description: Transient presigned PUT URL; never logged or persisted in lineage }
+        expiresAt: { type: string, format: date-time }
+    IntakeRequest:
+      type: object
+      additionalProperties: false
+      required: [sourceId, reportType, period, inputKind, inputId]
+      properties:
+        sourceId: { type: string }
+        reportType: { type: string }
+        period: { $ref: "#/components/schemas/ReportPeriod" }
+        inputKind: { type: string, enum: [upload, run] }
+        inputId: { type: string, description: Server-issued uploadId or verified runId; resolved and revalidated server-side }
+    ReconciliationCheck:
+      type: object
+      required: [name, unit, expected, actual, difference, status]
+      properties:
+        name: { type: string }
+        unit: { type: string, enum: [usd_cent, count] }
+        expected: { type: ["integer", "null"] }
+        actual: { type: ["integer", "null"] }
+        difference: { type: ["integer", "null"] }
+        status: { type: string, enum: [matched, mismatch, unavailable] }
+    ImportBatch:
+      type: object
+      required: [id, sourceId, reportType, period, state, runId, artifact, receivedAt, publishedAt, inputRows, acceptedRows, rejectedRows, duplicateRows, publicationId, duplicateOf, supersedesBatchId, reconciliation, warnings, failure, contractVersion]
+      properties:
+        id: { type: string }
+        sourceId: { type: string }
+        reportType: { type: string }
+        period: { $ref: "#/components/schemas/ReportPeriod" }
+        state: { type: string, enum: [received, validated, reconciled, published, partial, duplicate, quarantined, failed, superseded] }
+        runId: { type: ["string", "null"] }
+        artifact:
+          anyOf: [{ $ref: "#/components/schemas/RawArtifact" }, { type: "null" }]
+        receivedAt: { type: string, format: date-time }
+        publishedAt: { type: ["string", "null"], format: date-time }
+        inputRows: { type: integer, minimum: 0 }
+        acceptedRows: { type: integer, minimum: 0 }
+        rejectedRows: { type: integer, minimum: 0 }
+        duplicateRows: { type: integer, minimum: 0 }
+        publicationId: { type: ["string", "null"] }
+        duplicateOf: { type: ["string", "null"] }
+        supersedesBatchId: { type: ["string", "null"] }
+        reconciliation: { type: array, items: { $ref: "#/components/schemas/ReconciliationCheck" } }
+        warnings: { type: array, items: { type: string } }
+        failure:
+          anyOf: [{ $ref: "#/components/schemas/WorkflowFailure" }, { type: "null" }]
+        contractVersion: { type: string, enum: ["2.0.0"] }
+    ImportBatchPage:
+      type: object
+      required: [items, total, offset, limit]
+      properties:
+        items: { type: array, items: { $ref: "#/components/schemas/ImportBatch" } }
+        total: { type: integer, minimum: 0 }
+        offset: { type: integer, minimum: 0 }
+        limit: { type: integer, minimum: 1, maximum: 500 }
+    CorrectionReview:
+      type: object
+      additionalProperties: false
+      required: [action, expectedPublicationId, reason, confirmSyntheticOnly]
+      properties:
+        action: { type: string, enum: [approve_supersession, reject] }
+        expectedPublicationId: { type: string }
+        reason: { type: string, minLength: 10, maxLength: 1000 }
+        confirmSyntheticOnly: { type: boolean, enum: [true] }
+    MetricDefinition:
+      type: object
+      required: [id, version, label, formula, grain, unit, timeBasis, exclusions, requiredDatasets, availabilityReason]
+      properties:
+        id: { type: string }
+        version: { type: string }
+        label: { type: string }
+        formula: { type: string }
+        grain: { type: string }
+        unit: { type: string, enum: [usd_cent, count] }
+        timeBasis: { type: string }
+        exclusions: { type: array, items: { type: string } }
+        requiredDatasets: { type: array, items: { type: string } }
+        availabilityReason: { type: ["string", "null"] }
+    SourceCoverage:
+      type: object
+      required: [datasetId, status, startDate, endDate, lastGoodAt, latestAttemptAt, missingRows, reason]
+      properties:
+        datasetId: { type: string }
+        status: { type: string, enum: [missing, complete, partial, stale, failed, unsupported] }
+        startDate: { type: ["string", "null"] }
+        endDate: { type: ["string", "null"] }
+        lastGoodAt: { type: ["string", "null"], format: date-time }
+        latestAttemptAt: { type: ["string", "null"], format: date-time }
+        missingRows: { type: ["integer", "null"], minimum: 0 }
+        reason: { type: string }
+    DatasetDefinition:
+      type: object
+      required: [id, sourceId, reportType, filename, role, grain, timeBasis, keyFields, monetaryFields, supportedMetrics, coverage]
+      properties:
+        id: { type: string }
+        sourceId: { type: string }
+        reportType: { type: string }
+        filename: { type: string }
+        role: { type: string, enum: [sales, statement, expense, dimension, listing, snapshot, catalog, exception, lifecycle] }
+        grain: { type: string }
+        timeBasis: { type: string }
+        keyFields: { type: array, items: { type: string } }
+        monetaryFields: { type: array, items: { type: string } }
+        supportedMetrics: { type: array, items: { type: string } }
+        coverage: { $ref: "#/components/schemas/SourceCoverage" }
+    StoreDefinition:
+      type: object
+      required: [id, name, district]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        district: { type: string }
+    GoodwillCatalog:
+      type: object
+      required: [contractVersion, synthetic, datasets, metrics, stores]
+      properties:
+        contractVersion: { type: string, enum: ["2.0.0"] }
+        synthetic: { type: boolean, enum: [true] }
+        datasets: { type: array, items: { $ref: "#/components/schemas/DatasetDefinition" } }
+        metrics: { type: array, items: { $ref: "#/components/schemas/MetricDefinition" } }
+        stores: { type: array, items: { $ref: "#/components/schemas/StoreDefinition" } }
+    MetricQuery:
+      type: object
+      additionalProperties: false
+      required: [metricId, sourceId, period, groupBy]
+      properties:
+        metricId: { type: string, enum: [net_item_sales, source_net, shipping_expense, daily_customers, listings, backlog] }
+        sourceId: { type: string, description: Exactly one source or platform; all-source additive aggregation is forbidden }
+        period: { $ref: "#/components/schemas/ReportPeriod" }
+        storeId: { type: string, description: Omit for all stores; __unknown__ explicitly selects unresolved attribution }
+        snapshotAt: { type: string, format: date-time }
+        groupBy: { type: string, enum: [day, store, category, none] }
+    MetricPoint:
+      type: object
+      required: [key, value, contributingRows, missingBuyerRows]
+      properties:
+        key: { type: string }
+        value: { type: ["integer", "null"] }
+        contributingRows: { type: integer, minimum: 0 }
+        missingBuyerRows: { type: integer, minimum: 0 }
+    MetricResult:
+      type: object
+      required: [query, definition, publicationId, publishedAt, value, points, coverage, batchIds, warnings, currency, timezone, synthetic, contractVersion]
+      properties:
+        query: { $ref: "#/components/schemas/MetricQuery" }
+        definition: { $ref: "#/components/schemas/MetricDefinition" }
+        publicationId: { type: ["string", "null"], description: Immutable queryable ledger revision shared by evidence and export requests }
+        publishedAt: { type: ["string", "null"], format: date-time }
+        value: { type: ["integer", "null"], description: Daily customers across multiple days has null aggregate; never sum distinct daily counts into unique period customers }
+        points: { type: array, items: { $ref: "#/components/schemas/MetricPoint" } }
+        coverage: { type: array, items: { $ref: "#/components/schemas/SourceCoverage" } }
+        batchIds: { type: array, items: { type: string } }
+        warnings: { type: array, items: { type: string } }
+        currency: { type: string, enum: [USD] }
+        timezone: { type: string, enum: [America/New_York] }
+        synthetic: { type: boolean, enum: [true] }
+        contractVersion: { type: string, enum: ["2.0.0"] }
+    EvidenceRecord:
+      type: object
+      required: [recordId, sourceId, batchId, runId, artifactId, checksum, sourceRow, disposition, values, reasons]
+      properties:
+        recordId: { type: string }
+        sourceId: { type: string }
+        batchId: { type: string }
+        runId: { type: ["string", "null"] }
+        artifactId: { type: string }
+        checksum: { type: string, pattern: '^[a-f0-9]{64}$' }
+        sourceRow: { type: integer, minimum: 1, description: One-based data-row ordinal excluding header; multiline cells do not change ordinal }
+        disposition: { type: string, enum: [accepted, rejected, duplicate] }
+        values: { type: object, additionalProperties: { type: string }, description: Source-column strings plus documented normalized fields; currency integers serialized as decimal strings }
+        reasons: { type: array, items: { $ref: "#/components/schemas/WorkflowFailure" } }
+    EvidenceQuery:
+      type: object
+      additionalProperties: false
+      required: [query, publicationId, offset, limit]
+      properties:
+        query: { $ref: "#/components/schemas/MetricQuery" }
+        publicationId: { type: string }
+        offset: { type: integer, minimum: 0 }
+        limit: { type: integer, minimum: 1, maximum: 500 }
+    EvidencePage:
+      type: object
+      required: [items, total, offset, limit, publicationId]
+      properties:
+        items: { type: array, items: { $ref: "#/components/schemas/EvidenceRecord" } }
+        total: { type: integer, minimum: 0 }
+        offset: { type: integer, minimum: 0 }
+        limit: { type: integer, minimum: 1, maximum: 500 }
+        publicationId: { type: ["string", "null"] }
+    ExportRequest:
+      type: object
+      additionalProperties: false
+      required: [kind]
+      properties:
+        kind: { type: string, enum: [summary, evidence, rejections] }
+        query: { $ref: "#/components/schemas/MetricQuery" }
+        publicationId: { type: string, description: Required with query for summary/evidence; server rejects missing or stale/mismatched revisions }
+        batchId: { type: string, description: Required only for rejections }
+    CsvExport:
+      type: object
+      required: [filename, contentType, csv, checksum, synthetic, publicationId]
+      properties:
+        filename: { type: string }
+        contentType: { type: string, enum: [text/csv] }
+        csv: { type: string }
+        checksum: { type: string, pattern: '^[a-f0-9]{64}$' }
+        synthetic: { type: boolean, enum: [true] }
+        publicationId: { type: ["string", "null"] }
+    ReportPeriod:
+      type: object
+      additionalProperties: false
+      required: [startDate, endDate]
+      properties:
+        startDate: { type: string, pattern: '^\d{4}-\d{2}-\d{2}$' }
+        endDate: { type: string, pattern: '^\d{4}-\d{2}-\d{2}$' }
+    SyntheticReport:
+      type: object
+      additionalProperties: false
+      required: [startDate, endDate, sourceId, reportType, filename, csv, checksum, synthetic, contractVersion]
+      properties:
+        startDate: { type: string }
+        endDate: { type: string }
+        sourceId: { type: string, enum: [upright] }
+        reportType: { type: string, enum: [paid_order_items] }
+        filename: { type: string, minLength: 1, maxLength: 160 }
+        csv: { type: string, minLength: 1, maxLength: 250000 }
+        checksum: { type: string, pattern: '^[a-f0-9]{64}$' }
+        synthetic: { type: boolean, enum: [true] }
+        contractVersion: { type: string, enum: ["1.0.0"] }
+    ReportingRow:
+      type: object
+      required: [sourceRow, orderId, itemId, soldDate, storeId, buyerId, grossMinor, refundMinor, netMinor]
+      properties:
+        sourceRow: { type: integer }
+        orderId: { type: string }
+        itemId: { type: string }
+        soldDate: { type: string }
+        storeId: { type: ["string", "null"] }
+        buyerId: { type: ["string", "null"] }
+        grossMinor: { type: integer }
+        refundMinor: { type: integer }
+        netMinor: { type: integer }
+    ReportingResult:
+      type: object
+      required: [importId, publishedAt, sourceId, reportType, filename, checksum, startDate, endDate, timezone, currency, synthetic, contractVersion, definitionVersion, grossMinor, refundMinor, netMinor, acceptedRows, coverage, warnings, rows]
+      properties:
+        importId: { type: string }
+        publishedAt: { type: string }
+        sourceId: { type: string }
+        reportType: { type: string }
+        filename: { type: string }
+        checksum: { type: string }
+        startDate: { type: string }
+        endDate: { type: string }
+        timezone: { type: string, enum: [America/New_York] }
+        currency: { type: string, enum: [USD] }
+        synthetic: { type: boolean }
+        contractVersion: { type: string }
+        definitionVersion: { type: string }
+        grossMinor: { type: integer }
+        refundMinor: { type: integer }
+        netMinor: { type: integer }
+        acceptedRows: { type: integer }
+        coverage: { type: string, enum: [single_source_synthetic] }
+        warnings: { type: array, items: { type: string } }
+        rows:
+          type: array
+          items: { $ref: "#/components/schemas/ReportingRow" }
+    ReportingState:
+      type: object
+      required: [result]
+      properties:
+        result:
+          anyOf:
+            - $ref: "#/components/schemas/ReportingResult"
+            - type: "null"
+    ReportSource:
+      type: object
+      required: [id, name, acquisitionClass, accountingRole, status]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        acquisitionClass: { type: string }
+        accountingRole: { type: string }
+        status: { type: string, enum: [synthetic_fixture, not_connected] }
+    ReportingError:
+      type: object
+      required: [error, code]
+      properties:
+        error: { type: string }
+        code: { type: string }
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+

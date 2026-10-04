@@ -1,0 +1,82 @@
+{
+  "synthetic": true,
+  "verification": "test-only archive/repository; independently computed original-byte controls",
+  "elapsedMs": 2511,
+  "controls": {
+    "amazon/net_item_sales": {
+      "expected": 1306005,
+      "actual": 1306005,
+      "rows": 650
+    },
+    "cash_monkey/net_item_sales": {
+      "expected": 1032846,
+      "actual": 1032846,
+      "rows": 500
+    },
+    "ebay/net_item_sales": {
+      "expected": 5551526,
+      "actual": 5551526,
+      "rows": 900
+    },
+    "goodwill_books/net_item_sales": {
+      "expected": 918493,
+      "actual": 918493,
+      "rows": 450
+    },
+    "shopgoodwill/net_item_sales": {
+      "expected": 11126218,
+      "actual": 11126218,
+      "rows": 1800
+    },
+    "upright/net_item_sales": {
+      "expected": 3615710,
+      "actual": 3615710,
+      "rows": 650
+    },
+    "amazon/source_net": {
+      "expected": 1014720,
+      "actual": 1014720,
+      "rows": 650
+    },
+    "cash_monkey/source_net": {
+      "expected": 1216798,
+      "actual": 1216798,
+      "rows": 500
+    },
+    "ebay/source_net": {
+      "expected": 5704674,
+      "actual": 5704674,
+      "rows": 900
+    },
+    "goodwill_books/source_net": {
+      "expected": 1017376,
+      "actual": 1017376,
+      "rows": 450
+    },
+    "jewelry/source_net": {
+      "expected": 1799730,
+      "actual": 1799730,
+      "rows": 240
+    },
+    "shopgoodwill/source_net": {
+      "expected": 14186559,
+      "actual": 14186559,
+      "rows": 1800
+    },
+    "upright/source_net": {
+      "expected": 4289551,
+      "actual": 4289551,
+      "rows": 650
+    },
+    "fedex/shipping_expense": {
+      "expected": 2012104,
+      "actual": 2012104,
+      "rows": 802
+    },
+    "shipping/shipping_expense": {
+      "expected": 3281419,
+      "actual": 3281419,
+      "rows": 3457
+    }
+  }
+}

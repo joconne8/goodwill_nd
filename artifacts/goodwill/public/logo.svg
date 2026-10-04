@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="52" viewBox="0 0 280 52" role="img" aria-label="Goodwill Reporting synthetic prototype">
+  <rect x="0" y="4" width="42" height="42" rx="6" fill="#174b56"/>
+  <path d="M11 16h20M11 25h15M11 34h20" stroke="#fffdf7" stroke-width="3"/>
+  <text x="54" y="26" fill="#152629" font-family="Georgia,serif" font-size="23">Goodwill Reporting</text>
+  <text x="55" y="43" fill="#546268" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.3">SYNTHETIC PROTOTYPE</text>
+</svg>

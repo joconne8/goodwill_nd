@@ -1,0 +1,800 @@
+{
+  "as_of": "2026-08-31T23:59:59-04:00",
+  "control_totals": {
+    "01_cash_monkey_orders_aug2026.csv": {
+      "item_revenue": "10578.14",
+      "payment_fee": "769.89",
+      "payout_amount": "12167.98",
+      "refund_amount": "249.68",
+      "shipping_revenue": "2609.41"
+    },
+    "02_upright_paid_order_items_aug2026.csv": {
+      "gross_sales": "37021.26",
+      "marketplace_fee": "5227.37",
+      "net_sales": "42895.51",
+      "refund_amount": "864.16",
+      "shipping_collected": "6738.41"
+    },
+    "03_jewelry_report_aug2026.csv": {
+      "appraisal_fee": "1204.00",
+      "commission_fee": "1556.94",
+      "gross_sales": "20758.24",
+      "net_sales": "17997.30"
+    },
+    "04_shipping_osm_pb_easypost_aug2026.csv": {
+      "adjustment_amount": "74.03",
+      "postage_amount": "32740.16"
+    },
+    "05_fedex_charges_refunds_aug2026.csv": {
+      "charge_amount": "20391.28",
+      "net_amount": "20121.04",
+      "refund_amount": "270.24"
+    },
+    "06_shopgoodwill_periodic_reports_aug2026.csv": {
+      "buyer_premium": "11441.16",
+      "gross_sales": "114403.37",
+      "net_sales": "141865.59",
+      "refund_amount": "3141.19",
+      "shipping_collected": "19162.25"
+    },
+    "07_goodwill_books_payment_statement_aug2026.csv": {
+      "gross_sales": "9329.46",
+      "marketplace_fee": "1399.58",
+      "net_payout": "10173.76",
+      "refund_amount": "144.53",
+      "shipping_credit": "2388.41"
+    },
+    "08_ebay_listing_sales_aug2026.csv": {
+      "ebay_fee": "7909.66",
+      "payout_amount": "57046.74",
+      "refund_amount": "1475.41",
+      "sale_amount": "56990.67",
+      "shipping_paid": "9441.14"
+    },
+    "09_amazon_payments_summary_aug2026.csv": {
+      "fba_or_shipping_fees": "4304.03",
+      "net_proceeds": "10147.20",
+      "product_sales": "13405.84",
+      "promo_rebates": "57.63",
+      "refunds": "345.79",
+      "selling_fees": "2010.99",
+      "shipping_credits": "3459.80"
+    }
+  },
+  "currency": "USD",
+  "daily_core_metrics": [
+    {
+      "day": "2026-08-01",
+      "distinct_platform_buyers": 51,
+      "gross_item_sales": "2402.68",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2377.15",
+      "platform": "ShopGoodwill",
+      "refunds": "25.53",
+      "rows": 53
+    },
+    {
+      "day": "2026-08-02",
+      "distinct_platform_buyers": 60,
+      "gross_item_sales": "4835.49",
+      "missing_store_rows": 0,
+      "net_item_revenue": "4683.75",
+      "platform": "ShopGoodwill",
+      "refunds": "151.74",
+      "rows": 63
+    },
+    {
+      "day": "2026-08-03",
+      "distinct_platform_buyers": 54,
+      "gross_item_sales": "2794.18",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2640.76",
+      "platform": "ShopGoodwill",
+      "refunds": "153.42",
+      "rows": 55
+    },
+    {
+      "day": "2026-08-04",
+      "distinct_platform_buyers": 71,
+      "gross_item_sales": "5556.57",
+      "missing_store_rows": 0,
+      "net_item_revenue": "5468.22",
+      "platform": "ShopGoodwill",
+      "refunds": "88.35",
+      "rows": 72
+    },
+    {
+      "day": "2026-08-05",
+      "distinct_platform_buyers": 48,
+      "gross_item_sales": "2376.63",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2302.30",
+      "platform": "ShopGoodwill",
+      "refunds": "74.33",
+      "rows": 49
+    },
+    {
+      "day": "2026-08-06",
+      "distinct_platform_buyers": 41,
+      "gross_item_sales": "2002.68",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1976.90",
+      "platform": "ShopGoodwill",
+      "refunds": "25.78",
+      "rows": 41
+    },
+    {
+      "day": "2026-08-07",
+      "distinct_platform_buyers": 44,
+      "gross_item_sales": "2312.68",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2301.44",
+      "platform": "ShopGoodwill",
+      "refunds": "11.24",
+      "rows": 44
+    },
+    {
+      "day": "2026-08-08",
+      "distinct_platform_buyers": 74,
+      "gross_item_sales": "4440.54",
+      "missing_store_rows": 0,
+      "net_item_revenue": "4373.81",
+      "platform": "ShopGoodwill",
+      "refunds": "66.73",
+      "rows": 76
+    },
+    {
+      "day": "2026-08-09",
+      "distinct_platform_buyers": 66,
+      "gross_item_sales": "5653.84",
+      "missing_store_rows": 0,
+      "net_item_revenue": "5638.88",
+      "platform": "ShopGoodwill",
+      "refunds": "14.96",
+      "rows": 68
+    },
+    {
+      "day": "2026-08-10",
+      "distinct_platform_buyers": 51,
+      "gross_item_sales": "4173.25",
+      "missing_store_rows": 0,
+      "net_item_revenue": "4164.69",
+      "platform": "ShopGoodwill",
+      "refunds": "8.56",
+      "rows": 51
+    },
+    {
+      "day": "2026-08-11",
+      "distinct_platform_buyers": 49,
+      "gross_item_sales": "2829.44",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2823.29",
+      "platform": "ShopGoodwill",
+      "refunds": "6.15",
+      "rows": 49
+    },
+    {
+      "day": "2026-08-12",
+      "distinct_platform_buyers": 51,
+      "gross_item_sales": "4735.52",
+      "missing_store_rows": 0,
+      "net_item_revenue": "4393.62",
+      "platform": "ShopGoodwill",
+      "refunds": "341.90",
+      "rows": 51
+    },
+    {
+      "day": "2026-08-13",
+      "distinct_platform_buyers": 53,
+      "gross_item_sales": "3836.48",
+      "missing_store_rows": 0,
+      "net_item_revenue": "3811.38",
+      "platform": "ShopGoodwill",
+      "refunds": "25.10",
+      "rows": 54
+    },
+    {
+      "day": "2026-08-14",
+      "distinct_platform_buyers": 53,
+      "gross_item_sales": "3107.33",
+      "missing_store_rows": 0,
+      "net_item_revenue": "3000.00",
+      "platform": "ShopGoodwill",
+      "refunds": "107.33",
+      "rows": 55
+    },
+    {
+      "day": "2026-08-15",
+      "distinct_platform_buyers": 70,
+      "gross_item_sales": "3866.04",
+      "missing_store_rows": 0,
+      "net_item_revenue": "3773.52",
+      "platform": "ShopGoodwill",
+      "refunds": "92.52",
+      "rows": 71
+    },
+    {
+      "day": "2026-08-16",
+      "distinct_platform_buyers": 62,
+      "gross_item_sales": "3726.99",
+      "missing_store_rows": 2,
+      "net_item_revenue": "3710.13",
+      "platform": "ShopGoodwill",
+      "refunds": "16.86",
+      "rows": 65
+    },
+    {
+      "day": "2026-08-17",
+      "distinct_platform_buyers": 54,
+      "gross_item_sales": "3377.31",
+      "missing_store_rows": 0,
+      "net_item_revenue": "3267.89",
+      "platform": "ShopGoodwill",
+      "refunds": "109.42",
+      "rows": 55
+    },
+    {
+      "day": "2026-08-18",
+      "distinct_platform_buyers": 38,
+      "gross_item_sales": "2329.07",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2271.14",
+      "platform": "ShopGoodwill",
+      "refunds": "57.93",
+      "rows": 40
+    },
+    {
+      "day": "2026-08-19",
+      "distinct_platform_buyers": 41,
+      "gross_item_sales": "3536.22",
+      "missing_store_rows": 1,
+      "net_item_revenue": "3511.35",
+      "platform": "ShopGoodwill",
+      "refunds": "24.87",
+      "rows": 42
+    },
+    {
+      "day": "2026-08-20",
+      "distinct_platform_buyers": 54,
+      "gross_item_sales": "2938.55",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2856.77",
+      "platform": "ShopGoodwill",
+      "refunds": "81.78",
+      "rows": 54
+    },
+    {
+      "day": "2026-08-21",
+      "distinct_platform_buyers": 63,
+      "gross_item_sales": "5779.18",
+      "missing_store_rows": 1,
+      "net_item_revenue": "5509.02",
+      "platform": "ShopGoodwill",
+      "refunds": "270.16",
+      "rows": 65
+    },
+    {
+      "day": "2026-08-22",
+      "distinct_platform_buyers": 58,
+      "gross_item_sales": "4192.01",
+      "missing_store_rows": 0,
+      "net_item_revenue": "4183.82",
+      "platform": "ShopGoodwill",
+      "refunds": "8.19",
+      "rows": 58
+    },
+    {
+      "day": "2026-08-23",
+      "distinct_platform_buyers": 62,
+      "gross_item_sales": "3478.72",
+      "missing_store_rows": 1,
+      "net_item_revenue": "3276.84",
+      "platform": "ShopGoodwill",
+      "refunds": "201.88",
+      "rows": 66
+    },
+    {
+      "day": "2026-08-24",
+      "distinct_platform_buyers": 53,
+      "gross_item_sales": "4079.88",
+      "missing_store_rows": 0,
+      "net_item_revenue": "3910.69",
+      "platform": "ShopGoodwill",
+      "refunds": "169.19",
+      "rows": 55
+    },
+    {
+      "day": "2026-08-25",
+      "distinct_platform_buyers": 56,
+      "gross_item_sales": "3089.08",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2974.12",
+      "platform": "ShopGoodwill",
+      "refunds": "114.96",
+      "rows": 56
+    },
+    {
+      "day": "2026-08-26",
+      "distinct_platform_buyers": 55,
+      "gross_item_sales": "4909.84",
+      "missing_store_rows": 1,
+      "net_item_revenue": "4891.25",
+      "platform": "ShopGoodwill",
+      "refunds": "18.59",
+      "rows": 56
+    },
+    {
+      "day": "2026-08-27",
+      "distinct_platform_buyers": 47,
+      "gross_item_sales": "2575.52",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2514.72",
+      "platform": "ShopGoodwill",
+      "refunds": "60.80",
+      "rows": 49
+    },
+    {
+      "day": "2026-08-28",
+      "distinct_platform_buyers": 61,
+      "gross_item_sales": "3432.61",
+      "missing_store_rows": 0,
+      "net_item_revenue": "3007.62",
+      "platform": "ShopGoodwill",
+      "refunds": "424.99",
+      "rows": 63
+    },
+    {
+      "day": "2026-08-29",
+      "distinct_platform_buyers": 68,
+      "gross_item_sales": "3934.30",
+      "missing_store_rows": 0,
+      "net_item_revenue": "3838.85",
+      "platform": "ShopGoodwill",
+      "refunds": "95.45",
+      "rows": 76
+    },
+    {
+      "day": "2026-08-30",
+      "distinct_platform_buyers": 71,
+      "gross_item_sales": "3890.61",
+      "missing_store_rows": 2,
+      "net_item_revenue": "3707.39",
+      "platform": "ShopGoodwill",
+      "refunds": "183.22",
+      "rows": 74
+    },
+    {
+      "day": "2026-08-31",
+      "distinct_platform_buyers": 70,
+      "gross_item_sales": "4210.13",
+      "missing_store_rows": 0,
+      "net_item_revenue": "4100.87",
+      "platform": "ShopGoodwill",
+      "refunds": "109.26",
+      "rows": 74
+    },
+    {
+      "day": "2026-08-01",
+      "distinct_platform_buyers": 25,
+      "gross_item_sales": "2087.16",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1970.67",
+      "platform": "eBay",
+      "refunds": "116.49",
+      "rows": 25
+    },
+    {
+      "day": "2026-08-02",
+      "distinct_platform_buyers": 26,
+      "gross_item_sales": "1402.86",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1350.10",
+      "platform": "eBay",
+      "refunds": "52.76",
+      "rows": 28
+    },
+    {
+      "day": "2026-08-03",
+      "distinct_platform_buyers": 18,
+      "gross_item_sales": "1327.36",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1322.92",
+      "platform": "eBay",
+      "refunds": "4.44",
+      "rows": 20
+    },
+    {
+      "day": "2026-08-04",
+      "distinct_platform_buyers": 25,
+      "gross_item_sales": "1475.68",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1442.12",
+      "platform": "eBay",
+      "refunds": "33.56",
+      "rows": 25
+    },
+    {
+      "day": "2026-08-05",
+      "distinct_platform_buyers": 30,
+      "gross_item_sales": "1855.67",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1767.04",
+      "platform": "eBay",
+      "refunds": "88.63",
+      "rows": 31
+    },
+    {
+      "day": "2026-08-06",
+      "distinct_platform_buyers": 23,
+      "gross_item_sales": "1383.48",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1362.61",
+      "platform": "eBay",
+      "refunds": "20.87",
+      "rows": 24
+    },
+    {
+      "day": "2026-08-07",
+      "distinct_platform_buyers": 32,
+      "gross_item_sales": "2157.82",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2136.00",
+      "platform": "eBay",
+      "refunds": "21.82",
+      "rows": 33
+    },
+    {
+      "day": "2026-08-08",
+      "distinct_platform_buyers": 34,
+      "gross_item_sales": "1295.42",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1262.07",
+      "platform": "eBay",
+      "refunds": "33.35",
+      "rows": 34
+    },
+    {
+      "day": "2026-08-09",
+      "distinct_platform_buyers": 33,
+      "gross_item_sales": "1639.58",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1530.03",
+      "platform": "eBay",
+      "refunds": "109.55",
+      "rows": 36
+    },
+    {
+      "day": "2026-08-10",
+      "distinct_platform_buyers": 27,
+      "gross_item_sales": "1696.85",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1696.85",
+      "platform": "eBay",
+      "refunds": "0.00",
+      "rows": 27
+    },
+    {
+      "day": "2026-08-11",
+      "distinct_platform_buyers": 24,
+      "gross_item_sales": "1433.01",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1305.20",
+      "platform": "eBay",
+      "refunds": "127.81",
+      "rows": 24
+    },
+    {
+      "day": "2026-08-12",
+      "distinct_platform_buyers": 26,
+      "gross_item_sales": "2539.22",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2539.22",
+      "platform": "eBay",
+      "refunds": "0.00",
+      "rows": 26
+    },
+    {
+      "day": "2026-08-13",
+      "distinct_platform_buyers": 20,
+      "gross_item_sales": "1102.18",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1085.34",
+      "platform": "eBay",
+      "refunds": "16.84",
+      "rows": 21
+    },
+    {
+      "day": "2026-08-14",
+      "distinct_platform_buyers": 20,
+      "gross_item_sales": "1655.84",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1638.44",
+      "platform": "eBay",
+      "refunds": "17.40",
+      "rows": 20
+    },
+    {
+      "day": "2026-08-15",
+      "distinct_platform_buyers": 33,
+      "gross_item_sales": "2411.75",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2335.16",
+      "platform": "eBay",
+      "refunds": "76.59",
+      "rows": 35
+    },
+    {
+      "day": "2026-08-16",
+      "distinct_platform_buyers": 34,
+      "gross_item_sales": "1797.61",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1720.20",
+      "platform": "eBay",
+      "refunds": "77.41",
+      "rows": 34
+    },
+    {
+      "day": "2026-08-17",
+      "distinct_platform_buyers": 17,
+      "gross_item_sales": "905.69",
+      "missing_store_rows": 0,
+      "net_item_revenue": "669.50",
+      "platform": "eBay",
+      "refunds": "236.19",
+      "rows": 17
+    },
+    {
+      "day": "2026-08-18",
+      "distinct_platform_buyers": 34,
+      "gross_item_sales": "2955.04",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2873.91",
+      "platform": "eBay",
+      "refunds": "81.13",
+      "rows": 36
+    },
+    {
+      "day": "2026-08-19",
+      "distinct_platform_buyers": 22,
+      "gross_item_sales": "1213.13",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1182.78",
+      "platform": "eBay",
+      "refunds": "30.35",
+      "rows": 22
+    },
+    {
+      "day": "2026-08-20",
+      "distinct_platform_buyers": 25,
+      "gross_item_sales": "1521.36",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1468.54",
+      "platform": "eBay",
+      "refunds": "52.82",
+      "rows": 25
+    },
+    {
+      "day": "2026-08-21",
+      "distinct_platform_buyers": 26,
+      "gross_item_sales": "1960.54",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1935.88",
+      "platform": "eBay",
+      "refunds": "24.66",
+      "rows": 26
+    },
+    {
+      "day": "2026-08-22",
+      "distinct_platform_buyers": 31,
+      "gross_item_sales": "2170.04",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2124.55",
+      "platform": "eBay",
+      "refunds": "45.49",
+      "rows": 31
+    },
+    {
+      "day": "2026-08-23",
+      "distinct_platform_buyers": 26,
+      "gross_item_sales": "1272.33",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1251.11",
+      "platform": "eBay",
+      "refunds": "21.22",
+      "rows": 26
+    },
+    {
+      "day": "2026-08-24",
+      "distinct_platform_buyers": 32,
+      "gross_item_sales": "3009.25",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2996.94",
+      "platform": "eBay",
+      "refunds": "12.31",
+      "rows": 32
+    },
+    {
+      "day": "2026-08-25",
+      "distinct_platform_buyers": 26,
+      "gross_item_sales": "1475.31",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1456.63",
+      "platform": "eBay",
+      "refunds": "18.68",
+      "rows": 26
+    },
+    {
+      "day": "2026-08-26",
+      "distinct_platform_buyers": 28,
+      "gross_item_sales": "1254.75",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1245.56",
+      "platform": "eBay",
+      "refunds": "9.19",
+      "rows": 29
+    },
+    {
+      "day": "2026-08-27",
+      "distinct_platform_buyers": 25,
+      "gross_item_sales": "1650.12",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1637.80",
+      "platform": "eBay",
+      "refunds": "12.32",
+      "rows": 26
+    },
+    {
+      "day": "2026-08-28",
+      "distinct_platform_buyers": 21,
+      "gross_item_sales": "1236.12",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1236.12",
+      "platform": "eBay",
+      "refunds": "0.00",
+      "rows": 22
+    },
+    {
+      "day": "2026-08-29",
+      "distinct_platform_buyers": 46,
+      "gross_item_sales": "4596.29",
+      "missing_store_rows": 0,
+      "net_item_revenue": "4539.51",
+      "platform": "eBay",
+      "refunds": "56.78",
+      "rows": 49
+    },
+    {
+      "day": "2026-08-30",
+      "distinct_platform_buyers": 47,
+      "gross_item_sales": "2554.54",
+      "missing_store_rows": 0,
+      "net_item_revenue": "2520.06",
+      "platform": "eBay",
+      "refunds": "34.48",
+      "rows": 53
+    },
+    {
+      "day": "2026-08-31",
+      "distinct_platform_buyers": 33,
+      "gross_item_sales": "1954.67",
+      "missing_store_rows": 0,
+      "net_item_revenue": "1912.40",
+      "platform": "eBay",
+      "refunds": "42.27",
+      "rows": 37
+    }
+  ],
+  "excluded_from_august": [
+    "incremental/",
+    "test-fixtures/"
+  ],
+  "expected_exceptions": 21,
+  "files": {
+    "01_cash_monkey_orders_aug2026.csv": {
+      "rows": 500,
+      "sha256": "51e008d6d2ad58eb18cd29476d3f470cbc8066b2d7438f5e488990e8c04527c0"
+    },
+    "02_upright_paid_order_items_aug2026.csv": {
+      "rows": 650,
+      "sha256": "3ffd1bdae4a5f79d25788120833be99499b05791a255fcfd2f7b378254d5a1ab"
+    },
+    "03_jewelry_report_aug2026.csv": {
+      "rows": 240,
+      "sha256": "96e94636606bb677f8e1c46db933a613ba008384356742c7f7770be2264e4718"
+    },
+    "04_shipping_osm_pb_easypost_aug2026.csv": {
+      "rows": 3457,
+      "sha256": "635ebc41da539be5b249c771282cb5f74b8d7065bcb12ae7234547f745d06423"
+    },
+    "05_fedex_charges_refunds_aug2026.csv": {
+      "rows": 802,
+      "sha256": "2480dd5bcf5feddfc13db3a0ce78efdee89a37da17d6ecc24c570e6a74bd0446"
+    },
+    "06_shopgoodwill_periodic_reports_aug2026.csv": {
+      "rows": 1800,
+      "sha256": "1e1285b81b46e114acabdb96073e22fdd51a53c020fcbd93d5d4e7250fc6e725"
+    },
+    "07_goodwill_books_payment_statement_aug2026.csv": {
+      "rows": 450,
+      "sha256": "4d8f16c4dbfc4f00ffca095fc7a7440879de286a361a3277d5333407ea5052d4"
+    },
+    "08_ebay_listing_sales_aug2026.csv": {
+      "rows": 900,
+      "sha256": "7b59b4eb7004747961839b7f7b1fe90811a4cf2483e20dce1da46ac7c625e425"
+    },
+    "09_amazon_payments_summary_aug2026.csv": {
+      "rows": 650,
+      "sha256": "9c1300a896fa306111ca29d417a90f0ab753cb8365871820a8520434d3c0a8eb"
+    },
+    "10_stores.csv": {
+      "rows": 24,
+      "sha256": "026cd444c32ee49478198b6d24800707b8c777cdbd808318f2b5c8c58422eee4"
+    },
+    "11_listing_events_aug2026.csv": {
+      "rows": 3181,
+      "sha256": "041a11ffc3c80360deecfc9a077979959c008d9d43b346b7a569114f3243469f"
+    },
+    "12_inventory_snapshots_aug2026.csv": {
+      "rows": 6019,
+      "sha256": "c725f84a6f42ab4944f0091f42cba40ae8c4a42493f7bb7d81af4c637319fdc0"
+    },
+    "13_item_catalog.csv": {
+      "rows": 3900,
+      "sha256": "73dba993c40f40e6498f6a4245fe72c282be2c12ffce5a0200e1e2460ade5565"
+    },
+    "14_quality_exceptions.csv": {
+      "rows": 21,
+      "sha256": "3e3397181d91ec961754247140223cc890ec2151e307b51a6d1263da2cd5b36a"
+    },
+    "15_order_lifecycle.csv": {
+      "rows": 4950,
+      "sha256": "f35aca87e47492ce10e1890fdf215865697b1272920bd332effe508068f41f9a"
+    }
+  },
+  "incremental_files": {
+    "incremental/ebay_sep01_2026.csv": 30,
+    "incremental/shopgoodwill_sep01_2026.csv": 60
+  },
+  "inventory_controls": {
+    "2026-08-01T23:59:59-04:00": {
+      "missing_store_rows": 4,
+      "total_inventory": 2577,
+      "unlisted_backlog": 832,
+      "workflow_states": {
+        "awaiting_inspection": 194,
+        "awaiting_photography": 268,
+        "listed": 1745,
+        "ready_to_list": 232,
+        "received": 138
+      }
+    },
+    "2026-08-15T23:59:59-04:00": {
+      "missing_store_rows": 8,
+      "total_inventory": 2196,
+      "unlisted_backlog": 757,
+      "workflow_states": {
+        "awaiting_inspection": 146,
+        "awaiting_photography": 153,
+        "listed": 1439,
+        "ready_to_list": 371,
+        "received": 87
+      }
+    },
+    "2026-08-31T23:59:59-04:00": {
+      "missing_store_rows": 0,
+      "total_inventory": 1246,
+      "unlisted_backlog": 765,
+      "workflow_states": {
+        "awaiting_inspection": 64,
+        "awaiting_photography": 113,
+        "listed": 481,
+        "ready_to_list": 543,
+        "received": 45
+      }
+    }
+  },
+  "revenue_convention": "gross item sales minus item refunds; exclude shipping, tax, buyer premium, fees",
+  "seed": 260803,
+  "source_row_convention": "1-based data row, excluding CSV header; file name + row number is provenance",
+  "synthetic": true
+}

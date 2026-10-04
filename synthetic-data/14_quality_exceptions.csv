@@ -1,0 +1,22 @@
+source_file,source_row_id,record_id,field,issue,expected_handling,synthetic
+02_upright_paid_order_items_aug2026.csv,224,UP-2608-000395,buyer_id,missing_buyer,flag; never infer missing value,true
+02_upright_paid_order_items_aug2026.csv,249,UP-2608-000079,buyer_id,missing_buyer,flag; never infer missing value,true
+02_upright_paid_order_items_aug2026.csv,376,UP-2608-000474,buyer_id,missing_buyer,flag; never infer missing value,true
+02_upright_paid_order_items_aug2026.csv,382,UP-2608-000158,buyer_id,missing_buyer,flag; never infer missing value,true
+02_upright_paid_order_items_aug2026.csv,423,UP-2608-000553,buyer_id,missing_buyer,flag; never infer missing value,true
+02_upright_paid_order_items_aug2026.csv,504,UP-2608-000632,buyer_id,missing_buyer,flag; never infer missing value,true
+02_upright_paid_order_items_aug2026.csv,530,UP-2608-000316,buyer_id,missing_buyer,flag; never infer missing value,true
+02_upright_paid_order_items_aug2026.csv,628,UP-2608-000237,buyer_id,missing_buyer,flag; never infer missing value,true
+03_jewelry_report_aug2026.csv,19,JWL-ITM-000041,supplier,unconfirmed_supplier,flag; never infer missing value,true
+03_jewelry_report_aug2026.csv,26,JWL-ITM-000164,supplier,unconfirmed_supplier,flag; never infer missing value,true
+03_jewelry_report_aug2026.csv,44,JWL-ITM-000123,supplier,unconfirmed_supplier,flag; never infer missing value,true
+03_jewelry_report_aug2026.csv,55,JWL-ITM-000082,supplier,unconfirmed_supplier,flag; never infer missing value,true
+03_jewelry_report_aug2026.csv,218,JWL-ITM-000205,supplier,unconfirmed_supplier,flag; never infer missing value,true
+06_shopgoodwill_periodic_reports_aug2026.csv,856,SGW-2608-000211,store_id,missing_store,flag; never infer missing value,true
+06_shopgoodwill_periodic_reports_aug2026.csv,866,SGW-2608-000422,store_id,missing_store,flag; never infer missing value,true
+06_shopgoodwill_periodic_reports_aug2026.csv,1052,SGW-2608-001688,store_id,missing_store,flag; never infer missing value,true
+06_shopgoodwill_periodic_reports_aug2026.csv,1152,SGW-2608-001055,store_id,missing_store,flag; never infer missing value,true
+06_shopgoodwill_periodic_reports_aug2026.csv,1255,SGW-2608-000633,store_id,missing_store,flag; never infer missing value,true
+06_shopgoodwill_periodic_reports_aug2026.csv,1439,SGW-2608-000844,store_id,missing_store,flag; never infer missing value,true
+06_shopgoodwill_periodic_reports_aug2026.csv,1710,SGW-2608-001266,store_id,missing_store,flag; never infer missing value,true
+06_shopgoodwill_periodic_reports_aug2026.csv,1714,SGW-2608-001477,store_id,missing_store,flag; never infer missing value,true

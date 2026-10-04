@@ -1,0 +1,6 @@
+transaction_id,sale_date,listing_id,item_id,store_id,buyer_id,category,quantity,sale_amount,shipping_paid,tax_collected,ebay_fee,refund_amount,payout_amount,relisted
+INVALID-EB-01,2026-08-99,EB-LST-000059,EB-ITM-000059,GW-005,BUY-EB-00030,Electronics,1,84.78,17.52,8.18,12.06,0.00,90.24,false
+INVALID-EB-02,2026-08-01,EB-LST-000059,EB-ITM-000059,GW-005,BUY-EB-00030,Electronics,1,-18.00,17.52,8.18,12.06,0.00,90.24,false
+,2026-08-01,EB-LST-000059,EB-ITM-000059,GW-005,BUY-EB-00030,Electronics,1,84.78,17.52,8.18,12.06,0.00,90.24,false
+INVALID-EB-04,2026-08-01,EB-LST-000059,EB-ITM-000059,GW-005,BUY-EB-00030,Electronics,1,not-a-number,17.52,8.18,12.06,0.00,90.24,false
+INVALID-EB-05,2026-08-01,EB-LST-000059,EB-ITM-000059,GW-005,BUY-EB-00030,Electronics,1,84.78,17.52,8.18,12.06,99999.00,90.24,false

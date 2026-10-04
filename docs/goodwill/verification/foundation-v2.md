@@ -20,6 +20,29 @@ checkpoint; the existing dependent tasks cover that implementation and final QA.
   validation. v2 examples are test-only, not returned by the application.
 - Full workspace typecheck passed; web and API production builds passed.
   Vite emitted an existing tooltip sourcemap warning; it did not prevent build.
+- 32 live development-proxy smoke checks passed, including alternate periods,
+  exact replay, persistence and failed-input preservation of last-good totals.
+- Desktop preview rendered without application browser errors after both
+  managed workflows restarted successfully.
+
+## Published baseline and clean reconstruction
+
+[Reviewable draft PR](https://github.com/joconne8/goodwill_nd/pull/1).
+Main was not merged or replaced. Original root backlog and all synthetic-data
+blobs were preserved. The bundled copy in this PR references the target's
+original blobs, so both copies in GitHub are byte-identical.
+
+The connector denied the tarball endpoint (403). Instead, all 273 files in the
+published Git tree were reconstructed into a clean temporary directory and
+verified against their published Git blob hashes. This is a clean reconstruction
+of the actual PR, not a claimed successful GitHub tarball download.
+
+From that directory: frozen-lockfile offline install, full typecheck, all 13 API
+tests, source-pack checks (24 exact matches), API build and frontend build passed.
+The documented local launcher served UI, health and the expected persisted
+3,615,710-cent net result on one origin. That runtime check reused the existing
+demo database read-only; it did not validate provisioning a new database or a
+second person's laptop. Temporary processes were stopped after the check.
 
 ## Problems caught and resolved
 
@@ -31,8 +54,7 @@ and safe-range constraints. This is covered by a negative test.
 
 ## Explicit remaining verification gates
 
-The live thin-path smoke and preview checks are recorded with the foundation
-handoff. Actual browser replay, all-source database intake, approved corrections,
+Actual browser replay, all-source database intake, approved corrections,
 UI states for new reporting, persistent raw object storage and end-to-end v2
 regression remain downstream work. A build or schema-example test is not their
 acceptance evidence.

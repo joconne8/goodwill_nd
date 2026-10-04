@@ -1,0 +1,73 @@
+{
+  "synthetic": true,
+  "testOnlyRepositoryAndArchive": true,
+  "productionAuthBypass": false,
+  "acquisitionReplayVerifiedHere": false,
+  "controls": {
+    "amazon/net_item_sales": {
+      "expected": 1306005,
+      "actual": "$13,060.05"
+    },
+    "cash_monkey/net_item_sales": {
+      "expected": 1032846,
+      "actual": "$10,328.46"
+    },
+    "ebay/net_item_sales": {
+      "expected": 5551526,
+      "actual": "$55,515.26"
+    },
+    "goodwill_books/net_item_sales": {
+      "expected": 918493,
+      "actual": "$9,184.93"
+    },
+    "shopgoodwill/net_item_sales": {
+      "expected": 11126218,
+      "actual": "$111,262.18"
+    },
+    "upright/net_item_sales": {
+      "expected": 3615710,
+      "actual": "$36,157.10"
+    },
+    "amazon/source_net": {
+      "expected": 1014720,
+      "actual": "$10,147.20"
+    },
+    "cash_monkey/source_net": {
+      "expected": 1216798,
+      "actual": "$12,167.98"
+    },
+    "ebay/source_net": {
+      "expected": 5704674,
+      "actual": "$57,046.74"
+    },
+    "goodwill_books/source_net": {
+      "expected": 1017376,
+      "actual": "$10,173.76"
+    },
+    "jewelry/source_net": {
+      "expected": 1799730,
+      "actual": "$17,997.30"
+    },
+    "shopgoodwill/source_net": {
+      "expected": 14186559,
+      "actual": "$141,865.59"
+    },
+    "upright/source_net": {
+      "expected": 4289551,
+      "actual": "$42,895.51"
+    },
+    "fedex/shipping_expense": {
+      "expected": 2012104,
+      "actual": "$20,121.04"
+    },
+    "shipping/shipping_expense": {
+      "expected": 3281419,
+      "actual": "$32,814.19"
+    }
+  },
+  "publicationPinVerified": true,
+  "staleReview409Verified": true,
+  "originalByteUploadVerified": true,
+  "mobileBodyOverflow": false,
+  "pageErrors": []
+}

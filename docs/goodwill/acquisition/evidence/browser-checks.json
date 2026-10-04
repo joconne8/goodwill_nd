@@ -1,0 +1,262 @@
+{
+  "synthetic": true,
+  "realBrowser": true,
+  "elapsedMs": 11216,
+  "cases": [
+    {
+      "case": "download",
+      "expected": "f13d40cf2b281296d965a4aaa1c96d65740a6571b5e0ee448730db9e21c87436",
+      "actual": "f13d40cf2b281296d965a4aaa1c96d65740a6571b5e0ee448730db9e21c87436",
+      "expectedBytes": 22464,
+      "actualBytes": 22464,
+      "run": {
+        "id": "32662590-8107-44eb-b2f7-d87fee657e38",
+        "request": {
+          "sourceId": "upright",
+          "reportType": "paid_order_items",
+          "period": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-07"
+          },
+          "scenario": "success"
+        },
+        "state": "verified",
+        "createdAt": "2026-10-04T02:49:36.629Z",
+        "updatedAt": "2026-10-04T02:49:38.049Z",
+        "attempt": 1,
+        "lastStep": "archived_verified_file",
+        "steps": [
+          {
+            "name": "queued",
+            "at": "2026-10-04T02:49:36.629Z"
+          },
+          {
+            "name": "browser_start",
+            "at": "2026-10-04T02:49:36.630Z"
+          },
+          {
+            "name": "replica-reports",
+            "at": "2026-10-04T02:49:37.501Z"
+          },
+          {
+            "name": "replica-paid-orders",
+            "at": "2026-10-04T02:49:37.547Z"
+          },
+          {
+            "name": "replica-start",
+            "at": "2026-10-04T02:49:37.560Z"
+          },
+          {
+            "name": "replica-end",
+            "at": "2026-10-04T02:49:37.572Z"
+          },
+          {
+            "name": "replica-timezone",
+            "at": "2026-10-04T02:49:37.583Z"
+          },
+          {
+            "name": "replica-channel",
+            "at": "2026-10-04T02:49:37.594Z"
+          },
+          {
+            "name": "replica-payment",
+            "at": "2026-10-04T02:49:37.605Z"
+          },
+          {
+            "name": "replica-generate",
+            "at": "2026-10-04T02:49:37.646Z"
+          },
+          {
+            "name": "replica-confirm",
+            "at": "2026-10-04T02:49:37.703Z"
+          },
+          {
+            "name": "report_ready",
+            "at": "2026-10-04T02:49:37.793Z"
+          },
+          {
+            "name": "downloaded",
+            "at": "2026-10-04T02:49:38.040Z"
+          },
+          {
+            "name": "bytes_verified",
+            "at": "2026-10-04T02:49:38.049Z"
+          }
+        ],
+        "artifact": {
+          "artifactId": "32662590-8107-44eb-b2f7-d87fee657e38",
+          "filename": "synthetic_upright_2026-08-01_2026-08-07.csv",
+          "checksum": "f13d40cf2b281296d965a4aaa1c96d65740a6571b5e0ee448730db9e21c87436",
+          "byteSize": 22464,
+          "archivedAt": "2026-10-04T02:49:38.049Z",
+          "synthetic": true
+        },
+        "failure": null,
+        "contractVersion": "2.0.0",
+        "downloadedAt": "2026-10-04T02:49:37.833Z"
+      }
+    },
+    {
+      "case": "download",
+      "expected": "903b5693b4d2a37fbd2ea5299800796bd21881304cdd4c9fa673b84e4be817b6",
+      "actual": "903b5693b4d2a37fbd2ea5299800796bd21881304cdd4c9fa673b84e4be817b6",
+      "expectedBytes": 20454,
+      "actualBytes": 20454,
+      "run": {
+        "id": "da360670-9e12-4a9a-bdbb-95932041266b",
+        "request": {
+          "sourceId": "upright",
+          "reportType": "paid_order_items",
+          "period": {
+            "startDate": "2026-08-08",
+            "endDate": "2026-08-14"
+          },
+          "scenario": "success"
+        },
+        "state": "verified",
+        "createdAt": "2026-10-04T02:49:38.057Z",
+        "updatedAt": "2026-10-04T02:49:39.115Z",
+        "attempt": 1,
+        "lastStep": "archived_verified_file",
+        "steps": [
+          {
+            "name": "queued",
+            "at": "2026-10-04T02:49:38.057Z"
+          },
+          {
+            "name": "browser_start",
+            "at": "2026-10-04T02:49:38.057Z"
+          },
+          {
+            "name": "replica-reports",
+            "at": "2026-10-04T02:49:38.647Z"
+          },
+          {
+            "name": "replica-paid-orders",
+            "at": "2026-10-04T02:49:38.696Z"
+          },
+          {
+            "name": "replica-start",
+            "at": "2026-10-04T02:49:38.707Z"
+          },
+          {
+            "name": "replica-end",
+            "at": "2026-10-04T02:49:38.716Z"
+          },
+          {
+            "name": "replica-timezone",
+            "at": "2026-10-04T02:49:38.727Z"
+          },
+          {
+            "name": "replica-channel",
+            "at": "2026-10-04T02:49:38.735Z"
+          },
+          {
+            "name": "replica-payment",
+            "at": "2026-10-04T02:49:38.742Z"
+          },
+          {
+            "name": "replica-generate",
+            "at": "2026-10-04T02:49:38.775Z"
+          },
+          {
+            "name": "replica-confirm",
+            "at": "2026-10-04T02:49:38.811Z"
+          },
+          {
+            "name": "report_ready",
+            "at": "2026-10-04T02:49:38.871Z"
+          },
+          {
+            "name": "downloaded",
+            "at": "2026-10-04T02:49:39.110Z"
+          },
+          {
+            "name": "bytes_verified",
+            "at": "2026-10-04T02:49:39.115Z"
+          }
+        ],
+        "artifact": {
+          "artifactId": "da360670-9e12-4a9a-bdbb-95932041266b",
+          "filename": "synthetic_upright_2026-08-08_2026-08-14.csv",
+          "checksum": "903b5693b4d2a37fbd2ea5299800796bd21881304cdd4c9fa673b84e4be817b6",
+          "byteSize": 20454,
+          "archivedAt": "2026-10-04T02:49:39.115Z",
+          "synthetic": true
+        },
+        "failure": null,
+        "contractVersion": "2.0.0",
+        "downloadedAt": "2026-10-04T02:49:38.914Z"
+      }
+    },
+    {
+      "case": "delayed",
+      "expectedCode": null,
+      "actualCode": null,
+      "lastStep": "archived_verified_file"
+    },
+    {
+      "case": "session_expired",
+      "expectedCode": "SESSION_EXPIRED",
+      "actualCode": "SESSION_EXPIRED",
+      "lastStep": "replica-confirm"
+    },
+    {
+      "case": "dom_drift",
+      "expectedCode": "DOM_DRIFT",
+      "actualCode": "DOM_DRIFT",
+      "lastStep": "replica-payment"
+    },
+    {
+      "case": "missing_report",
+      "expectedCode": "MISSING_REPORT",
+      "actualCode": "MISSING_REPORT",
+      "lastStep": "replica-confirm"
+    },
+    {
+      "case": "wrong_dates",
+      "expectedCode": "WRONG_REPORT_DATES",
+      "actualCode": "WRONG_REPORT_DATES"
+    },
+    {
+      "case": "failed_download",
+      "expectedCode": "DOWNLOAD_FAILED",
+      "actualCode": "DOWNLOAD_FAILED"
+    },
+    {
+      "case": "cancel",
+      "state": "cancelled",
+      "artifact": null
+    },
+    {
+      "case": "manual-upload",
+      "bytes": 22464,
+      "checksum": "f13d40cf2b281296d965a4aaa1c96d65740a6571b5e0ee448730db9e21c87436",
+      "matched": true,
+      "unsupportedFormatRejectedBeforeTicket": true,
+      "intakeContract": {
+        "sourceId": "upright",
+        "reportType": "paid_order_items",
+        "period": {
+          "startDate": "2026-08-01",
+          "endDate": "2026-08-07"
+        },
+        "inputKind": "upload",
+        "inputId": "test-upload-1"
+      },
+      "limitation": "Data intake is a transport spy, not financial acceptance."
+    },
+    {
+      "case": "unsupported-filter",
+      "expectedCode": "INVALID_FILTER",
+      "actualCode": "INVALID_FILTER"
+    }
+  ],
+  "lastGoodChecked": true,
+  "lastGoodUnchanged": true,
+  "limitations": [
+    "Test-only archive/repository for browser harness; real Postgres separately tested with connection-local temporary table.",
+    "Manual intake transport spy; data-lane parser and production App Storage remain integration gates.",
+    "No live Upright compatibility or measured partner time savings."
+  ]
+}
